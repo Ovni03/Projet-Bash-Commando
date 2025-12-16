@@ -14,4 +14,4 @@
 										1 => 🕹️ Continuer Partie
 										2 => 💾 Selectionner Partie
 										3 => ❓ Reinitialiser la Partie
-										4 => ❌ Quitter
+										4 => ❌ Quitter 

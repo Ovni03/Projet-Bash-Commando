@@ -5,7 +5,7 @@
  */
 #ifndef DECL
 #define DECL
-
+ 
     /**
      *  @def    SORTIR
      *  @brief  c'est la commande pour sortir du petit terminale

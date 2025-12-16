@@ -7,7 +7,7 @@
 #include <termio.h>
 #include "../include/arborescence.h"
 
-
+ 
 #define ESPACE 7 // Espace du texte dans la fonction echec() et felicitation()
 
 // Clear the termirnal srceen
