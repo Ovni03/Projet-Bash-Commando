@@ -22,4 +22,4 @@ PROMPT :
      |    |           └───────────────── : @Base-Bash → Nom du jeu.
      |    └───────────────────────────── : Soldat → Nom du joueur .
      └────────────────────────────────── : [11] → Nombre de point actuel..
-
+ 
