@@ -1,0 +1,39 @@
+\doxysection{main.\+c}
+\hypertarget{main_8c_source}{}\label{main_8c_source}\index{src/main.c@{src/main.c}}
+\mbox{\hyperlink{main_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}\ \ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <locale.h>}\ \textcolor{comment}{//\ Pour\ les\ accents\ (setlocale)}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}../include/arborescence.h"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}../include/affichage.h"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}../include/mission.h"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}../include/menu.h"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}../include/prompt.h"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00013}\mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{00013}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{structMission}{Mission}}\ *mission\ =\ NULL\ ;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *racine\ =\ NULL\ ;\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00019}00019\ \ \ \ \ setlocale(LC\_ALL,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00020}00020\ \ \ \ \ racine\ =\ \mbox{\hyperlink{arborescence_8h_a6c0724abc3ecc3bf67434ffcab617868}{creer}}(NULL\ ,\ \textcolor{stringliteral}{"{}AK-\/07"{}}\ ,\ 1\ ,\ 1\ );\ \textcolor{comment}{//\ création\ du\ racine}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00021}00021\ \ \ \ \ mission\ =\ malloc(\ \mbox{\hyperlink{mission_8h_aec500f88025cfe421fd29ce2c4dd2e4f}{NOMBRE\_MISSION}}\ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structMission}{Mission}})\ );\ \textcolor{comment}{//\ Allocation\ du\ structure\ mission\ }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{menu_8h_a69bd562bd8eef2aece5748bfc6f6c2c5}{loging}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{mission_8h_a6776c9e4b7e2bbcc3af33ceb1a939a2f}{load\_struct\_mission}}(mission)\ ;\ \ \textcolor{comment}{//\ Chargement\ du\ structure\ mission}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{mission_8h_af990e85f5156387409f04d308e0bca72}{map\_initialisation}}(\ mission\ ,\ racine\ )\ ;\ \textcolor{comment}{//\ Construction\ du\ map\ du\ jeu}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{menu_8h_a0f8a0c90aa152f4542ce093e8d914c08}{menu\_pricipale}}(mission\ ,\ racine\ );}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00029}00029\ \ \ \ \ free(mission);\ \textcolor{comment}{//\ liberation\ du\ mémoire\ alloué\ au\ struct\ mission}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{return}\ 0\ ;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00033}00033\ \}}
+
+\end{DoxyCode}

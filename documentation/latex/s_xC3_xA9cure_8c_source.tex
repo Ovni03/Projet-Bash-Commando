@@ -1,0 +1,53 @@
+\doxysection{sécure.\+c}
+\hypertarget{s_xC3_xA9cure_8c_source}{}\label{s_xC3_xA9cure_8c_source}\index{src/sécure.c@{src/sécure.c}}
+\mbox{\hyperlink{s_xC3_xA9cure_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00020}\mbox{\hyperlink{s_xC3_xA9cure_8h_a5e29ee70400afd7683fb8b0188a11ee0}{00020}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s_xC3_xA9cure_8c_a5e29ee70400afd7683fb8b0188a11ee0}{lireLigne}}(\ \textcolor{keywordtype}{char}\ *line\ ,\ \textcolor{keywordtype}{int}\ taille)}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{int}\ size\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00023}00023\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fgets(line\ ,\ taille\ ,\ stdin))}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00025}00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ size\ =\ strlen(line);}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ size\ >\ 0\ \&\&\ line[size-\/1]\ ==\ \textcolor{charliteral}{'\(\backslash\)n'}\ )\ \textcolor{comment}{//\ Supprime\ "{}\(\backslash\)n"{}\ inserez\ automatiquement\ par\ fgets}}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ line[size-\/1]=\textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00031}00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00040}\mbox{\hyperlink{s_xC3_xA9cure_8h_a061e87d58e78f436eff6731db40fbc0d}{00040}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{s_xC3_xA9cure_8c_a6e058c52cf548631e2076e0f49cb8ee0}{lireEntier}}()}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{char}\ entier[50]=\textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00043}00043\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{s_xC3_xA9cure_8c_a5e29ee70400afd7683fb8b0188a11ee0}{lireLigne}}(entier\ ,\ \textcolor{keyword}{sizeof}(entier));}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{return}\ atoi(entier);}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00055}\mbox{\hyperlink{s_xC3_xA9cure_8h_a14ce155a358cd273ef58569ed2ed2cbc}{00055}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{s_xC3_xA9cure_8c_adb73b4704094a2b42f9ce2f85aca23df}{lireFloat}}()}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00056}00056\ \{}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{char}\ reel[50]=\textcolor{stringliteral}{"{}"{}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{s_xC3_xA9cure_8c_a5e29ee70400afd7683fb8b0188a11ee0}{lireLigne}}(reel\ ,\ \textcolor{keyword}{sizeof}(reel));}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{return}\ strtof(reel\ ,\ NULL);}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00061}00061\ \}}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00069}\mbox{\hyperlink{s_xC3_xA9cure_8h_a0bbba6cb17527b47f11e48fa9cd5684e}{00069}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{s_xC3_xA9cure_8c_a537eba45f2b6b73378dc26a7d5fa1120}{lireDouble}}()}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00070}00070\ \{}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00071}00071\ \ \ \ \ \textcolor{keywordtype}{char}\ reel[50]=\textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{s_xC3_xA9cure_8c_a5e29ee70400afd7683fb8b0188a11ee0}{lireLigne}}(reel\ ,\ \textcolor{keyword}{sizeof}(reel));}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{return}\ strtod(reel\ ,\ NULL);}
+\DoxyCodeLine{\Hypertarget{s_xC3_xA9cure_8c_source_l00075}00075\ \}}
+
+\end{DoxyCode}

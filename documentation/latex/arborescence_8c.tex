@@ -1,0 +1,942 @@
+\doxysection{src/arborescence.c File Reference}
+\hypertarget{arborescence_8c}{}\label{arborescence_8c}\index{src/arborescence.c@{src/arborescence.c}}
+
+
+fonction pour manipuler les arborescences  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}../include/arborescence.\+h"{}}\newline
+{\ttfamily \#include "{}../include/prompt.\+h"{}}\newline
+Include dependency graph for arborescence.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{arborescence_8c_a6c0724abc3ecc3bf67434ffcab617868}{creer}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}parent, char \texorpdfstring{$\ast$}{*}nom, int est\+Dossier, int statut)
+\begin{DoxyCompactList}\small\item\em Crée un nouveau fichier ou dossier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_a52b4732bb5e50a17cef0f89051acd365}{ajouter\+\_\+enfant}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}parent, char \texorpdfstring{$\ast$}{*}nom, int nombre, int statut)
+\begin{DoxyCompactList}\small\item\em Ajoute un enfant (fichier ou dossier) à un dossier parent. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_a5141f09059285d7b4a582866484df402}{my\+\_\+touch}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}courant, char \texorpdfstring{$\ast$}{*}nom, int statut)
+\begin{DoxyCompactList}\small\item\em Crée un nouveau fichier dans le répertoire courant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_ade9f38a4d7503ed267738d45fe14d16f}{afficher}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}home, int prfnd)
+\begin{DoxyCompactList}\small\item\em Affiche la structure de l\textquotesingle{}arborescence des fichiers et dossiers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_a6c4fa25a347e9972b9e029c71ed9fd00}{my\+\_\+ls}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}courant, char \texorpdfstring{$\ast$}{*}nom)
+\begin{DoxyCompactList}\small\item\em Liste les fichiers et dossiers dans le répertoire courant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_acd0f7b49807b2fadf35b86dffb2fed29}{my\+\_\+ls\+\_\+a}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}courant, char \texorpdfstring{$\ast$}{*}nom)
+\begin{DoxyCompactList}\small\item\em Liste tous les fichiers et dossiers, y compris les fichiers cachés, dans le répertoire courant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_af0987e7e9562defd988e5df8306f1c31}{my\+\_\+rmdir}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}courant, char \texorpdfstring{$\ast$}{*}nom)
+\begin{DoxyCompactList}\small\item\em Supprime un dossier dans le répertoire courant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{arborescence_8c_ac248248ebcb492503e52068627f5fe91}{my\+\_\+cd}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}courant, char \texorpdfstring{$\ast$}{*}nom)
+\begin{DoxyCompactList}\small\item\em Change le répertoire courant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_a2fbd32a61a608cdaa759a7fa08ef326f}{my\+\_\+cp}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}rep\+\_\+actuel, char \texorpdfstring{$\ast$}{*}nom, char \texorpdfstring{$\ast$}{*}destination)
+\begin{DoxyCompactList}\small\item\em Copie un fichier ou dossier vers une destination. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_ab470da3ee0c4fa1bc6f931fd71cff2a1}{my\+\_\+mv}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}rep\+\_\+actuel, char \texorpdfstring{$\ast$}{*}nom, char \texorpdfstring{$\ast$}{*}destination)
+\begin{DoxyCompactList}\small\item\em Déplace un fichier ou dossier vers une destination. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_a7edea57482ac8f7f759439e0d6731332}{deplacer}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}dest, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}source)
+\begin{DoxyCompactList}\small\item\em Déplace un fichier ou dossier d\textquotesingle{}une source vers une destination. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{arborescence_8c_a0249217c5659201e1b06aad32054c2cc}{chercher}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}courant, char \texorpdfstring{$\ast$}{*}nom)
+\begin{DoxyCompactList}\small\item\em Cherche un fichier ou dossier par son nom dans le répertoire courant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_ac701c3663af3c6f46e81e321ae1c8dc3}{my\+\_\+rm}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}courant, char \texorpdfstring{$\ast$}{*}nom)
+\begin{DoxyCompactList}\small\item\em Supprime un fichier dans le répertoire courant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_aae42bc34beef7c8eca802e58a9b00273}{my\+\_\+mkdir\+\_\+p}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}parent, char \texorpdfstring{$\ast$}{*}nom)
+\begin{DoxyCompactList}\small\item\em Crée un chemin de dossiers, créant les dossiers intermédiaires si nécessaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_a6c0b420e70006a2a80f3ce8d0b054f62}{my\+\_\+mkdir}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}courant, char \texorpdfstring{$\ast$}{*}nom, int statut)
+\begin{DoxyCompactList}\small\item\em Crée un nouveau dossier dans le répertoire courant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_ac90204e39291595ace81a322d8e20051}{my\+\_\+pwd}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}rep\+\_\+actuel)
+\begin{DoxyCompactList}\small\item\em Affiche le chemin complet du répertoire courant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_a6e941d66f44c17b79bdd749a8ca8ac57}{my\+\_\+echo}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}ligne\+\_\+c)
+\begin{DoxyCompactList}\small\item\em Affiche une ligne de texte. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_a7467868fcde9c080b05562fa728cf395}{my\+\_\+chmod}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}courant, char \texorpdfstring{$\ast$}{*}option, char \texorpdfstring{$\ast$}{*}nom)
+\begin{DoxyCompactList}\small\item\em Modifie les permissions d\textquotesingle{}un fichier ou dossier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_a8e522d900e7a0dd937f6ad4566d83fc9}{my\+\_\+ls\+\_\+l}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}courant, char \texorpdfstring{$\ast$}{*}nom)
+\begin{DoxyCompactList}\small\item\em Liste les fichiers et dossiers avec des détails dans le répertoire courant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_a35142ee6610ab9a5c42eb75c678c3de6}{afficher\+\_\+nbr\+\_\+ouverture}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}home, int prfnd)
+\begin{DoxyCompactList}\small\item\em Affiche le nombre d\textquotesingle{}ouvertures pour chaque fichier dans l\textquotesingle{}arborescence. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{arborescence_8c_ab7ffc2f5e970bfdd99098fabedc6e3e9}{recherche\+\_\+max}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}home, int max)
+\begin{DoxyCompactList}\small\item\em Recherche le nombre maximum d\textquotesingle{}ouvertures parmi les fichiers dans l\textquotesingle{}arborescence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_a32c5992992d3a7928fa34a2ffc73eb63}{favori}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}home, int max)
+\begin{DoxyCompactList}\small\item\em Affiche les fichiers ayant le nombre maximum d\textquotesingle{}ouvertures. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_a8b285a8fb71a634f1bc1d4781611fdfa}{affichage}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}home)
+\begin{DoxyCompactList}\small\item\em Affiche les fichiers les plus ouverts dans l\textquotesingle{}arborescence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{arborescence_8c_a3bb9bbca7eeffa784954293d8ca87d18}{my\+\_\+ls\+\_\+la}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}courant, char \texorpdfstring{$\ast$}{*}nom)
+\begin{DoxyCompactList}\small\item\em Liste tous les fichiers et dossiers avec des détails, y compris les fichiers cachés, dans le répertoire courant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+fonction pour manipuler les arborescences 
+
+
+
+Definition in file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{arborescence_8c_a8b285a8fb71a634f1bc1d4781611fdfa}\label{arborescence_8c_a8b285a8fb71a634f1bc1d4781611fdfa} 
+\index{arborescence.c@{arborescence.c}!affichage@{affichage}}
+\index{affichage@{affichage}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{affichage()}{affichage()}}
+{\footnotesize\ttfamily void affichage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{home }\end{DoxyParamCaption})}
+
+
+
+Affiche les fichiers les plus ouverts dans l\textquotesingle{}arborescence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em home} & Pointeur vers le répertoire racine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l01530}{1530}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{arborescence_8c_a8b285a8fb71a634f1bc1d4781611fdfa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_a8b285a8fb71a634f1bc1d4781611fdfa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_ade9f38a4d7503ed267738d45fe14d16f}\label{arborescence_8c_ade9f38a4d7503ed267738d45fe14d16f} 
+\index{arborescence.c@{arborescence.c}!afficher@{afficher}}
+\index{afficher@{afficher}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{afficher()}{afficher()}}
+{\footnotesize\ttfamily void afficher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{home,  }\item[{int}]{prfnd }\end{DoxyParamCaption})}
+
+
+
+Affiche la structure de l\textquotesingle{}arborescence des fichiers et dossiers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em home} & Pointeur vers le répertoire racine. \\
+\hline
+{\em prfnd} & Profondeur actuelle dans l\textquotesingle{}arborescence. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l00170}{170}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=133pt]{arborescence_8c_ade9f38a4d7503ed267738d45fe14d16f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=133pt]{arborescence_8c_ade9f38a4d7503ed267738d45fe14d16f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_a35142ee6610ab9a5c42eb75c678c3de6}\label{arborescence_8c_a35142ee6610ab9a5c42eb75c678c3de6} 
+\index{arborescence.c@{arborescence.c}!afficher\_nbr\_ouverture@{afficher\_nbr\_ouverture}}
+\index{afficher\_nbr\_ouverture@{afficher\_nbr\_ouverture}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{afficher\_nbr\_ouverture()}{afficher\_nbr\_ouverture()}}
+{\footnotesize\ttfamily void afficher\+\_\+nbr\+\_\+ouverture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{home,  }\item[{int}]{prfnd }\end{DoxyParamCaption})}
+
+
+
+Affiche le nombre d\textquotesingle{}ouvertures pour chaque fichier dans l\textquotesingle{}arborescence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em home} & Pointeur vers le répertoire racine. \\
+\hline
+{\em prfnd} & Profondeur actuelle dans l\textquotesingle{}arborescence. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l01486}{1486}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{arborescence_8c_a35142ee6610ab9a5c42eb75c678c3de6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_a35142ee6610ab9a5c42eb75c678c3de6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_a52b4732bb5e50a17cef0f89051acd365}\label{arborescence_8c_a52b4732bb5e50a17cef0f89051acd365} 
+\index{arborescence.c@{arborescence.c}!ajouter\_enfant@{ajouter\_enfant}}
+\index{ajouter\_enfant@{ajouter\_enfant}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{ajouter\_enfant()}{ajouter\_enfant()}}
+{\footnotesize\ttfamily void ajouter\+\_\+enfant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{parent,  }\item[{char \texorpdfstring{$\ast$}{*}}]{nom,  }\item[{int}]{nombre,  }\item[{int}]{statut }\end{DoxyParamCaption})}
+
+
+
+Ajoute un enfant (fichier ou dossier) à un dossier parent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointeur vers le dossier parent. \\
+\hline
+{\em nom} & Nom de l\textquotesingle{}enfant à ajouter. \\
+\hline
+{\em nombre} & Indicateur si c\textquotesingle{}est un dossier (1) ou un fichier (0). \\
+\hline
+{\em statut} & Statut de protection de l\textquotesingle{}enfant. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l00040}{40}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{arborescence_8c_a52b4732bb5e50a17cef0f89051acd365_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_a52b4732bb5e50a17cef0f89051acd365_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_a0249217c5659201e1b06aad32054c2cc}\label{arborescence_8c_a0249217c5659201e1b06aad32054c2cc} 
+\index{arborescence.c@{arborescence.c}!chercher@{chercher}}
+\index{chercher@{chercher}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{chercher()}{chercher()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*} chercher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{courant,  }\item[{char \texorpdfstring{$\ast$}{*}}]{nom }\end{DoxyParamCaption})}
+
+
+
+Cherche un fichier ou dossier par son nom dans le répertoire courant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em courant} & Pointeur vers le répertoire courant. \\
+\hline
+{\em nom} & Nom du fichier ou dossier à chercher. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointeur vers le fichier ou dossier trouvé, ou NULL s\textquotesingle{}il n\textquotesingle{}existe pas. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l00984}{984}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_a0249217c5659201e1b06aad32054c2cc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_a6c0724abc3ecc3bf67434ffcab617868}\label{arborescence_8c_a6c0724abc3ecc3bf67434ffcab617868} 
+\index{arborescence.c@{arborescence.c}!creer@{creer}}
+\index{creer@{creer}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{creer()}{creer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*} creer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{parent,  }\item[{char \texorpdfstring{$\ast$}{*}}]{nom,  }\item[{int}]{est\+Dossier,  }\item[{int}]{statut }\end{DoxyParamCaption})}
+
+
+
+Crée un nouveau fichier ou dossier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointeur vers le dossier parent. \\
+\hline
+{\em nom} & Nom du fichier ou dossier à créer. \\
+\hline
+{\em est\+Dossier} & Indicateur si c\textquotesingle{}est un dossier (1) ou un fichier (0). \\
+\hline
+{\em statut} & Statut de protection du fichier ou dossier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointeur vers le nouveau fichier ou dossier créé. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l00019}{19}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_a6c0724abc3ecc3bf67434ffcab617868_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_a7edea57482ac8f7f759439e0d6731332}\label{arborescence_8c_a7edea57482ac8f7f759439e0d6731332} 
+\index{arborescence.c@{arborescence.c}!deplacer@{deplacer}}
+\index{deplacer@{deplacer}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{deplacer()}{deplacer()}}
+{\footnotesize\ttfamily void deplacer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{source }\end{DoxyParamCaption})}
+
+
+
+Déplace un fichier ou dossier d\textquotesingle{}une source vers une destination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & Pointeur vers le dossier de destination. \\
+\hline
+{\em source} & Pointeur vers le fichier ou dossier source à déplacer. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l00930}{930}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_a7edea57482ac8f7f759439e0d6731332_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_a32c5992992d3a7928fa34a2ffc73eb63}\label{arborescence_8c_a32c5992992d3a7928fa34a2ffc73eb63} 
+\index{arborescence.c@{arborescence.c}!favori@{favori}}
+\index{favori@{favori}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{favori()}{favori()}}
+{\footnotesize\ttfamily void favori (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{home,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+
+
+Affiche les fichiers ayant le nombre maximum d\textquotesingle{}ouvertures. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em home} & Pointeur vers le répertoire racine. \\
+\hline
+{\em max} & Nombre maximum d\textquotesingle{}ouvertures. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l01516}{1516}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=125pt]{arborescence_8c_a32c5992992d3a7928fa34a2ffc73eb63_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_a32c5992992d3a7928fa34a2ffc73eb63_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_ac248248ebcb492503e52068627f5fe91}\label{arborescence_8c_ac248248ebcb492503e52068627f5fe91} 
+\index{arborescence.c@{arborescence.c}!my\_cd@{my\_cd}}
+\index{my\_cd@{my\_cd}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{my\_cd()}{my\_cd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*} my\+\_\+cd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{courant,  }\item[{char \texorpdfstring{$\ast$}{*}}]{nom }\end{DoxyParamCaption})}
+
+
+
+Change le répertoire courant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em racine} & Pointeur vers le répertoire racine. \\
+\hline
+{\em courant} & Pointeur vers le répertoire courant. \\
+\hline
+{\em nom} & Nom du répertoire cible. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointeur vers le nouveau répertoire courant. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l00522}{522}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{arborescence_8c_ac248248ebcb492503e52068627f5fe91_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_ac248248ebcb492503e52068627f5fe91_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_a7467868fcde9c080b05562fa728cf395}\label{arborescence_8c_a7467868fcde9c080b05562fa728cf395} 
+\index{arborescence.c@{arborescence.c}!my\_chmod@{my\_chmod}}
+\index{my\_chmod@{my\_chmod}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{my\_chmod()}{my\_chmod()}}
+{\footnotesize\ttfamily void my\+\_\+chmod (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{courant,  }\item[{char \texorpdfstring{$\ast$}{*}}]{option,  }\item[{char \texorpdfstring{$\ast$}{*}}]{nom }\end{DoxyParamCaption})}
+
+
+
+Modifie les permissions d\textquotesingle{}un fichier ou dossier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em racine} & Pointeur vers le répertoire racine. \\
+\hline
+{\em courant} & Pointeur vers le répertoire courant. \\
+\hline
+{\em option} & Chaîne de caractères représentant les options de permission. \\
+\hline
+{\em nom} & Nom du fichier ou dossier dont les permissions doivent être modifiées. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l01259}{1259}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{arborescence_8c_a7467868fcde9c080b05562fa728cf395_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_a7467868fcde9c080b05562fa728cf395_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_a2fbd32a61a608cdaa759a7fa08ef326f}\label{arborescence_8c_a2fbd32a61a608cdaa759a7fa08ef326f} 
+\index{arborescence.c@{arborescence.c}!my\_cp@{my\_cp}}
+\index{my\_cp@{my\_cp}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{my\_cp()}{my\_cp()}}
+{\footnotesize\ttfamily void my\+\_\+cp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{rep\+\_\+actuel,  }\item[{char \texorpdfstring{$\ast$}{*}}]{nom,  }\item[{char \texorpdfstring{$\ast$}{*}}]{destination }\end{DoxyParamCaption})}
+
+
+
+Copie un fichier ou dossier vers une destination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em racine} & Pointeur vers le répertoire racine. \\
+\hline
+{\em parent} & Pointeur vers le répertoire parent du fichier ou dossier à copier. \\
+\hline
+{\em nom} & Nom du fichier ou dossier à copier. \\
+\hline
+{\em destination} & Chemin de destination pour la copie. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l00611}{611}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_a2fbd32a61a608cdaa759a7fa08ef326f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_a2fbd32a61a608cdaa759a7fa08ef326f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_a6e941d66f44c17b79bdd749a8ca8ac57}\label{arborescence_8c_a6e941d66f44c17b79bdd749a8ca8ac57} 
+\index{arborescence.c@{arborescence.c}!my\_echo@{my\_echo}}
+\index{my\_echo@{my\_echo}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{my\_echo()}{my\_echo()}}
+{\footnotesize\ttfamily void my\+\_\+echo (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{ligne\+\_\+c }\end{DoxyParamCaption})}
+
+
+
+Affiche une ligne de texte. 
+
+c\textquotesingle{}est comme la commande \textquotesingle{}echo\textquotesingle{} mais en devellopement
+
+
+\begin{DoxyParams}{Parameters}
+{\em ligne\+\_\+c} & Tableau de chaînes de caractères à afficher. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l01245}{1245}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_a6e941d66f44c17b79bdd749a8ca8ac57_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_a6c4fa25a347e9972b9e029c71ed9fd00}\label{arborescence_8c_a6c4fa25a347e9972b9e029c71ed9fd00} 
+\index{arborescence.c@{arborescence.c}!my\_ls@{my\_ls}}
+\index{my\_ls@{my\_ls}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{my\_ls()}{my\_ls()}}
+{\footnotesize\ttfamily void my\+\_\+ls (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{courant,  }\item[{char \texorpdfstring{$\ast$}{*}}]{nom }\end{DoxyParamCaption})}
+
+
+
+Liste les fichiers et dossiers dans le répertoire courant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em racine} & Pointeur vers le répertoire racine. \\
+\hline
+{\em courant} & Pointeur vers le répertoire courant. \\
+\hline
+{\em nom} & Nom du répertoire à lister. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l00192}{192}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{arborescence_8c_a6c4fa25a347e9972b9e029c71ed9fd00_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_a6c4fa25a347e9972b9e029c71ed9fd00_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_acd0f7b49807b2fadf35b86dffb2fed29}\label{arborescence_8c_acd0f7b49807b2fadf35b86dffb2fed29} 
+\index{arborescence.c@{arborescence.c}!my\_ls\_a@{my\_ls\_a}}
+\index{my\_ls\_a@{my\_ls\_a}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{my\_ls\_a()}{my\_ls\_a()}}
+{\footnotesize\ttfamily void my\+\_\+ls\+\_\+a (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{courant,  }\item[{char \texorpdfstring{$\ast$}{*}}]{nom }\end{DoxyParamCaption})}
+
+
+
+Liste tous les fichiers et dossiers, y compris les fichiers cachés, dans le répertoire courant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em racine} & Pointeur vers le répertoire racine. \\
+\hline
+{\em courant} & Pointeur vers le répertoire courant. \\
+\hline
+{\em nom} & Nom du répertoire à lister. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l00296}{296}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{arborescence_8c_acd0f7b49807b2fadf35b86dffb2fed29_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_acd0f7b49807b2fadf35b86dffb2fed29_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_a8e522d900e7a0dd937f6ad4566d83fc9}\label{arborescence_8c_a8e522d900e7a0dd937f6ad4566d83fc9} 
+\index{arborescence.c@{arborescence.c}!my\_ls\_l@{my\_ls\_l}}
+\index{my\_ls\_l@{my\_ls\_l}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{my\_ls\_l()}{my\_ls\_l()}}
+{\footnotesize\ttfamily void my\+\_\+ls\+\_\+l (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{courant,  }\item[{char \texorpdfstring{$\ast$}{*}}]{nom }\end{DoxyParamCaption})}
+
+
+
+Liste les fichiers et dossiers avec des détails dans le répertoire courant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em racine} & Pointeur vers le répertoire racine. \\
+\hline
+{\em courant} & Pointeur vers le répertoire courant. \\
+\hline
+{\em nom} & Nom du répertoire à lister. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l01387}{1387}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{arborescence_8c_a8e522d900e7a0dd937f6ad4566d83fc9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_a8e522d900e7a0dd937f6ad4566d83fc9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_a3bb9bbca7eeffa784954293d8ca87d18}\label{arborescence_8c_a3bb9bbca7eeffa784954293d8ca87d18} 
+\index{arborescence.c@{arborescence.c}!my\_ls\_la@{my\_ls\_la}}
+\index{my\_ls\_la@{my\_ls\_la}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{my\_ls\_la()}{my\_ls\_la()}}
+{\footnotesize\ttfamily void my\+\_\+ls\+\_\+la (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{courant,  }\item[{char \texorpdfstring{$\ast$}{*}}]{nom }\end{DoxyParamCaption})}
+
+
+
+Liste tous les fichiers et dossiers avec des détails, y compris les fichiers cachés, dans le répertoire courant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em racine} & Pointeur vers le répertoire racine. \\
+\hline
+{\em courant} & Pointeur vers le répertoire courant. \\
+\hline
+{\em nom} & Nom du répertoire à lister. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l01537}{1537}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{arborescence_8c_a3bb9bbca7eeffa784954293d8ca87d18_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_a3bb9bbca7eeffa784954293d8ca87d18_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_a6c0b420e70006a2a80f3ce8d0b054f62}\label{arborescence_8c_a6c0b420e70006a2a80f3ce8d0b054f62} 
+\index{arborescence.c@{arborescence.c}!my\_mkdir@{my\_mkdir}}
+\index{my\_mkdir@{my\_mkdir}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{my\_mkdir()}{my\_mkdir()}}
+{\footnotesize\ttfamily void my\+\_\+mkdir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{courant,  }\item[{char \texorpdfstring{$\ast$}{*}}]{nom,  }\item[{int}]{statut }\end{DoxyParamCaption})}
+
+
+
+Crée un nouveau dossier dans le répertoire courant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em racine} & Pointeur vers le répertoire racine. \\
+\hline
+{\em courant} & Pointeur vers le répertoire courant. \\
+\hline
+{\em nom} & Nom du dossier à créer. \\
+\hline
+{\em statut} & Statut de protection du dossier. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l01143}{1143}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{arborescence_8c_a6c0b420e70006a2a80f3ce8d0b054f62_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_a6c0b420e70006a2a80f3ce8d0b054f62_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_aae42bc34beef7c8eca802e58a9b00273}\label{arborescence_8c_aae42bc34beef7c8eca802e58a9b00273} 
+\index{arborescence.c@{arborescence.c}!my\_mkdir\_p@{my\_mkdir\_p}}
+\index{my\_mkdir\_p@{my\_mkdir\_p}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{my\_mkdir\_p()}{my\_mkdir\_p()}}
+{\footnotesize\ttfamily void my\+\_\+mkdir\+\_\+p (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{parent,  }\item[{char \texorpdfstring{$\ast$}{*}}]{nom }\end{DoxyParamCaption})}
+
+
+
+Crée un chemin de dossiers, créant les dossiers intermédiaires si nécessaire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em racine} & Pointeur vers le répertoire racine. \\
+\hline
+{\em parent} & Pointeur vers le répertoire parent. \\
+\hline
+{\em nom} & Chemin du dossier à créer. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l01121}{1121}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{arborescence_8c_aae42bc34beef7c8eca802e58a9b00273_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_ab470da3ee0c4fa1bc6f931fd71cff2a1}\label{arborescence_8c_ab470da3ee0c4fa1bc6f931fd71cff2a1} 
+\index{arborescence.c@{arborescence.c}!my\_mv@{my\_mv}}
+\index{my\_mv@{my\_mv}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{my\_mv()}{my\_mv()}}
+{\footnotesize\ttfamily void my\+\_\+mv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{rep\+\_\+actuel,  }\item[{char \texorpdfstring{$\ast$}{*}}]{nom,  }\item[{char \texorpdfstring{$\ast$}{*}}]{destination }\end{DoxyParamCaption})}
+
+
+
+Déplace un fichier ou dossier vers une destination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em racine} & Pointeur vers le répertoire racine. \\
+\hline
+{\em parent} & Pointeur vers le répertoire parent du fichier ou dossier à déplacer. \\
+\hline
+{\em nom} & Nom du fichier ou dossier à déplacer. \\
+\hline
+{\em destination} & Chemin de destination pour le déplacement. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l00751}{751}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{arborescence_8c_ab470da3ee0c4fa1bc6f931fd71cff2a1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_ab470da3ee0c4fa1bc6f931fd71cff2a1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_ac90204e39291595ace81a322d8e20051}\label{arborescence_8c_ac90204e39291595ace81a322d8e20051} 
+\index{arborescence.c@{arborescence.c}!my\_pwd@{my\_pwd}}
+\index{my\_pwd@{my\_pwd}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{my\_pwd()}{my\_pwd()}}
+{\footnotesize\ttfamily void my\+\_\+pwd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{rep\+\_\+actuel }\end{DoxyParamCaption})}
+
+
+
+Affiche le chemin complet du répertoire courant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rep\+\_\+actuel} & Pointeur vers le répertoire courant. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l01231}{1231}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{arborescence_8c_ac90204e39291595ace81a322d8e20051_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_ac90204e39291595ace81a322d8e20051_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_ac701c3663af3c6f46e81e321ae1c8dc3}\label{arborescence_8c_ac701c3663af3c6f46e81e321ae1c8dc3} 
+\index{arborescence.c@{arborescence.c}!my\_rm@{my\_rm}}
+\index{my\_rm@{my\_rm}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{my\_rm()}{my\_rm()}}
+{\footnotesize\ttfamily void my\+\_\+rm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{courant,  }\item[{char \texorpdfstring{$\ast$}{*}}]{nom }\end{DoxyParamCaption})}
+
+
+
+Supprime un fichier dans le répertoire courant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em racine} & Pointeur vers le répertoire racine. \\
+\hline
+{\em courant} & Pointeur vers le répertoire courant. \\
+\hline
+{\em nom} & Nom du fichier à supprimer. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l01006}{1006}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{arborescence_8c_ac701c3663af3c6f46e81e321ae1c8dc3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_ac701c3663af3c6f46e81e321ae1c8dc3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_af0987e7e9562defd988e5df8306f1c31}\label{arborescence_8c_af0987e7e9562defd988e5df8306f1c31} 
+\index{arborescence.c@{arborescence.c}!my\_rmdir@{my\_rmdir}}
+\index{my\_rmdir@{my\_rmdir}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{my\_rmdir()}{my\_rmdir()}}
+{\footnotesize\ttfamily void my\+\_\+rmdir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{courant,  }\item[{char \texorpdfstring{$\ast$}{*}}]{nom }\end{DoxyParamCaption})}
+
+
+
+Supprime un dossier dans le répertoire courant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em racine} & Pointeur vers le répertoire racine. \\
+\hline
+{\em courant} & Pointeur vers le répertoire courant. \\
+\hline
+{\em nom} & Nom du dossier à supprimer. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l00394}{394}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{arborescence_8c_af0987e7e9562defd988e5df8306f1c31_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_af0987e7e9562defd988e5df8306f1c31_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_a5141f09059285d7b4a582866484df402}\label{arborescence_8c_a5141f09059285d7b4a582866484df402} 
+\index{arborescence.c@{arborescence.c}!my\_touch@{my\_touch}}
+\index{my\_touch@{my\_touch}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{my\_touch()}{my\_touch()}}
+{\footnotesize\ttfamily void my\+\_\+touch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{courant,  }\item[{char \texorpdfstring{$\ast$}{*}}]{nom,  }\item[{int}]{statut }\end{DoxyParamCaption})}
+
+
+
+Crée un nouveau fichier dans le répertoire courant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em racine} & Pointeur vers le répertoire racine. \\
+\hline
+{\em courant} & Pointeur vers le répertoire courant. \\
+\hline
+{\em nom} & Nom du fichier à créer. \\
+\hline
+{\em statut} & Statut de protection du fichier. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l00071}{71}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{arborescence_8c_a5141f09059285d7b4a582866484df402_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_a5141f09059285d7b4a582866484df402_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{arborescence_8c_ab7ffc2f5e970bfdd99098fabedc6e3e9}\label{arborescence_8c_ab7ffc2f5e970bfdd99098fabedc6e3e9} 
+\index{arborescence.c@{arborescence.c}!recherche\_max@{recherche\_max}}
+\index{recherche\_max@{recherche\_max}!arborescence.c@{arborescence.c}}
+\doxysubsubsection{\texorpdfstring{recherche\_max()}{recherche\_max()}}
+{\footnotesize\ttfamily int recherche\+\_\+max (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{home,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+
+
+Recherche le nombre maximum d\textquotesingle{}ouvertures parmi les fichiers dans l\textquotesingle{}arborescence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em home} & Pointeur vers le répertoire racine. \\
+\hline
+{\em max} & Nombre maximum d\textquotesingle{}ouvertures trouvé jusqu\textquotesingle{}à présent. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nombre maximum d\textquotesingle{}ouvertures. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{arborescence_8c_source_l01501}{1501}} of file \mbox{\hyperlink{arborescence_8c_source}{arborescence.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{arborescence_8c_ab7ffc2f5e970bfdd99098fabedc6e3e9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arborescence_8c_ab7ffc2f5e970bfdd99098fabedc6e3e9_icgraph}
+\end{center}
+\end{figure}

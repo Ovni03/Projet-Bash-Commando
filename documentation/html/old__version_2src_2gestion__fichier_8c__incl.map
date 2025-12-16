@@ -1,0 +1,21 @@
+<map id="old_version/src/gestion_fichier.c" name="old_version/src/gestion_fichier.c">
+<area shape="rect" id="Node000001" title="regroupe tous les fonctions qui manipule les fichiers" alt="" coords="199,5,371,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,72,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="227,48,86,93,84,87,225,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="97,93,167,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="250,48,168,89,165,85,247,43"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="328,167,411,192"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="263,48,247,63,234,81,228,100,233,117,249,135,269,149,315,167,314,172,267,154,246,139,228,120,223,99,229,79,243,60,259,44"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="243,93,327,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="288,46,288,79,283,79,283,46"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="351,93,422,119"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="311,43,362,82,359,87,308,48"/>
+<area shape="rect" id="Node000007" href="$old__version_2include_2mission_8h.html" title=" " alt="" coords="615,93,763,119"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="372,41,617,88,616,93,371,46"/>
+<area shape="rect" id="Node000009" href="$old__version_2include_2prompt_8h.html" title="regroupement des fonctions dans prompt.c" alt="" coords="447,93,591,119"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="342,43,472,86,471,91,340,48"/>
+<area shape="rect" id="Node000008" href="$old__version_2include_2arborescence_8h.html" title=" " alt="" coords="512,167,696,192"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="677,121,630,160,627,156,674,117"/>
+<area shape="poly" id="edge10_Node000009_Node000004" title=" " alt="" coords="496,121,407,163,405,158,494,116"/>
+<area shape="poly" id="edge9_Node000009_Node000008" title=" " alt="" coords="534,117,581,156,578,160,531,121"/>
+</map>

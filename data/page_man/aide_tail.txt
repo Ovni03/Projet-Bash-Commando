@@ -1,0 +1,22 @@
+commande	:	tail
+
+description	:	afficher des lignes qui sont à la fin d'une fichier
+
+utilisation	:	tail [option]... [fichier]...
+
+			{sans option il affiche les 10 derniers lignes du fichier}
+
+option existant
+
+	-c	pour preciser le nombres de caractere
+
+	-f	afficher le fichier en temps réelle
+
+	-n	pour preciser le nombre de ligne
+       		Ajouter "+" devant le nombre de ligne pour debuter l'affichage du fichier en cette ligne 
+
+	-q	mode silencieux
+
+	-v	pour afficher en tête le nom de fichier
+
+

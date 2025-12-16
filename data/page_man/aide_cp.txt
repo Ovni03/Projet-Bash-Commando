@@ -1,0 +1,23 @@
+commande	:	cp
+
+description	:	copier un fichier (tout est fichier sous linux) vers une destination
+
+utilisation	:	cp [option]... [source]... [destination]
+
+			{ la source peut être nombreuse mais la destination est unique}
+
+option existant
+
+       -f	ne demande pas d'avis en cas d'écrasement de fichier deja existant dans la destination
+
+       -i	n'écrase pas si la destination contient deja la copie mais demande une confirmation
+
+       -p	preserver tous les attributs des fichiers comme les droits et groupes propriétaires ; les temps de modifications
+
+       -R, -r	fait une copie recursive donc la hierarchie des sous dossiers
+
+       -t	pour preciser une repertoire de destination
+
+       -v	afficher tous ce qui a été fait
+
+

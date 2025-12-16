@@ -1,0 +1,25 @@
+COURS :
+
+ Soldat !!
+
+ Comme vous viennez de voir .
+ La commande pwd te montre ta localisation dans la carte par rapport 
+ au base ici c'est  : "AK-07".
+ 
+ - Les endroits sont separes avec des '/'.
+
+EXEMPLE :
+    - /AK-07/Hangar : veut dire que tu te trouve dans Hangar qui est lui meme dans AK-07.
+    - /AK-07/       : veut dire que vous etes dans la base 'AK-07' tout simplement.
+                      Et y'a pas plus gros endroit que 'AK-07'.
+    
+PROMPT :
+
+    [11]Soldat@Base-Bash:/AK-07/$
+     |    |           |     |      
+     |    |           |     |     
+     |    |           |     └─────────── : /AK-07/ → Zone de mission actuelle.
+     |    |           └───────────────── : @Base-Bash → Nom du jeu.
+     |    └───────────────────────────── : Soldat → Nom du joueur .
+     └────────────────────────────────── : [11] → Nombre de point actuel..
+

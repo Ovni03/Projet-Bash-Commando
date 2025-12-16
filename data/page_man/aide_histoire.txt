@@ -1,0 +1,11 @@
+commande	:	histoire
+
+description	:	afficher l'historique des commandes qui sont entrées par l'utilisateur
+
+utilisation	:	histoire [option]
+
+option existant
+
+	-c	pour effacer tous les historiques de commandes
+
+

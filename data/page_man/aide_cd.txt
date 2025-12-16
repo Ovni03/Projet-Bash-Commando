@@ -1,0 +1,12 @@
+commande	:	cd
+
+description	:	c'est la commande pour se deplacer dans les repertoires
+
+utilisation	:	cd [repertoire]
+
+			{sans argument il se dirrige vers le repertoire personnel}
+
+option existant	:	il n' y a pas d'option pour cd
+
+
+

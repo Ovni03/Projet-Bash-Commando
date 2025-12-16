@@ -1,0 +1,12 @@
+commande	:	aide
+
+description	:	afficher l'aide pour une commande donnée
+
+utilisation	:	aide [nom_de_commande]...
+
+			{il peut prendre plusieurs commande en argument}
+
+--> Faite "liste_commande" pour lister tous les commandes connues !
+
+
+

@@ -1,0 +1,461 @@
+\doxysection{old\+\_\+version/src/mission.c File Reference}
+\hypertarget{old__version_2src_2mission_8c}{}\label{old__version_2src_2mission_8c}\index{old\_version/src/mission.c@{old\_version/src/mission.c}}
+
+
+\+: Fonction pour gérer les missions du jeu  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ncurses.\+h$>$}\newline
+{\ttfamily \#include $<$locale.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include "{}../include/sécure.\+h"{}}\newline
+{\ttfamily \#include "{}../include/affichage.\+h"{}}\newline
+{\ttfamily \#include "{}../include/gestion\+\_\+fichier.\+h"{}}\newline
+{\ttfamily \#include "{}../include/prompt.\+h"{}}\newline
+{\ttfamily \#include "{}../include/mission.\+h"{}}\newline
+{\ttfamily \#include "{}../include/menu.\+h"{}}\newline
+Include dependency graph for mission.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{old__version_2src_2mission_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{old__version_2src_2mission_8c_a6442184118f9afe40f6f6991c86f8a09}{LIGNE}}~100
+\begin{DoxyCompactList}\small\item\em Nombre maximum de caractère dans une commande. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_af990e85f5156387409f04d308e0bca72}{map\+\_\+initialisation}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_a6776c9e4b7e2bbcc3af33ceb1a939a2f}{load\+\_\+struct\+\_\+mission}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_ab9e87cde0476b22876f8bd6ba3f89671}{sauvegarde\+\_\+dernier\+\_\+partie}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, int rang\+\_\+mission\+\_\+actuel)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_a05238cf0bfb33a0098cdae8685b48240}{réinitialisation\+\_\+mission}} (\mbox{\hyperlink{structMission}{Mission}} mission\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af}{verification\+\_\+reussite}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine, bool reuissite, int num\+\_\+mission)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_a060574dcb2ecd963a2e4e0af59808810}{intro}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+bool \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\+\_\+mission}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine, char \texorpdfstring{$\ast$}{*}commande, char \texorpdfstring{$\ast$}{*}titre, char \texorpdfstring{$\ast$}{*}chemin, char \texorpdfstring{$\ast$}{*}rep\+\_\+courant, \mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}miss\+\_\+actuelle, int rang\+\_\+mission, int autoverifi)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_ac3914327e4aa282b233f138bbf3912bf}{mission\+\_\+1}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_ac3eb824d03b78b6e9e71124e50ca221b}{mission\+\_\+2}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+bool \mbox{\hyperlink{old__version_2src_2mission_8c_a5519f0d20d640f61e785c215524a3a32}{verification\+\_\+mission}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, int rang\+\_\+mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine, char \texorpdfstring{$\ast$}{*}courant)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_ae2620c79968764049bb9ad4a30ef1811}{mission\+\_\+3}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_afa874f5eadd06f5d5deed916d7e6b099}{mission\+\_\+4}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_a8c6f3f918eadb32c897c19a1274a66e4}{mission\+\_\+5}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_ae29788b4f43a31672492ec70912055d8}{mission\+\_\+6}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_afa9f6a6ec1e13e9ae480305cfb253502}{mission\+\_\+7}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_a01eed157c6371b2cf91cb9eae24735e9}{mission\+\_\+8}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_a84a07b104a844f83537192cf9ff865fa}{mission\+\_\+9}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_a597303e4bb80f7822f16c5b572f8ee9e}{mission\+\_\+10}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_a35e102f5291c73343f8b01dedd397897}{mission\+\_\+11}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_a6eef36863d5898b56239c646fd310f3b}{mission\+\_\+12}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_a46ed1e33b45d68cbed3cd26b0a31ff12}{mission\+\_\+13}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_a3032547878aefcb457e23da1d08f5fb0}{entrainement\+\_\+14\+\_\+1}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_abccce48c6c65d1d40bf0b992b7b32615}{prepa\+\_\+14}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+int \mbox{\hyperlink{old__version_2src_2mission_8c_a5b37737fc91326eca59f11e1a6f324af}{demande\+\_\+avis}} ()
+\item 
+void \mbox{\hyperlink{old__version_2src_2mission_8c_a10949bd060a3de8fd48a66f2bc16e2dd}{mission\+\_\+14}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Fonction pour gérer les missions du jeu 
+
+\begin{DoxyAuthor}{Author}
+\+: RAKOTOARIVONY Zo Mamitiana Olivier 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 03 déc 2025 
+\end{DoxyDate}
+
+
+Definition in file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{old__version_2src_2mission_8c_a6442184118f9afe40f6f6991c86f8a09}\label{old__version_2src_2mission_8c_a6442184118f9afe40f6f6991c86f8a09} 
+\index{mission.c@{mission.c}!LIGNE@{LIGNE}}
+\index{LIGNE@{LIGNE}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{LIGNE}{LIGNE}}
+{\footnotesize\ttfamily \#define LIGNE~100}
+
+
+
+Nombre maximum de caractère dans une commande. 
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00026}{26}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{old__version_2src_2mission_8c_a5b37737fc91326eca59f11e1a6f324af}\label{old__version_2src_2mission_8c_a5b37737fc91326eca59f11e1a6f324af} 
+\index{mission.c@{mission.c}!demande\_avis@{demande\_avis}}
+\index{demande\_avis@{demande\_avis}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{demande\_avis()}{demande\_avis()}}
+{\footnotesize\ttfamily int demande\+\_\+avis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l01147}{1147}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{old__version_2src_2mission_8c_a5b37737fc91326eca59f11e1a6f324af_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{old__version_2src_2mission_8c_a5b37737fc91326eca59f11e1a6f324af_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{old__version_2src_2mission_8c_a3032547878aefcb457e23da1d08f5fb0}\label{old__version_2src_2mission_8c_a3032547878aefcb457e23da1d08f5fb0} 
+\index{mission.c@{mission.c}!entrainement\_14\_1@{entrainement\_14\_1}}
+\index{entrainement\_14\_1@{entrainement\_14\_1}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{entrainement\_14\_1()}{entrainement\_14\_1()}}
+{\footnotesize\ttfamily void entrainement\+\_\+14\+\_\+1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l01092}{1092}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{old__version_2src_2mission_8c_a3032547878aefcb457e23da1d08f5fb0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{old__version_2src_2mission_8c_a3032547878aefcb457e23da1d08f5fb0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{old__version_2src_2mission_8c_a060574dcb2ecd963a2e4e0af59808810}\label{old__version_2src_2mission_8c_a060574dcb2ecd963a2e4e0af59808810} 
+\index{mission.c@{mission.c}!intro@{intro}}
+\index{intro@{intro}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{intro()}{intro()}}
+{\footnotesize\ttfamily void intro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00291}{291}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+\Hypertarget{old__version_2src_2mission_8c_a6776c9e4b7e2bbcc3af33ceb1a939a2f}\label{old__version_2src_2mission_8c_a6776c9e4b7e2bbcc3af33ceb1a939a2f} 
+\index{mission.c@{mission.c}!load\_struct\_mission@{load\_struct\_mission}}
+\index{load\_struct\_mission@{load\_struct\_mission}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{load\_struct\_mission()}{load\_struct\_mission()}}
+{\footnotesize\ttfamily void load\+\_\+struct\+\_\+mission (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00082}{82}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+\Hypertarget{old__version_2src_2mission_8c_af990e85f5156387409f04d308e0bca72}\label{old__version_2src_2mission_8c_af990e85f5156387409f04d308e0bca72} 
+\index{mission.c@{mission.c}!map\_initialisation@{map\_initialisation}}
+\index{map\_initialisation@{map\_initialisation}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{map\_initialisation()}{map\_initialisation()}}
+{\footnotesize\ttfamily void map\+\_\+initialisation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00034}{34}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+\Hypertarget{old__version_2src_2mission_8c_ac3914327e4aa282b233f138bbf3912bf}\label{old__version_2src_2mission_8c_ac3914327e4aa282b233f138bbf3912bf} 
+\index{mission.c@{mission.c}!mission\_1@{mission\_1}}
+\index{mission\_1@{mission\_1}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{mission\_1()}{mission\_1()}}
+{\footnotesize\ttfamily void mission\+\_\+1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00435}{435}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{old__version_2src_2mission_8c_ac3914327e4aa282b233f138bbf3912bf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{old__version_2src_2mission_8c_a597303e4bb80f7822f16c5b572f8ee9e}\label{old__version_2src_2mission_8c_a597303e4bb80f7822f16c5b572f8ee9e} 
+\index{mission.c@{mission.c}!mission\_10@{mission\_10}}
+\index{mission\_10@{mission\_10}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{mission\_10()}{mission\_10()}}
+{\footnotesize\ttfamily void mission\+\_\+10 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00935}{935}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+\Hypertarget{old__version_2src_2mission_8c_a35e102f5291c73343f8b01dedd397897}\label{old__version_2src_2mission_8c_a35e102f5291c73343f8b01dedd397897} 
+\index{mission.c@{mission.c}!mission\_11@{mission\_11}}
+\index{mission\_11@{mission\_11}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{mission\_11()}{mission\_11()}}
+{\footnotesize\ttfamily void mission\+\_\+11 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00972}{972}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+\Hypertarget{old__version_2src_2mission_8c_a6eef36863d5898b56239c646fd310f3b}\label{old__version_2src_2mission_8c_a6eef36863d5898b56239c646fd310f3b} 
+\index{mission.c@{mission.c}!mission\_12@{mission\_12}}
+\index{mission\_12@{mission\_12}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{mission\_12()}{mission\_12()}}
+{\footnotesize\ttfamily void mission\+\_\+12 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l01014}{1014}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+\Hypertarget{old__version_2src_2mission_8c_a46ed1e33b45d68cbed3cd26b0a31ff12}\label{old__version_2src_2mission_8c_a46ed1e33b45d68cbed3cd26b0a31ff12} 
+\index{mission.c@{mission.c}!mission\_13@{mission\_13}}
+\index{mission\_13@{mission\_13}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{mission\_13()}{mission\_13()}}
+{\footnotesize\ttfamily void mission\+\_\+13 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l01056}{1056}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+\Hypertarget{old__version_2src_2mission_8c_a10949bd060a3de8fd48a66f2bc16e2dd}\label{old__version_2src_2mission_8c_a10949bd060a3de8fd48a66f2bc16e2dd} 
+\index{mission.c@{mission.c}!mission\_14@{mission\_14}}
+\index{mission\_14@{mission\_14}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{mission\_14()}{mission\_14()}}
+{\footnotesize\ttfamily void mission\+\_\+14 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l01187}{1187}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+\Hypertarget{old__version_2src_2mission_8c_ac3eb824d03b78b6e9e71124e50ca221b}\label{old__version_2src_2mission_8c_ac3eb824d03b78b6e9e71124e50ca221b} 
+\index{mission.c@{mission.c}!mission\_2@{mission\_2}}
+\index{mission\_2@{mission\_2}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{mission\_2()}{mission\_2()}}
+{\footnotesize\ttfamily void mission\+\_\+2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00464}{464}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+\Hypertarget{old__version_2src_2mission_8c_ae2620c79968764049bb9ad4a30ef1811}\label{old__version_2src_2mission_8c_ae2620c79968764049bb9ad4a30ef1811} 
+\index{mission.c@{mission.c}!mission\_3@{mission\_3}}
+\index{mission\_3@{mission\_3}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{mission\_3()}{mission\_3()}}
+{\footnotesize\ttfamily void mission\+\_\+3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00707}{707}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+\Hypertarget{old__version_2src_2mission_8c_afa874f5eadd06f5d5deed916d7e6b099}\label{old__version_2src_2mission_8c_afa874f5eadd06f5d5deed916d7e6b099} 
+\index{mission.c@{mission.c}!mission\_4@{mission\_4}}
+\index{mission\_4@{mission\_4}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{mission\_4()}{mission\_4()}}
+{\footnotesize\ttfamily void mission\+\_\+4 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00732}{732}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+\Hypertarget{old__version_2src_2mission_8c_a8c6f3f918eadb32c897c19a1274a66e4}\label{old__version_2src_2mission_8c_a8c6f3f918eadb32c897c19a1274a66e4} 
+\index{mission.c@{mission.c}!mission\_5@{mission\_5}}
+\index{mission\_5@{mission\_5}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{mission\_5()}{mission\_5()}}
+{\footnotesize\ttfamily void mission\+\_\+5 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00762}{762}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+\Hypertarget{old__version_2src_2mission_8c_ae29788b4f43a31672492ec70912055d8}\label{old__version_2src_2mission_8c_ae29788b4f43a31672492ec70912055d8} 
+\index{mission.c@{mission.c}!mission\_6@{mission\_6}}
+\index{mission\_6@{mission\_6}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{mission\_6()}{mission\_6()}}
+{\footnotesize\ttfamily void mission\+\_\+6 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00795}{795}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+\Hypertarget{old__version_2src_2mission_8c_afa9f6a6ec1e13e9ae480305cfb253502}\label{old__version_2src_2mission_8c_afa9f6a6ec1e13e9ae480305cfb253502} 
+\index{mission.c@{mission.c}!mission\_7@{mission\_7}}
+\index{mission\_7@{mission\_7}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{mission\_7()}{mission\_7()}}
+{\footnotesize\ttfamily void mission\+\_\+7 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00819}{819}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+\Hypertarget{old__version_2src_2mission_8c_a01eed157c6371b2cf91cb9eae24735e9}\label{old__version_2src_2mission_8c_a01eed157c6371b2cf91cb9eae24735e9} 
+\index{mission.c@{mission.c}!mission\_8@{mission\_8}}
+\index{mission\_8@{mission\_8}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{mission\_8()}{mission\_8()}}
+{\footnotesize\ttfamily void mission\+\_\+8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00854}{854}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+\Hypertarget{old__version_2src_2mission_8c_a84a07b104a844f83537192cf9ff865fa}\label{old__version_2src_2mission_8c_a84a07b104a844f83537192cf9ff865fa} 
+\index{mission.c@{mission.c}!mission\_9@{mission\_9}}
+\index{mission\_9@{mission\_9}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{mission\_9()}{mission\_9()}}
+{\footnotesize\ttfamily void mission\+\_\+9 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00902}{902}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+\Hypertarget{old__version_2src_2mission_8c_abccce48c6c65d1d40bf0b992b7b32615}\label{old__version_2src_2mission_8c_abccce48c6c65d1d40bf0b992b7b32615} 
+\index{mission.c@{mission.c}!prepa\_14@{prepa\_14}}
+\index{prepa\_14@{prepa\_14}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{prepa\_14()}{prepa\_14()}}
+{\footnotesize\ttfamily void prepa\+\_\+14 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l01121}{1121}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{old__version_2src_2mission_8c_abccce48c6c65d1d40bf0b992b7b32615_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{old__version_2src_2mission_8c_abccce48c6c65d1d40bf0b992b7b32615_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}\label{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1} 
+\index{mission.c@{mission.c}!prompt\_mission@{prompt\_mission}}
+\index{prompt\_mission@{prompt\_mission}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{prompt\_mission()}{prompt\_mission()}}
+{\footnotesize\ttfamily bool prompt\+\_\+mission (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine,  }\item[{char \texorpdfstring{$\ast$}{*}}]{commande,  }\item[{char \texorpdfstring{$\ast$}{*}}]{titre,  }\item[{char \texorpdfstring{$\ast$}{*}}]{chemin,  }\item[{char \texorpdfstring{$\ast$}{*}}]{rep\+\_\+courant,  }\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{miss\+\_\+actuelle,  }\item[{int}]{rang\+\_\+mission,  }\item[{int}]{autoverifi }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00311}{311}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{old__version_2src_2mission_8c_a05238cf0bfb33a0098cdae8685b48240}\label{old__version_2src_2mission_8c_a05238cf0bfb33a0098cdae8685b48240} 
+\index{mission.c@{mission.c}!réinitialisation\_mission@{réinitialisation\_mission}}
+\index{réinitialisation\_mission@{réinitialisation\_mission}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{réinitialisation\_mission()}{réinitialisation\_mission()}}
+{\footnotesize\ttfamily void réinitialisation\+\_\+mission (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}}}]{mission\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00167}{167}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+\Hypertarget{old__version_2src_2mission_8c_ab9e87cde0476b22876f8bd6ba3f89671}\label{old__version_2src_2mission_8c_ab9e87cde0476b22876f8bd6ba3f89671} 
+\index{mission.c@{mission.c}!sauvegarde\_dernier\_partie@{sauvegarde\_dernier\_partie}}
+\index{sauvegarde\_dernier\_partie@{sauvegarde\_dernier\_partie}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{sauvegarde\_dernier\_partie()}{sauvegarde\_dernier\_partie()}}
+{\footnotesize\ttfamily void sauvegarde\+\_\+dernier\+\_\+partie (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{int}]{rang\+\_\+mission\+\_\+actuel }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00113}{113}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{old__version_2src_2mission_8c_ab9e87cde0476b22876f8bd6ba3f89671_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{old__version_2src_2mission_8c_a5519f0d20d640f61e785c215524a3a32}\label{old__version_2src_2mission_8c_a5519f0d20d640f61e785c215524a3a32} 
+\index{mission.c@{mission.c}!verification\_mission@{verification\_mission}}
+\index{verification\_mission@{verification\_mission}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{verification\_mission()}{verification\_mission()}}
+{\footnotesize\ttfamily bool verification\+\_\+mission (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{int}]{rang\+\_\+mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine,  }\item[{char \texorpdfstring{$\ast$}{*}}]{courant }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00550}{550}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{old__version_2src_2mission_8c_a5519f0d20d640f61e785c215524a3a32_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af}\label{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af} 
+\index{mission.c@{mission.c}!verification\_reussite@{verification\_reussite}}
+\index{verification\_reussite@{verification\_reussite}!mission.c@{mission.c}}
+\doxysubsubsection{\texorpdfstring{verification\_reussite()}{verification\_reussite()}}
+{\footnotesize\ttfamily void verification\+\_\+reussite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine,  }\item[{bool}]{reuissite,  }\item[{int}]{num\+\_\+mission }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2mission_8c_source_l00248}{248}} of file \mbox{\hyperlink{old__version_2src_2mission_8c_source}{mission.\+c}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,7 @@
+<map id="old_version/include/gestion_fichier.h" name="old_version/include/gestion_fichier.h">
+<area shape="rect" id="Node000001" title="regroupe tous les fonctions qui manipule les fichiers" alt="" coords="129,5,277,45"/>
+<area shape="rect" id="Node000002" href="$old__version_2src_2mission_8c.html" title=": Fonction pour gérer les missions du jeu" alt="" coords="5,93,192,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,56,116,95,113,91,165,51"/>
+<area shape="rect" id="Node000003" href="$old__version_2src_2prompt_8c.html" title="ceci fait reference à la simulation de prompt" alt="" coords="217,93,399,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="241,51,294,91,291,95,237,56"/>
+</map>

@@ -1,0 +1,53 @@
+<map id="prend_ligne_command" name="prend_ligne_command">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,132,176,157"/>
+<area shape="rect" id="Node000002" href="$prompt_8c.html#a362854a5b5cd2d77d28ea9e01f6977b3" title=" " alt="" coords="224,132,335,157"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,142,210,142,210,147,176,147"/>
+<area shape="rect" id="Node000003" href="$prompt_8c.html#ab9f8390d536c2ecce3ef7800782d563e" title="Elle permet d&#39;inserer une caractere dans une chaine et d&#39;affcher la chaine." alt="" coords="395,5,542,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="289,130,328,90,381,48,410,33,413,38,384,52,331,94,293,134"/>
+<area shape="rect" id="Node000005" href="$prompt_8c.html#ac5cea60156f61bb7095ac40599b2292b" title="c&#39;est une simple fonction qui permet de vider la ligne de commande actuelle" alt="" coords="627,56,717,81"/>
+<area shape="poly" id="edge28_Node000002_Node000005" title=" " alt="" coords="300,129,337,109,382,91,443,78,505,70,614,65,614,70,506,75,444,83,383,97,339,114,302,134"/>
+<area shape="rect" id="Node000007" href="$prompt_8c.html#a17f37eb7d8e685081c92862f70d2b828" title="c&#39;est la fonction principale de l&#39;auto&#45;completion sur ligne de commande" alt="" coords="403,329,534,355"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="295,156,448,317,444,321,291,159"/>
+<area shape="rect" id="Node000019" href="$prompt_8c.html#a65e7638ac474f2be4464a9bc1fa8f7df" title="c&#39;est la fonction associer à la touche suppr" alt="" coords="414,107,523,132"/>
+<area shape="poly" id="edge21_Node000002_Node000019" title=" " alt="" coords="335,135,400,126,400,131,336,140"/>
+<area shape="rect" id="Node000021" href="$prompt_8c.html#a235d5945ac03974453b95fa104c0159b" title="c&#39;est la fonction associer à la touche gauche et droite" alt="" coords="383,379,555,404"/>
+<area shape="poly" id="edge24_Node000002_Node000021" title=" " alt="" coords="285,157,294,197,312,254,342,314,361,341,384,365,391,370,387,374,381,369,357,345,337,317,307,256,289,199,280,158"/>
+<area shape="rect" id="Node000022" href="$prompt_8c.html#a997e5fdac968567f743f8fadd114632d" title="la fonctione associer à la touche haut et bas" alt="" coords="399,156,538,181"/>
+<area shape="poly" id="edge25_Node000002_Node000022" title=" " alt="" coords="336,149,386,156,385,161,335,154"/>
+<area shape="rect" id="Node000004" href="$prompt_8c.html#a0e325e237cb694a1f54655b47746b82a" title="Elle permet d&#39;inserer une caractere dans une chaine à une position preciser en argument." alt="" coords="639,5,705,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="542,15,625,15,625,21,542,21"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="521,28,615,52,613,57,520,33"/>
+<area shape="rect" id="Node000006" href="$prompt_8c.html#ae4852ffe3005375dff4d8dac83ca5942" title="elle ne compte pas les caracteres comme strlen ; elle donne la taille en affichage" alt="" coords="807,131,886,156"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="713,79,742,90,810,122,808,127,740,95,711,84"/>
+<area shape="poly" id="edge19_Node000007_Node000006" title=" " alt="" coords="483,327,534,287,601,242,639,224,670,214,740,190,807,160,809,164,742,195,672,219,641,229,604,247,537,291,486,331"/>
+<area shape="rect" id="Node000008" href="$prompt_8c.html#a8224c0f5c6caf14e2630ab7bd877fc07" title="Quelques fonctions de Olivier utilise cette bibliotheques." alt="" coords="612,453,732,479"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="533,352,556,365,573,384,581,403,589,422,604,440,611,445,608,449,601,444,584,425,576,405,569,387,553,369,530,357"/>
+<area shape="rect" id="Node000012" href="$prompt_8c.html#a82c7fe66cf3596c91306ae54d9eca589" title="fonction qui compte le nombre de mot dans une chaine de caractere" alt="" coords="792,553,901,579"/>
+<area shape="poly" id="edge11_Node000007_Node000012" title=" " alt="" coords="535,352,556,365,570,381,577,397,581,429,586,460,592,475,604,489,628,501,673,516,784,547,782,552,672,521,626,506,601,493,588,477,580,461,576,430,572,399,565,384,553,369,533,356"/>
+<area shape="rect" id="Node000013" href="$prompt_8c.html#a0d8529b02b5a1209e10d4810637dd1ed" title="c&#39;est pour inserer une mot dans une position precise dans une chaine ; separateur = espace" alt="" coords="603,555,741,580"/>
+<area shape="poly" id="edge12_Node000007_Node000013" title=" " alt="" coords="536,351,557,365,573,387,581,408,583,450,584,491,591,512,605,534,619,546,616,550,601,537,586,515,579,492,578,450,576,409,568,389,553,369,533,356"/>
+<area shape="rect" id="Node000014" href="$arborescence_8c.html#ac248248ebcb492503e52068627f5fe91" title="Change le répertoire courant." alt="" coords="639,404,705,429"/>
+<area shape="poly" id="edge14_Node000007_Node000014" title=" " alt="" coords="519,352,556,365,604,390,627,400,625,404,602,395,554,370,518,357"/>
+<area shape="rect" id="Node000016" href="$arborescence_8c.html#a6c4fa25a347e9972b9e029c71ed9fd00" title="Liste les fichiers et dossiers dans le répertoire courant." alt="" coords="641,256,703,281"/>
+<area shape="poly" id="edge16_Node000007_Node000016" title=" " alt="" coords="504,327,628,282,630,287,506,332"/>
+<area shape="rect" id="Node000017" href="$prompt_8c.html#a10c43f5ca70cc0962729fd7cd95a80c9" title=" " alt="" coords="607,305,737,331"/>
+<area shape="poly" id="edge18_Node000007_Node000017" title=" " alt="" coords="534,332,593,325,594,330,534,337"/>
+<area shape="rect" id="Node000018" href="$prompt_8c.html#a5288f6b9f4b7f6cd692005dd08bea7e2" title="Elle permet de trouver si la chaine recherche est le debut de chaine ; les espaces sont ignorés." alt="" coords="615,355,729,380"/>
+<area shape="poly" id="edge20_Node000007_Node000018" title=" " alt="" coords="534,347,602,356,602,361,534,353"/>
+<area shape="rect" id="Node000009" href="$prompt_8c.html#a7be520ef705ee067bc123f782b2cd6f9" title="c&#39;est pour savoir le point que le joueur actuel possède" alt="" coords="805,453,888,479"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="732,463,791,463,791,469,732,469"/>
+<area shape="rect" id="Node000010" href="$prompt_8c.html#ac778e6a7210b6ab52bc8d395d0a63145" title="trouver le chemin du repertoire actuelle et puis l&#39;inserer dans emplacement" alt="" coords="808,503,885,528"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="718,476,795,498,794,503,717,481"/>
+<area shape="rect" id="Node000011" href="$prompt_8c.html#a7561703c0e5c30615f04d1caa4279ac9" title="trouver le nom du joueur actuelle et puis l&#39;inserer dans emplacement" alt="" coords="789,404,904,429"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="717,451,787,431,788,436,718,456"/>
+<area shape="poly" id="edge13_Node000013_Node000012" title=" " alt="" coords="742,564,779,564,779,569,742,569"/>
+<area shape="rect" id="Node000015" href="$arborescence_8c.html#a0249217c5659201e1b06aad32054c2cc" title="Cherche un fichier ou dossier par son nom dans le répertoire courant." alt="" coords="807,305,886,331"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="704,405,740,390,782,364,818,338,821,342,785,369,743,395,706,410"/>
+<area shape="poly" id="edge17_Node000016_Node000015" title=" " alt="" coords="704,275,795,301,793,306,702,280"/>
+<area shape="poly" id="edge23_Node000019_Node000005" title=" " alt="" coords="520,104,613,80,615,86,521,109"/>
+<area shape="rect" id="Node000020" href="$prompt_8c.html#ac8bb82aceed1af2184b3a60daa343ec9" title="On lui donne une chaine de caractere et une position ; Il supprime le caractere qui se trouve à cette..." alt="" coords="623,105,721,131"/>
+<area shape="poly" id="edge22_Node000019_Node000020" title=" " alt="" coords="524,116,610,116,610,121,524,122"/>
+<area shape="poly" id="edge27_Node000022_Node000005" title=" " alt="" coords="526,154,553,141,568,129,577,117,586,104,601,90,613,84,616,88,604,95,590,107,581,120,572,133,556,146,528,158"/>
+<area shape="rect" id="Node000023" href="$gestion__fichier_8c.html#a1e0663e3fb9c24f9f880e2fb809cff1d" title="Lire une ligne precise dans un fichier depart de la fin si negative." alt="" coords="619,155,725,180"/>
+<area shape="poly" id="edge26_Node000022_Node000023" title=" " alt="" coords="538,166,605,165,605,170,539,171"/>
+</map>

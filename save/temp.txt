@@ -1,0 +1,3 @@
+../save/valisoa/level.txt
+../save/valisoa/mission.bin
+../save/valisoa/pTSci

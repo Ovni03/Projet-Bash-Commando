@@ -1,0 +1,16 @@
+MISSION :
+
+    c'est comme la mission precedente mais tu ne doit me dire que les 
+    cinq premier ligne .
+
+COMMANDE :
+
+    head -n N [nom_de_fichier] : Cette commande affiche le N premier ligne du fichier en argument
+
+    - Sans l'option n il affiche les 10 premier par defaut
+
+HELP :
+
+    Va dans le batiment Laboratoire et deplace dans archives_secretes !
+
+    

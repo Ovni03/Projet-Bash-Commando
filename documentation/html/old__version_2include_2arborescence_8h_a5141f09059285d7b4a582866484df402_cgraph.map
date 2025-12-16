@@ -1,0 +1,7 @@
+<map id="my_touch" name="my_touch">
+<area shape="rect" id="Node000001" title="Crée un nouveau fichier dans le répertoire courant." alt="" coords="5,31,92,56"/>
+<area shape="rect" id="Node000002" href="$old__version_2src_2arborescence_8c.html#a52b4732bb5e50a17cef0f89051acd365" title="Ajoute un enfant (fichier ou dossier) à un dossier parent." alt="" coords="140,5,257,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,33,126,28,127,33,93,39"/>
+<area shape="rect" id="Node000003" href="$old__version_2src_2arborescence_8c.html#a0249217c5659201e1b06aad32054c2cc" title="Cherche un fichier ou dossier par son nom dans le répertoire courant." alt="" coords="159,55,238,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="93,48,146,56,145,62,92,53"/>
+</map>

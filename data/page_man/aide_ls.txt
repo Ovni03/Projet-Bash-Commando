@@ -1,0 +1,21 @@
+commande	:	ls
+
+description	:	lister les contenus d'une repertoire
+
+utilisation	:	ls [option]... [fichier]...
+
+			{ fichier car même les repertoires sont des fichiers sous Linux }
+			sans argument il affche le contenu la repertoire courante
+
+option existant
+
+       -a	afficher tous les contenus même les cachés avec '.'
+
+       -d	lister dossiers existant
+
+       -l	une liste detaillé de la contenu
+
+       -R	affiche les sous dossiers recursivement
+
+
+

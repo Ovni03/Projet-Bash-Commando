@@ -1,0 +1,14 @@
+MISSION-1 : PWD
+MISSION-2 : LS
+MISSION-3 : CD
+MISSION-4 : mkdir
+MISSION-5 : rmdir
+MISSION-6 : touch
+MISSION-7 : rm
+MISSION-8 : cp
+MISSION-9 : mv
+MISSION-10 : echo
+MISSION-11 : cat
+MISSION-12 : head
+MISSION-13 : tail
+MISSION-14 : chmod

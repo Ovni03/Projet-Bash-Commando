@@ -1,0 +1,12 @@
+<map id="favori" name="favori">
+<area shape="rect" id="Node000001" title="Affiche les fichiers ayant le nombre maximum d&#39;ouvertures." alt="" coords="432,31,492,56"/>
+<area shape="rect" id="Node000002" href="$src_2arborescence_8c.html#a8b285a8fb71a634f1bc1d4781611fdfa" title="Affiche les fichiers les plus ouverts dans l&#39;arborescence." alt="" coords="301,5,384,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="418,37,384,29,385,24,419,32"/>
+<area shape="rect" id="Node000005" href="$src_2arborescence_8c.html#a32c5992992d3a7928fa34a2ffc73eb63" title="Affiche les fichiers ayant le nombre maximum d&#39;ouvertures." alt="" coords="313,55,373,80"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="419,55,373,64,372,59,418,49"/>
+<area shape="rect" id="Node000003" href="$src_2prompt_8c.html#a8ef3938937798f138d1b9d1d94c68ffa" title="execution du commande entrée en argument" alt="" coords="180,5,253,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="288,30,254,29,254,24,288,24"/>
+<area shape="poly" id="edge4_Node000002_Node000003" title=" " alt="" coords="288,12,254,12,254,7,288,6"/>
+<area shape="rect" id="Node000004" href="$src_2mission_8c.html#ade573c5eee8265efcab5053e371befe1" title=" " alt="" coords="5,5,132,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="166,21,132,21,132,15,166,15"/>
+</map>

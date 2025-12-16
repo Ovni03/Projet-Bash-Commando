@@ -1,0 +1,7 @@
+<map id="my_cp" name="my_cp">
+<area shape="rect" id="Node000001" title="Copie un fichier ou dossier vers une destination." alt="" coords="5,31,71,56"/>
+<area shape="rect" id="Node000002" href="$old__version_2src_2arborescence_8c.html#a0249217c5659201e1b06aad32054c2cc" title="Cherche un fichier ou dossier par son nom dans le répertoire courant." alt="" coords="123,5,201,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,34,109,26,110,31,72,39"/>
+<area shape="rect" id="Node000003" href="$old__version_2src_2arborescence_8c.html#a5141f09059285d7b4a582866484df402" title="Crée un nouveau fichier dans le répertoire courant." alt="" coords="119,55,205,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="72,47,106,54,105,59,71,52"/>
+</map>

@@ -1,0 +1,55 @@
+\doxysection{prompt.\+h}
+\hypertarget{prompt_8h_source}{}\label{prompt_8h_source}\index{include/prompt.h@{include/prompt.h}}
+\mbox{\hyperlink{prompt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00006}00006\ \textcolor{preprocessor}{\#ifndef\ DECL}}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00007}00007\ \textcolor{preprocessor}{\#define\ DECL}}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00013}\mbox{\hyperlink{prompt_8h_abdd4871c52b1f32fa99f1e940a7f3e04}{00013}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SORTIR\ "{}exit"{}}}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00018}00018\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}../include/arborescence.h"{}}}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00023}00023\ \textcolor{preprocessor}{\ \ \ \ \#include\ <stdbool.h>}}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00029}\mbox{\hyperlink{prompt_8h_a6442184118f9afe40f6f6991c86f8a09}{00029}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ LIGNE\ 1000}}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00034}\mbox{\hyperlink{prompt_8h_ae21f7b47b9a3f60e7ae2a76eeeb58150}{00034}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ MOT\ 100}}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00040}\mbox{\hyperlink{structligne}{00040}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structligne}{ligne}}}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00042}\mbox{\hyperlink{structligne_a15698724b9f8ec3802db7724cebd75d3}{00042}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structligne_a15698724b9f8ec3802db7724cebd75d3}{commande}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00043}\mbox{\hyperlink{structligne_ab59efbe08e01efd67d52295446d35437}{00043}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ **\mbox{\hyperlink{structligne_ab59efbe08e01efd67d52295446d35437}{option}};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00044}\mbox{\hyperlink{structligne_a343dee1c5e152123ffb779928190a92f}{00044}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ **\mbox{\hyperlink{structligne_a343dee1c5e152123ffb779928190a92f}{argument}};\ \ }
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00045}00045\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00046}\mbox{\hyperlink{prompt_8h_a6721f79b08a802b8d2f45dde67021360}{00046}}\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structligne}{ligne}}\ \mbox{\hyperlink{structligne__commande}{ligne\_commande}};}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{prompt_8h_a8224c0f5c6caf14e2630ab7bd877fc07}{affiche\_prompt}}(\mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_actuel);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{prompt_8h_a1bf8c82ba6228acf03ee3fc9d9ab2315}{prend\_ligne\_command}}(\textcolor{keywordtype}{char}\ **emplacement,\ \textcolor{keywordtype}{int}\ taille\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_actuel);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{prompt_8h_a7561703c0e5c30615f04d1caa4279ac9}{getNomJoueur}}(\textcolor{keywordtype}{char}\ *emplacement);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00074}00074\ \ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *\mbox{\hyperlink{prompt_8h_a80c6641adc25aa31aed09e7338f911d7}{execute}}(\textcolor{keywordtype}{char}\ **\mbox{\hyperlink{structligne_a15698724b9f8ec3802db7724cebd75d3}{commande}}\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_actue\ ,\ \textcolor{keywordtype}{int}\ nbMot);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00082}00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{prompt_8h_ac778e6a7210b6ab52bc8d395d0a63145}{get\_pwd}}(\mbox{\hyperlink{structfichier}{fichier}}\ *adresse,\ \textcolor{keywordtype}{char}\ *emplacement);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{prompt_8h_a7be520ef705ee067bc123f782b2cd6f9}{get\_point}}();}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00094}00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{prompt_8h_aa99f29d159bdefecc6f70f00361524d6}{increment\_score}}(\textcolor{keywordtype}{int}\ actuPTS);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00102}00102\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{prompt_8h_a27629766e8e7b540919e4090001e7219}{decrement\_score}}(\textcolor{keywordtype}{int}\ penalite);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00112}00112\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{prompt_8h_a362854a5b5cd2d77d28ea9e01f6977b3}{my\_get\_ligne}}(\textcolor{keywordtype}{char}\ *mobile\ ,\ \textcolor{keywordtype}{int}\ taille\_Max\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_actuel);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00121}00121\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{prompt_8h_aad9347c04d854607b0d82e353da23a8c}{rapport\_mission}}(\textcolor{keywordtype}{int}\ num\_mission\ ,\ \textcolor{keywordtype}{bool}\ reussie);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00128}00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{prompt_8h_ac5cea60156f61bb7095ac40599b2292b}{vide\_ligne}}(\textcolor{keywordtype}{int}\ droite\ ,\ \textcolor{keywordtype}{char}\ *chaine);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00135}00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{prompt_8h_ac8bb82aceed1af2184b3a60daa343ec9}{efface\_cara}}(\textcolor{keywordtype}{char}\ *chaine\ ,\ \ \textcolor{keywordtype}{int}\ *position);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00142}00142\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{prompt_8h_ae4852ffe3005375dff4d8dac83ca5942}{taille\_de}}(\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structligne}{ligne}});}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00150}00150\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{prompt_8h_a10c43f5ca70cc0962729fd7cd95a80c9}{prend\_mot\_dans}}(\textcolor{keywordtype}{int}\ position\ ,\ \textcolor{keywordtype}{char}\ *chaine\ ,\ \textcolor{keywordtype}{char}\ *emplacement);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00160}00160\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{prompt_8h_a17f37eb7d8e685081c92862f70d2b828}{auto\_completion}}(\textcolor{keywordtype}{char}\ *chaine\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_actuel\ ,\ \textcolor{keywordtype}{int}\ *nb\_Tab\ ,\ \textcolor{keywordtype}{int}\ *pos\_droite);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00168}00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{prompt_8h_a65e7638ac474f2be4464a9bc1fa8f7df}{touche\_suppr}}(\textcolor{keywordtype}{int}\ *position\ ,\ \textcolor{keywordtype}{int}\ *pos\_droite\ ,\ \textcolor{keywordtype}{char}\ *chaine);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00177}00177\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{prompt_8h_a235d5945ac03974453b95fa104c0159b}{touches\_gauche\_droite}}(\textcolor{keywordtype}{int}\ *indice\ ,\ \textcolor{keywordtype}{int}\ *pos\_droite\ ,\ \textcolor{keywordtype}{char}\ *chaine\ ,\ \textcolor{keywordtype}{int}\ gauche);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00188}00188\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{prompt_8h_a997e5fdac968567f743f8fadd114632d}{touches\_haut\_bas}}(\textcolor{keywordtype}{int}\ *indice\ ,\ \textcolor{keywordtype}{int}\ *position\ ,\ \textcolor{keywordtype}{int}\ *droite\ ,\ \textcolor{keywordtype}{char}\ *chaine\ ,\ \textcolor{keywordtype}{char}\ *tmp\ ,\ \textcolor{keywordtype}{int}\ haut);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00196}00196\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{prompt_8h_a0d8529b02b5a1209e10d4810637dd1ed}{inserer\_mot\_dans}}(\textcolor{keywordtype}{int}\ position\ ,\ \textcolor{keywordtype}{char}\ *chaine\ ,\ \textcolor{keywordtype}{char}\ *insertion);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00204}00204\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{prompt_8h_a5288f6b9f4b7f6cd692005dd08bea7e2}{trouver\_avant}}(\textcolor{keywordtype}{char}\ *chaine\ ,\ \textcolor{keywordtype}{char}\ *recherche);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00213}00213\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{prompt_8h_ab9f8390d536c2ecce3ef7800782d563e}{affiche\_commande}}(\textcolor{keywordtype}{int}\ *indice\ ,\ \textcolor{keywordtype}{char}\ caractere\ ,\textcolor{keywordtype}{char}\ *chaine\ ,\textcolor{keywordtype}{int}\ \ droite);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00220}00220\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{prompt_8h_a82c7fe66cf3596c91306ae54d9eca589}{compter\_mot}}(\textcolor{keywordtype}{char}\ *chaine);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00229}00229\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{prompt_8h_a73fafd8c1624a9112e654554e05fdaf1}{commande\_option}}(\mbox{\hyperlink{structligne__commande}{ligne\_commande}}\ *\mbox{\hyperlink{structligne}{ligne}}\ ,\ \textcolor{keywordtype}{char}\ **liste\ ,\ \textcolor{keywordtype}{int}\ nb\_mot);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00237}00237\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{prompt_8h_a0e325e237cb694a1f54655b47746b82a}{inserer}}(\textcolor{keywordtype}{char}\ caractere\ ,\ \textcolor{keywordtype}{int}\ position\ ,\ \textcolor{keywordtype}{char}\ *chaine);}
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{prompt_8h_source_l00239}00239\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

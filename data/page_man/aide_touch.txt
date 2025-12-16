@@ -1,0 +1,17 @@
+commande	:	touch
+
+description	:	créer un fichier vide
+
+utilisation	:	touch [option]... [nom_de_fichier]...
+			{il peut créer plusieurs fichier en une seule fois}
+
+option existant
+
+       -a	change le temps de dernier acces du fichier
+
+
+       -d	parametrer l'heure de création du fichier
+
+       -m	change le temps de dernier modification du fichier
+
+

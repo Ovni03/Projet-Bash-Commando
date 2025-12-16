@@ -1,0 +1,50 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,104,60,129"/>
+<area shape="rect" id="Node000002" href="$src_2arborescence_8c.html#a6c0724abc3ecc3bf67434ffcab617868" title="Crée un nouveau fichier ou dossier." alt="" coords="157,5,211,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="42,102,69,71,107,40,142,24,145,29,109,44,72,75,46,105"/>
+<area shape="rect" id="Node000003" href="$src_2mission_8c.html#a6776c9e4b7e2bbcc3af33ceb1a939a2f" title=" " alt="" coords="108,55,260,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="59,105,107,89,129,82,131,87,109,94,61,110"/>
+<area shape="rect" id="Node000004" href="$src_2menu_8c.html#a5b4df09ad4bc42bbe037a1364efd9ec3" title="Fonction pour gérer la connexion de l&#39;utilisateur." alt="" coords="153,104,215,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="60,114,139,114,139,119,60,119"/>
+<area shape="rect" id="Node000008" href="$src_2mission_8c.html#af990e85f5156387409f04d308e0bca72" title=" " alt="" coords="115,153,253,179"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="61,123,132,146,131,152,59,128"/>
+<area shape="rect" id="Node000013" href="$src_2menu_8c.html#a0f8a0c90aa152f4542ce093e8d914c08" title=" " alt="" coords="123,400,245,425"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="43,128,173,387,168,389,38,131"/>
+<area shape="rect" id="Node000005" href="$old__version_2src_2menu_8c.html#aab4636cb9924e3ab41d607451e09ed94" title=" " alt="" coords="341,5,450,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="215,107,237,100,259,89,273,77,282,65,291,52,307,40,326,30,328,35,309,44,295,56,286,68,277,81,261,94,239,105,216,112"/>
+<area shape="rect" id="Node000006" href="$src_2prompt_8c.html#a7561703c0e5c30615f04d1caa4279ac9" title="trouver le nom du joueur actuelle et puis l&#39;inserer dans emplacement" alt="" coords="338,55,453,80"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="215,107,326,81,327,86,216,112"/>
+<area shape="rect" id="Node000007" href="$old__version_2src_2menu_8c.html#a5b4df09ad4bc42bbe037a1364efd9ec3" title="Fonction pour gérer la connexion de l&#39;utilisateur." alt="" coords="364,104,427,129"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="216,114,351,114,351,119,216,119"/>
+<area shape="rect" id="Node000009" href="$src_2arborescence_8c.html#ac248248ebcb492503e52068627f5fe91" title="Change le répertoire courant." alt="" coords="363,153,428,179"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="254,163,349,163,349,169,254,169"/>
+<area shape="rect" id="Node000011" href="$src_2arborescence_8c.html#a6c0b420e70006a2a80f3ce8d0b054f62" title="Crée un nouveau dossier dans le répertoire courant." alt="" coords="351,203,439,228"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="240,176,339,200,338,205,238,181"/>
+<area shape="rect" id="Node000010" href="$old__version_2src_2arborescence_8c.html#a0249217c5659201e1b06aad32054c2cc" title="Cherche un fichier ou dossier par son nom dans le répertoire courant." alt="" coords="552,153,631,179"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="428,163,538,163,538,169,428,169"/>
+<area shape="poly" id="edge12_Node000011_Node000010" title=" " alt="" coords="439,202,538,177,539,182,440,207"/>
+<area shape="rect" id="Node000012" href="$old__version_2src_2arborescence_8c.html#a52b4732bb5e50a17cef0f89051acd365" title="Ajoute un enfant (fichier ou dossier) à un dossier parent." alt="" coords="533,203,650,228"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="440,213,519,213,519,218,440,218"/>
+<area shape="rect" id="Node000014" href="$src_2affichage_8c.html#a7ad679ded74015890f90157f1194734f" title=" " alt="" coords="339,252,452,277"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="192,398,237,344,270,313,307,286,325,278,327,283,309,291,273,317,241,348,196,402"/>
+<area shape="rect" id="Node000017" href="$old__version_2src_2menu_8c.html#af87ff8258b49b4091909740cfededd17" title=" " alt="" coords="337,301,453,327"/>
+<area shape="poly" id="edge17_Node000013_Node000017" title=" " alt="" coords="201,398,248,367,307,336,326,328,327,333,309,340,250,372,204,402"/>
+<area shape="rect" id="Node000018" href="$src_2s_xC3_xA9cure_8c.html#a6e058c52cf548631e2076e0f49cb8ee0" title="Lire un entier." alt="" coords="355,351,436,376"/>
+<area shape="poly" id="edge18_Node000013_Node000018" title=" " alt="" coords="238,397,340,373,342,378,240,403"/>
+<area shape="rect" id="Node000020" href="$old__version_2src_2menu_8c.html#a3f8bf4a7d071108da45a49c477f5fd1b" title=" " alt="" coords="348,400,443,425"/>
+<area shape="poly" id="edge20_Node000013_Node000020" title=" " alt="" coords="246,410,334,410,334,415,246,415"/>
+<area shape="rect" id="Node000021" href="$old__version_2src_2menu_8c.html#a57bd833ab5b3e3631255a74890ae43ed" title=" " alt="" coords="346,449,445,475"/>
+<area shape="poly" id="edge21_Node000013_Node000021" title=" " alt="" coords="240,423,333,445,332,450,238,428"/>
+<area shape="rect" id="Node000022" href="$old__version_2src_2menu_8c.html#a700680a6adb8f0c5c16d725dd3c4e31a" title=" " alt="" coords="350,499,441,524"/>
+<area shape="poly" id="edge22_Node000013_Node000022" title=" " alt="" coords="205,423,251,453,309,484,338,494,336,499,307,488,248,458,202,428"/>
+<area shape="rect" id="Node000023" href="$include_2mission_8h.html#a716e01c785c35126dacc0f303323e73e" title=" " alt="" coords="308,548,483,573"/>
+<area shape="poly" id="edge23_Node000013_Node000023" title=" " alt="" coords="197,424,241,477,273,507,309,533,324,541,322,545,307,538,270,511,238,480,193,427"/>
+<area shape="rect" id="Node000024" href="$src_2affichage_8c.html#a448d55968909ab0f809276a961b2a1f6" title="Fonction pour nettoyer l&#39;écran." alt="" coords="343,597,447,623"/>
+<area shape="poly" id="edge24_Node000013_Node000024" title=" " alt="" coords="193,424,209,457,234,500,268,545,310,584,332,595,329,600,306,588,264,549,229,503,204,459,188,427"/>
+<area shape="rect" id="Node000015" href="$old__version_2src_2affichage_8c.html#a44d3032801715a05aeb89e1970660d9a" title=" " alt="" coords="531,252,652,277"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="452,262,517,262,517,267,452,267"/>
+<area shape="rect" id="Node000016" href="$old__version_2src_2affichage_8c.html#a448d55968909ab0f809276a961b2a1f6" title="Fonction pour nettoyer l&#39;écran." alt="" coords="539,301,643,327"/>
+<area shape="poly" id="edge16_Node000014_Node000016" title=" " alt="" coords="447,275,527,295,526,300,446,280"/>
+<area shape="rect" id="Node000019" href="$old__version_2src_2s_xC3_xA9cure_8c.html#a5e29ee70400afd7683fb8b0188a11ee0" title=" " alt="" coords="552,351,631,376"/>
+<area shape="poly" id="edge19_Node000018_Node000019" title=" " alt="" coords="436,361,538,361,538,366,436,366"/>
+</map>

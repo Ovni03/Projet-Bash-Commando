@@ -1,0 +1,19 @@
+MISSION :
+
+    Soldat !!!
+    Parfois, cértains batiments sont inutiles et vides.
+    Ta mission est de détruire la tente_2 et tente_3 qui se trouves dans les dortoirs 
+    pour libérer de lespace.
+
+COMMANDE :
+
+    rmdir [nom_du_lieu] : Cette commande supprime un lieu vide.
+
+    - C'est comme démollir un batiment vide.
+    - Elle ne fonctionne que si le lieu est totalement vide.
+    - Utile pour garder la base propre et organisee.
+
+HELP :
+
+    Tape "ls" pour verifier que le batiment a disparu.
+    

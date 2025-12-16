@@ -1,0 +1,869 @@
+\doxysection{src/prompt.c File Reference}
+\hypertarget{prompt_8c}{}\label{prompt_8c}\index{src/prompt.c@{src/prompt.c}}
+
+
+ceci fait reference à la simulation de prompt  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$termios.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$ncurses.\+h$>$}\newline
+{\ttfamily \#include "{}../include/gestion\+\_\+fichier.\+h"{}}\newline
+{\ttfamily \#include "{}../include/prompt.\+h"{}}\newline
+{\ttfamily \#include "{}../include/affichage.\+h"{}}\newline
+Include dependency graph for prompt.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{prompt_8c_a8224c0f5c6caf14e2630ab7bd877fc07}{affiche\+\_\+prompt}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}repertoire\+\_\+actuel)
+\begin{DoxyCompactList}\small\item\em Quelques fonctions de Olivier utilise cette bibliotheques. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prompt_8c_ac8bb82aceed1af2184b3a60daa343ec9}{efface\+\_\+cara}} (char \texorpdfstring{$\ast$}{*}chaine, int \texorpdfstring{$\ast$}{*}position)
+\begin{DoxyCompactList}\small\item\em On lui donne une chaine de caractere et une position ; Il supprime le caractere qui se trouve à cette position. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prompt_8c_a362854a5b5cd2d77d28ea9e01f6977b3}{my\+\_\+get\+\_\+ligne}} (char \texorpdfstring{$\ast$}{*}mobile, int taille\+\_\+\+Max, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}repertoire\+\_\+actuel)
+\item 
+void \mbox{\hyperlink{prompt_8c_ab9f8390d536c2ecce3ef7800782d563e}{affiche\+\_\+commande}} (int \texorpdfstring{$\ast$}{*}indice, char caractere, char \texorpdfstring{$\ast$}{*}chaine, int droite)
+\begin{DoxyCompactList}\small\item\em Elle permet d\textquotesingle{}inserer une caractere dans une chaine et d\textquotesingle{}affcher la chaine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prompt_8c_a235d5945ac03974453b95fa104c0159b}{touches\+\_\+gauche\+\_\+droite}} (int \texorpdfstring{$\ast$}{*}indice, int \texorpdfstring{$\ast$}{*}pos\+\_\+droite, char \texorpdfstring{$\ast$}{*}chaine, int gauche)
+\begin{DoxyCompactList}\small\item\em c\textquotesingle{}est la fonction associer à la touche gauche et droite \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prompt_8c_a997e5fdac968567f743f8fadd114632d}{touches\+\_\+haut\+\_\+bas}} (int \texorpdfstring{$\ast$}{*}indice, int \texorpdfstring{$\ast$}{*}position, int \texorpdfstring{$\ast$}{*}droite, char \texorpdfstring{$\ast$}{*}chaine, char \texorpdfstring{$\ast$}{*}tmp, int haut)
+\begin{DoxyCompactList}\small\item\em la fonctione associer à la touche haut et bas \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prompt_8c_a65e7638ac474f2be4464a9bc1fa8f7df}{touche\+\_\+suppr}} (int \texorpdfstring{$\ast$}{*}position, int \texorpdfstring{$\ast$}{*}pos\+\_\+droite, char \texorpdfstring{$\ast$}{*}chaine)
+\begin{DoxyCompactList}\small\item\em c\textquotesingle{}est la fonction associer à la touche suppr \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prompt_8c_ac5cea60156f61bb7095ac40599b2292b}{vide\+\_\+ligne}} (int droite, char \texorpdfstring{$\ast$}{*}chaine)
+\begin{DoxyCompactList}\small\item\em c\textquotesingle{}est une simple fonction qui permet de vider la ligne de commande actuelle \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prompt_8c_ae4852ffe3005375dff4d8dac83ca5942}{taille\+\_\+de}} (char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structligne}{ligne}})
+\begin{DoxyCompactList}\small\item\em elle ne compte pas les caracteres comme strlen ; elle donne la taille en affichage \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prompt_8c_a17f37eb7d8e685081c92862f70d2b828}{auto\+\_\+completion}} (char \texorpdfstring{$\ast$}{*}chaine, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}repertoire\+\_\+actuel, int \texorpdfstring{$\ast$}{*}nb\+\_\+\+Tab, int \texorpdfstring{$\ast$}{*}pos\+\_\+droite)
+\begin{DoxyCompactList}\small\item\em c\textquotesingle{}est la fonction principale de l\textquotesingle{}auto-\/completion sur ligne de commande \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prompt_8c_a0d8529b02b5a1209e10d4810637dd1ed}{inserer\+\_\+mot\+\_\+dans}} (int position, char \texorpdfstring{$\ast$}{*}chaine, char \texorpdfstring{$\ast$}{*}insertion)
+\begin{DoxyCompactList}\small\item\em c\textquotesingle{}est pour inserer une mot dans une position precise dans une chaine ; separateur = espace \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prompt_8c_a5288f6b9f4b7f6cd692005dd08bea7e2}{trouver\+\_\+avant}} (char \texorpdfstring{$\ast$}{*}chaine, char \texorpdfstring{$\ast$}{*}recherche)
+\begin{DoxyCompactList}\small\item\em Elle permet de trouver si la chaine recherche est le debut de chaine ; les espaces sont ignorés. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prompt_8c_a82c7fe66cf3596c91306ae54d9eca589}{compter\+\_\+mot}} (char \texorpdfstring{$\ast$}{*}chaine)
+\begin{DoxyCompactList}\small\item\em fonction qui compte le nombre de mot dans une chaine de caractere \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prompt_8c_a10c43f5ca70cc0962729fd7cd95a80c9}{prend\+\_\+mot\+\_\+dans}} (int position, char \texorpdfstring{$\ast$}{*}chaine, char \texorpdfstring{$\ast$}{*}emplacement)
+\item 
+void \mbox{\hyperlink{prompt_8c_a0e325e237cb694a1f54655b47746b82a}{inserer}} (char caractere, int position, char \texorpdfstring{$\ast$}{*}chaine)
+\begin{DoxyCompactList}\small\item\em Elle permet d\textquotesingle{}inserer une caractere dans une chaine à une position preciser en argument. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prompt_8c_a1bf8c82ba6228acf03ee3fc9d9ab2315}{prend\+\_\+ligne\+\_\+command}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}emplacement, int taille, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}repertoire\+\_\+actuel)
+\item 
+int \mbox{\hyperlink{prompt_8c_a7561703c0e5c30615f04d1caa4279ac9}{get\+Nom\+Joueur}} (char \texorpdfstring{$\ast$}{*}emplacement)
+\begin{DoxyCompactList}\small\item\em trouver le nom du joueur actuelle et puis l\textquotesingle{}inserer dans emplacement \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prompt_8c_a7be520ef705ee067bc123f782b2cd6f9}{get\+\_\+point}} ()
+\begin{DoxyCompactList}\small\item\em c\textquotesingle{}est pour savoir le point que le joueur actuel possède \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prompt_8c_aa99f29d159bdefecc6f70f00361524d6}{increment\+\_\+score}} (int actu\+PTS)
+\begin{DoxyCompactList}\small\item\em c\textquotesingle{}est pour augmenter le nombre de score du joueur actuel \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prompt_8c_a27629766e8e7b540919e4090001e7219}{decrement\+\_\+score}} (int penalite)
+\begin{DoxyCompactList}\small\item\em c\textquotesingle{}est une fonction qui fait decrementer le nombre de score d\textquotesingle{}une joueur en jeu \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prompt_8c_ac778e6a7210b6ab52bc8d395d0a63145}{get\+\_\+pwd}} (\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}adresse, char \texorpdfstring{$\ast$}{*}emplacement)
+\begin{DoxyCompactList}\small\item\em trouver le chemin du repertoire actuelle et puis l\textquotesingle{}inserer dans emplacement \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prompt_8c_a73fafd8c1624a9112e654554e05fdaf1}{commande\+\_\+option}} (\mbox{\hyperlink{structligne__commande}{ligne\+\_\+commande}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structligne}{ligne}}, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}liste, int nb\+\_\+mot)
+\begin{DoxyCompactList}\small\item\em cette fonction represente une ligne de commande dans une structure \doxylink{structligne__commande}{ligne\+\_\+commande} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{prompt_8c_a8ef3938937798f138d1b9d1d94c68ffa}{execute}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}commande, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}repertoire\+\_\+actuel, int nb\+Mot)
+\begin{DoxyCompactList}\small\item\em execution du commande entrée en argument \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{prompt_8c_aad9347c04d854607b0d82e353da23a8c}{rapport\+\_\+mission}} (int num\+\_\+mission, bool reussie)
+\begin{DoxyCompactList}\small\item\em celui ci ecrit le joueur , temps de jeu , reussie ou pas et numero de mission dans le fichier d\textquotesingle{}enregistrement \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ceci fait reference à la simulation de prompt 
+
+\begin{DoxyAuthor}{Author}
+Valisoa
+\end{DoxyAuthor}
+Il est regroupe les fonctions utiles pour notre petite terminale ;
+\begin{DoxyItemize}
+\item affiche le repertoire courant ; le nom d\textquotesingle{}utilisateur ; la machine
+\item execute le commande decrit 
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{prompt_8c_ab9f8390d536c2ecce3ef7800782d563e}\label{prompt_8c_ab9f8390d536c2ecce3ef7800782d563e} 
+\index{prompt.c@{prompt.c}!affiche\_commande@{affiche\_commande}}
+\index{affiche\_commande@{affiche\_commande}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{affiche\_commande()}{affiche\_commande()}}
+{\footnotesize\ttfamily void affiche\+\_\+commande (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{indice,  }\item[{char}]{caractere,  }\item[{char \texorpdfstring{$\ast$}{*}}]{chaine,  }\item[{int}]{droite }\end{DoxyParamCaption})}
+
+
+
+Elle permet d\textquotesingle{}inserer une caractere dans une chaine et d\textquotesingle{}affcher la chaine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indice} & la position d\textquotesingle{}insertion dans la chaine \\
+\hline
+{\em caractere} & le caractere à inserer dans la chaine \\
+\hline
+{\em chaine} & la chaine où l\textquotesingle{}on va inserer une caractere \\
+\hline
+{\em droite} & la position actuelle en se referant de la position la plus à droite \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l00213}{213}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_ab9f8390d536c2ecce3ef7800782d563e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_ab9f8390d536c2ecce3ef7800782d563e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_a8224c0f5c6caf14e2630ab7bd877fc07}\label{prompt_8c_a8224c0f5c6caf14e2630ab7bd877fc07} 
+\index{prompt.c@{prompt.c}!affiche\_prompt@{affiche\_prompt}}
+\index{affiche\_prompt@{affiche\_prompt}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{affiche\_prompt()}{affiche\_prompt()}}
+{\footnotesize\ttfamily void affiche\+\_\+prompt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{repertoire\+\_\+actuel }\end{DoxyParamCaption})}
+
+
+
+Quelques fonctions de Olivier utilise cette bibliotheques. 
+
+il affiche le ligne de prompt où l\textquotesingle{}on insere du commande
+
+
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ \texorpdfstring{$<$}{<}ncurses.\+h\texorpdfstring{$>$}{>} 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ "{}../include/gestion\+\_\+fichier.\+h"{}
+
+pour la gestion des fichiers ( adaptation des mes besoins ) 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ "{}../include/prompt.\+h"{}
+
+inclusion de tous les fonctions de ce fichier \mbox{[} certains appelle les autres \mbox{]} 
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l00035}{35}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{prompt_8c_a8224c0f5c6caf14e2630ab7bd877fc07_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a8224c0f5c6caf14e2630ab7bd877fc07_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_a17f37eb7d8e685081c92862f70d2b828}\label{prompt_8c_a17f37eb7d8e685081c92862f70d2b828} 
+\index{prompt.c@{prompt.c}!auto\_completion@{auto\_completion}}
+\index{auto\_completion@{auto\_completion}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{auto\_completion()}{auto\_completion()}}
+{\footnotesize\ttfamily int auto\+\_\+completion (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{chaine,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{repertoire\+\_\+actuel,  }\item[{int \texorpdfstring{$\ast$}{*}}]{nb\+\_\+\+Tab,  }\item[{int \texorpdfstring{$\ast$}{*}}]{pos\+\_\+droite }\end{DoxyParamCaption})}
+
+
+
+c\textquotesingle{}est la fonction principale de l\textquotesingle{}auto-\/completion sur ligne de commande 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chaine} & la chaine à completer \\
+\hline
+{\em repertoire\+\_\+actuel} & l\textquotesingle{}adresse du repertoire actuelle \\
+\hline
+{\em nb\+\_\+\+Tab} & nombre de tabulation deja effectuer \\
+\hline
+{\em pos\+\_\+droite} & la position actuelle par rapport à la position la plus à droite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la taille de la chaine en affichage ; donc reussi si different de zero 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l00408}{408}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a17f37eb7d8e685081c92862f70d2b828_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a17f37eb7d8e685081c92862f70d2b828_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_a73fafd8c1624a9112e654554e05fdaf1}\label{prompt_8c_a73fafd8c1624a9112e654554e05fdaf1} 
+\index{prompt.c@{prompt.c}!commande\_option@{commande\_option}}
+\index{commande\_option@{commande\_option}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{commande\_option()}{commande\_option()}}
+{\footnotesize\ttfamily int commande\+\_\+option (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structligne__commande}{ligne\+\_\+commande}} \texorpdfstring{$\ast$}{*}}]{ligne,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{liste,  }\item[{int}]{nb\+\_\+mot }\end{DoxyParamCaption})}
+
+
+
+cette fonction represente une ligne de commande dans une structure \doxylink{structligne__commande}{ligne\+\_\+commande} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ligne} & l\textquotesingle{}adresse du structure où l\textquotesingle{}on stockera la representation de la ligne de commande \\
+\hline
+{\em liste} & la ligne actuelle deja separer mot par mot ( dans une tableau mot ) \\
+\hline
+{\em nb\+\_\+mot} & le nombre de mot dans liste \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si tous s\textquotesingle{}est bien passer 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l01305}{1305}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a73fafd8c1624a9112e654554e05fdaf1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_a82c7fe66cf3596c91306ae54d9eca589}\label{prompt_8c_a82c7fe66cf3596c91306ae54d9eca589} 
+\index{prompt.c@{prompt.c}!compter\_mot@{compter\_mot}}
+\index{compter\_mot@{compter\_mot}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{compter\_mot()}{compter\_mot()}}
+{\footnotesize\ttfamily int compter\+\_\+mot (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{chaine }\end{DoxyParamCaption})}
+
+
+
+fonction qui compte le nombre de mot dans une chaine de caractere 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chaine} & la chaine dont on veut compter le nombre de mot \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le nombre de mot dans chaine ~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l00908}{908}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a82c7fe66cf3596c91306ae54d9eca589_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_a27629766e8e7b540919e4090001e7219}\label{prompt_8c_a27629766e8e7b540919e4090001e7219} 
+\index{prompt.c@{prompt.c}!decrement\_score@{decrement\_score}}
+\index{decrement\_score@{decrement\_score}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{decrement\_score()}{decrement\_score()}}
+{\footnotesize\ttfamily int decrement\+\_\+score (\begin{DoxyParamCaption}\item[{int}]{penalite }\end{DoxyParamCaption})}
+
+
+
+c\textquotesingle{}est une fonction qui fait decrementer le nombre de score d\textquotesingle{}une joueur en jeu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em penalite} & c\textquotesingle{}est le nombre de point à enlever dans le nombre de score \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+renvoie une entier negatif si le score est insuffisant ou n\textquotesingle{}existe pas encore 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l01214}{1214}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{prompt_8c_a27629766e8e7b540919e4090001e7219_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a27629766e8e7b540919e4090001e7219_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_ac8bb82aceed1af2184b3a60daa343ec9}\label{prompt_8c_ac8bb82aceed1af2184b3a60daa343ec9} 
+\index{prompt.c@{prompt.c}!efface\_cara@{efface\_cara}}
+\index{efface\_cara@{efface\_cara}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{efface\_cara()}{efface\_cara()}}
+{\footnotesize\ttfamily void efface\+\_\+cara (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{chaine,  }\item[{int \texorpdfstring{$\ast$}{*}}]{position }\end{DoxyParamCaption})}
+
+
+
+On lui donne une chaine de caractere et une position ; Il supprime le caractere qui se trouve à cette position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chaine} & la chaine de caractere dont on veut supprimer un caractere \\
+\hline
+{\em position} & la position du caractere dans la chaine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l00052}{52}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_ac8bb82aceed1af2184b3a60daa343ec9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_a8ef3938937798f138d1b9d1d94c68ffa}\label{prompt_8c_a8ef3938937798f138d1b9d1d94c68ffa} 
+\index{prompt.c@{prompt.c}!execute@{execute}}
+\index{execute@{execute}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*} execute (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{commande,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{repertoire\+\_\+actuel,  }\item[{int}]{nb\+Mot }\end{DoxyParamCaption})}
+
+
+
+execution du commande entrée en argument 
+
+
+\begin{DoxyParams}{Parameters}
+{\em commande} & La ligne entrer par l\textquotesingle{}utilisateur \\
+\hline
+{\em repertoire\+\_\+actuel} & l\textquotesingle{}adresse du repertoire où l\textquotesingle{}on travaille actuellement \\
+\hline
+{\em nb\+Mot} & le nombre de mot prise dans commande qui est de type char\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}adresse du repertoire de travaille qui a peut etre changé durant le prompt 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l01349}{1349}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{prompt_8c_a8ef3938937798f138d1b9d1d94c68ffa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a8ef3938937798f138d1b9d1d94c68ffa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_a7be520ef705ee067bc123f782b2cd6f9}\label{prompt_8c_a7be520ef705ee067bc123f782b2cd6f9} 
+\index{prompt.c@{prompt.c}!get\_point@{get\_point}}
+\index{get\_point@{get\_point}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{get\_point()}{get\_point()}}
+{\footnotesize\ttfamily int get\+\_\+point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+c\textquotesingle{}est pour savoir le point que le joueur actuel possède 
+
+\begin{DoxyReturn}{Returns}
+il return le nombre de point de l\textquotesingle{}utilisateur actuel 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l01121}{1121}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a7be520ef705ee067bc123f782b2cd6f9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_ac778e6a7210b6ab52bc8d395d0a63145}\label{prompt_8c_ac778e6a7210b6ab52bc8d395d0a63145} 
+\index{prompt.c@{prompt.c}!get\_pwd@{get\_pwd}}
+\index{get\_pwd@{get\_pwd}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{get\_pwd()}{get\_pwd()}}
+{\footnotesize\ttfamily void get\+\_\+pwd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{adresse,  }\item[{char \texorpdfstring{$\ast$}{*}}]{emplacement }\end{DoxyParamCaption})}
+
+
+
+trouver le chemin du repertoire actuelle et puis l\textquotesingle{}inserer dans emplacement 
+
+
+\begin{DoxyParams}{Parameters}
+{\em adresse} & l\textquotesingle{}emplacement actuelle dans l\textquotesingle{}arborescence \\
+\hline
+{\em emplacement} & la variable ou stocker le resulatat \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l01260}{1260}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_ac778e6a7210b6ab52bc8d395d0a63145_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_a7561703c0e5c30615f04d1caa4279ac9}\label{prompt_8c_a7561703c0e5c30615f04d1caa4279ac9} 
+\index{prompt.c@{prompt.c}!getNomJoueur@{getNomJoueur}}
+\index{getNomJoueur@{getNomJoueur}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{getNomJoueur()}{getNomJoueur()}}
+{\footnotesize\ttfamily int get\+Nom\+Joueur (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{emplacement }\end{DoxyParamCaption})}
+
+
+
+trouver le nom du joueur actuelle et puis l\textquotesingle{}inserer dans emplacement 
+
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l01104}{1104}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a7561703c0e5c30615f04d1caa4279ac9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_aa99f29d159bdefecc6f70f00361524d6}\label{prompt_8c_aa99f29d159bdefecc6f70f00361524d6} 
+\index{prompt.c@{prompt.c}!increment\_score@{increment\_score}}
+\index{increment\_score@{increment\_score}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{increment\_score()}{increment\_score()}}
+{\footnotesize\ttfamily void increment\+\_\+score (\begin{DoxyParamCaption}\item[{int}]{actu\+PTS }\end{DoxyParamCaption})}
+
+
+
+c\textquotesingle{}est pour augmenter le nombre de score du joueur actuel 
+
+
+\begin{DoxyParams}{Parameters}
+{\em actu\+PTS} & le nombre de point à ajouter au score actuel \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l01165}{1165}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{prompt_8c_aa99f29d159bdefecc6f70f00361524d6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_aa99f29d159bdefecc6f70f00361524d6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_a0e325e237cb694a1f54655b47746b82a}\label{prompt_8c_a0e325e237cb694a1f54655b47746b82a} 
+\index{prompt.c@{prompt.c}!inserer@{inserer}}
+\index{inserer@{inserer}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{inserer()}{inserer()}}
+{\footnotesize\ttfamily void inserer (\begin{DoxyParamCaption}\item[{char}]{caractere,  }\item[{int}]{position,  }\item[{char \texorpdfstring{$\ast$}{*}}]{chaine }\end{DoxyParamCaption})}
+
+
+
+Elle permet d\textquotesingle{}inserer une caractere dans une chaine à une position preciser en argument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em caractere} & le caractere à inserer dans une chaine \\
+\hline
+{\em position} & la position de l\textquotesingle{}insertion \\
+\hline
+{\em chaine} & la chaine où l\textquotesingle{}on va inserer caractere \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l01006}{1006}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a0e325e237cb694a1f54655b47746b82a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_a0d8529b02b5a1209e10d4810637dd1ed}\label{prompt_8c_a0d8529b02b5a1209e10d4810637dd1ed} 
+\index{prompt.c@{prompt.c}!inserer\_mot\_dans@{inserer\_mot\_dans}}
+\index{inserer\_mot\_dans@{inserer\_mot\_dans}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{inserer\_mot\_dans()}{inserer\_mot\_dans()}}
+{\footnotesize\ttfamily void inserer\+\_\+mot\+\_\+dans (\begin{DoxyParamCaption}\item[{int}]{position,  }\item[{char \texorpdfstring{$\ast$}{*}}]{chaine,  }\item[{char \texorpdfstring{$\ast$}{*}}]{insertion }\end{DoxyParamCaption})}
+
+
+
+c\textquotesingle{}est pour inserer une mot dans une position precise dans une chaine ; separateur = espace 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & la position de l\textquotesingle{}insertion dans la chaine \\
+\hline
+{\em chaine} & la chaine d\textquotesingle{}insertion \\
+\hline
+{\em insertion} & la chaine à inserer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l00818}{818}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{prompt_8c_a0d8529b02b5a1209e10d4810637dd1ed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a0d8529b02b5a1209e10d4810637dd1ed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_a362854a5b5cd2d77d28ea9e01f6977b3}\label{prompt_8c_a362854a5b5cd2d77d28ea9e01f6977b3} 
+\index{prompt.c@{prompt.c}!my\_get\_ligne@{my\_get\_ligne}}
+\index{my\_get\_ligne@{my\_get\_ligne}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{my\_get\_ligne()}{my\_get\_ligne()}}
+{\footnotesize\ttfamily int my\+\_\+get\+\_\+ligne (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{mobile,  }\item[{int}]{taille\+\_\+\+Max,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{repertoire\+\_\+actuel }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l00078}{78}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a362854a5b5cd2d77d28ea9e01f6977b3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a362854a5b5cd2d77d28ea9e01f6977b3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_a1bf8c82ba6228acf03ee3fc9d9ab2315}\label{prompt_8c_a1bf8c82ba6228acf03ee3fc9d9ab2315} 
+\index{prompt.c@{prompt.c}!prend\_ligne\_command@{prend\_ligne\_command}}
+\index{prend\_ligne\_command@{prend\_ligne\_command}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{prend\_ligne\_command()}{prend\_ligne\_command()}}
+{\footnotesize\ttfamily int prend\+\_\+ligne\+\_\+command (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{emplacement,  }\item[{int}]{taille,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{repertoire\+\_\+actuel }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l01027}{1027}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a1bf8c82ba6228acf03ee3fc9d9ab2315_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a1bf8c82ba6228acf03ee3fc9d9ab2315_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_a10c43f5ca70cc0962729fd7cd95a80c9}\label{prompt_8c_a10c43f5ca70cc0962729fd7cd95a80c9} 
+\index{prompt.c@{prompt.c}!prend\_mot\_dans@{prend\_mot\_dans}}
+\index{prend\_mot\_dans@{prend\_mot\_dans}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{prend\_mot\_dans()}{prend\_mot\_dans()}}
+{\footnotesize\ttfamily int prend\+\_\+mot\+\_\+dans (\begin{DoxyParamCaption}\item[{int}]{position,  }\item[{char \texorpdfstring{$\ast$}{*}}]{chaine,  }\item[{char \texorpdfstring{$\ast$}{*}}]{emplacement }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & la position du mot à prendre \\
+\hline
+{\em chaine} & la chaine de caractere où extracter le mot \\
+\hline
+{\em emplacement} & l\textquotesingle{}adresse de l\textquotesingle{}emplacement de la chaine extractée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+renvoie 0 si tous s\textquotesingle{}est bien passé 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l00940}{940}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a10c43f5ca70cc0962729fd7cd95a80c9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_aad9347c04d854607b0d82e353da23a8c}\label{prompt_8c_aad9347c04d854607b0d82e353da23a8c} 
+\index{prompt.c@{prompt.c}!rapport\_mission@{rapport\_mission}}
+\index{rapport\_mission@{rapport\_mission}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{rapport\_mission()}{rapport\_mission()}}
+{\footnotesize\ttfamily int rapport\+\_\+mission (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+mission,  }\item[{bool}]{reussie }\end{DoxyParamCaption})}
+
+
+
+celui ci ecrit le joueur , temps de jeu , reussie ou pas et numero de mission dans le fichier d\textquotesingle{}enregistrement 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+mission} & c\textquotesingle{}est la numero de la mission dont on va faire le rapport \\
+\hline
+{\em reussie} & possede une valeur true si la mission est reussie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si l\textquotesingle{}ecriture s\textquotesingle{}est bien passe ou -\/1 si non 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l01989}{1989}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+\Hypertarget{prompt_8c_ae4852ffe3005375dff4d8dac83ca5942}\label{prompt_8c_ae4852ffe3005375dff4d8dac83ca5942} 
+\index{prompt.c@{prompt.c}!taille\_de@{taille\_de}}
+\index{taille\_de@{taille\_de}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{taille\_de()}{taille\_de()}}
+{\footnotesize\ttfamily int taille\+\_\+de (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{ligne }\end{DoxyParamCaption})}
+
+
+
+elle ne compte pas les caracteres comme strlen ; elle donne la taille en affichage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ligne} & la chaine de caractere à compter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le nombre de caractere de la chaine entrer en argument 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l00384}{384}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_ae4852ffe3005375dff4d8dac83ca5942_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_a65e7638ac474f2be4464a9bc1fa8f7df}\label{prompt_8c_a65e7638ac474f2be4464a9bc1fa8f7df} 
+\index{prompt.c@{prompt.c}!touche\_suppr@{touche\_suppr}}
+\index{touche\_suppr@{touche\_suppr}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{touche\_suppr()}{touche\_suppr()}}
+{\footnotesize\ttfamily void touche\+\_\+suppr (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{position,  }\item[{int \texorpdfstring{$\ast$}{*}}]{pos\+\_\+droite,  }\item[{char \texorpdfstring{$\ast$}{*}}]{chaine }\end{DoxyParamCaption})}
+
+
+
+c\textquotesingle{}est la fonction associer à la touche suppr 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & la position dans le chaine de caractere \\
+\hline
+{\em pos\+\_\+droite} & la position de curseur en comptant depuis la droite \\
+\hline
+{\em chaine} & le ligne où l\textquotesingle{}on veut supprimer une caractere \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l00348}{348}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a65e7638ac474f2be4464a9bc1fa8f7df_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a65e7638ac474f2be4464a9bc1fa8f7df_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_a235d5945ac03974453b95fa104c0159b}\label{prompt_8c_a235d5945ac03974453b95fa104c0159b} 
+\index{prompt.c@{prompt.c}!touches\_gauche\_droite@{touches\_gauche\_droite}}
+\index{touches\_gauche\_droite@{touches\_gauche\_droite}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{touches\_gauche\_droite()}{touches\_gauche\_droite()}}
+{\footnotesize\ttfamily void touches\+\_\+gauche\+\_\+droite (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{indice,  }\item[{int \texorpdfstring{$\ast$}{*}}]{pos\+\_\+droite,  }\item[{char \texorpdfstring{$\ast$}{*}}]{chaine,  }\item[{int}]{gauche }\end{DoxyParamCaption})}
+
+
+
+c\textquotesingle{}est la fonction associer à la touche gauche et droite 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indice} & la position dans la ligne actuelle \\
+\hline
+{\em pos\+\_\+droite} & la position par rapport à la position la plus à droite \\
+\hline
+{\em chaine} & la ligne actuelle \\
+\hline
+{\em gauche} & valeur si 0 si touche droite et 1 si touche gauche \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l00231}{231}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a235d5945ac03974453b95fa104c0159b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_a997e5fdac968567f743f8fadd114632d}\label{prompt_8c_a997e5fdac968567f743f8fadd114632d} 
+\index{prompt.c@{prompt.c}!touches\_haut\_bas@{touches\_haut\_bas}}
+\index{touches\_haut\_bas@{touches\_haut\_bas}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{touches\_haut\_bas()}{touches\_haut\_bas()}}
+{\footnotesize\ttfamily void touches\+\_\+haut\+\_\+bas (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{indice,  }\item[{int \texorpdfstring{$\ast$}{*}}]{position,  }\item[{int \texorpdfstring{$\ast$}{*}}]{droite,  }\item[{char \texorpdfstring{$\ast$}{*}}]{chaine,  }\item[{char \texorpdfstring{$\ast$}{*}}]{tmp,  }\item[{int}]{haut }\end{DoxyParamCaption})}
+
+
+
+la fonctione associer à la touche haut et bas 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indice} & position dans la chaine \\
+\hline
+{\em position} & position actuelle dans les visions des historiques des commandes \\
+\hline
+{\em droite} & position par rapport à la plus droite \\
+\hline
+{\em chaine} & la chaine de caractere contenant la ligne \\
+\hline
+{\em tmp} & la chaine ou l\textquotesingle{}on stocke une ligne temporairement ; ici la ligne la plus bas est enregistrer \\
+\hline
+{\em haut} & 1 si touche haut et 0 si touche bas \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l00276}{276}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a997e5fdac968567f743f8fadd114632d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a997e5fdac968567f743f8fadd114632d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_a5288f6b9f4b7f6cd692005dd08bea7e2}\label{prompt_8c_a5288f6b9f4b7f6cd692005dd08bea7e2} 
+\index{prompt.c@{prompt.c}!trouver\_avant@{trouver\_avant}}
+\index{trouver\_avant@{trouver\_avant}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{trouver\_avant()}{trouver\_avant()}}
+{\footnotesize\ttfamily int trouver\+\_\+avant (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{chaine,  }\item[{char \texorpdfstring{$\ast$}{*}}]{recherche }\end{DoxyParamCaption})}
+
+
+
+Elle permet de trouver si la chaine recherche est le debut de chaine ; les espaces sont ignorés. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chaine} & la chaine de recherche \\
+\hline
+{\em recherche} & la chaine à rechercher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Elle renvoie la taille de chaine semblable 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l00889}{889}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_a5288f6b9f4b7f6cd692005dd08bea7e2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{prompt_8c_ac5cea60156f61bb7095ac40599b2292b}\label{prompt_8c_ac5cea60156f61bb7095ac40599b2292b} 
+\index{prompt.c@{prompt.c}!vide\_ligne@{vide\_ligne}}
+\index{vide\_ligne@{vide\_ligne}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{vide\_ligne()}{vide\_ligne()}}
+{\footnotesize\ttfamily void vide\+\_\+ligne (\begin{DoxyParamCaption}\item[{int}]{droite,  }\item[{char \texorpdfstring{$\ast$}{*}}]{chaine }\end{DoxyParamCaption})}
+
+
+
+c\textquotesingle{}est une simple fonction qui permet de vider la ligne de commande actuelle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em droite} & la position par rapport à la plus droite \\
+\hline
+{\em chaine} & la chaine de caractere de la ligne à vider \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{prompt_8c_source_l00368}{368}} of file \mbox{\hyperlink{prompt_8c_source}{prompt.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{prompt_8c_ac5cea60156f61bb7095ac40599b2292b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prompt_8c_ac5cea60156f61bb7095ac40599b2292b_icgraph}
+\end{center}
+\end{figure}

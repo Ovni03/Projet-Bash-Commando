@@ -1,0 +1,5 @@
+<map id="initialiser" name="initialiser">
+<area shape="rect" id="Node000001" title=" " alt="" coords="123,5,205,31"/>
+<area shape="rect" id="Node000002" href="$prompt_8c.html#aa7e4fe1d0c843e02dfdba34edc69fe91" title="c&#39;est le fonction principale ; il affiche les informations et execute des commandes" alt="" coords="5,5,75,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,21,75,21,75,15,109,15"/>
+</map>

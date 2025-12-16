@@ -1,0 +1,11 @@
+    Bienvenue soldat !!
+    
+    Dans cette mission, tu vas apprendre à explorer et à maitriser tous les lieux de notre territoire.
+    Chaque commandes que tu vas decouvrir est un outil de navigation et de survie :
+    elles te permettront de savoir où tu es, ce qui t'entoure, et comment agir efficacement dans le terrain .
+    
+    Prepares-toi à devenir un véritable Bash Commando !
+    
+    
+    Tapes sur entrée pour continuer
+    

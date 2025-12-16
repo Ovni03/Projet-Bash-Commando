@@ -1,0 +1,83 @@
+<map id="execute" name="execute">
+<area shape="rect" id="Node000001" title="execution du commande entrée en argument" alt="" coords="5,660,79,685"/>
+<area shape="rect" id="Node000002" href="$arborescence_8c.html#a8b285a8fb71a634f1bc1d4781611fdfa" title="Affiche les fichiers les plus ouverts dans l&#39;arborescence." alt="" coords="170,31,253,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="41,660,42,547,52,368,62,274,77,187,97,115,110,87,125,66,139,54,155,47,158,52,142,58,129,69,115,90,103,117,82,188,68,275,57,369,48,547,46,660"/>
+<area shape="rect" id="Node000005" href="$arborescence_8c.html#a35142ee6610ab9a5c42eb75c678c3de6" title="Affiche le nombre d&#39;ouvertures pour chaque fichier dans l&#39;arborescence." alt="" coords="127,104,296,129"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="41,660,44,559,56,403,67,321,81,245,100,182,112,158,125,139,128,136,132,139,129,142,116,160,105,184,86,246,72,321,62,403,50,559,46,660"/>
+<area shape="rect" id="Node000006" href="$gestion__fichier_8c.html#a2c34a7ad4e3ffcbef0ebc72f6c106abd" title="afficher le fichier entrée en parametre" alt="" coords="361,156,450,181"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="42,660,48,578,63,457,88,335,105,287,125,254,140,241,162,229,220,208,346,177,347,182,221,213,164,234,143,245,129,257,110,289,93,337,69,458,54,579,47,660"/>
+<area shape="rect" id="Node000007" href="$arborescence_8c.html#a0249217c5659201e1b06aad32054c2cc" title="Cherche un fichier ou dossier par son nom dans le répertoire courant." alt="" coords="534,559,613,584"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="79,669,151,665,248,656,357,640,466,614,534,587,536,592,467,619,358,645,248,661,151,670,79,674"/>
+<area shape="rect" id="Node000008" href="$prompt_8c.html#a73fafd8c1624a9112e654554e05fdaf1" title="cette fonction represente une ligne de commande dans une structure ligne_commande" alt="" coords="140,913,283,939"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="47,685,53,725,67,780,91,840,108,867,128,892,146,905,143,909,125,896,104,871,86,842,62,782,48,726,42,686"/>
+<area shape="rect" id="Node000009" href="$gestion__fichier_8c.html#a2d90bdfdc632e4ffbafc22e2b18ed8fd" title="il affiche des premiers lignes d&#39;une fichier entrer en parametre" alt="" coords="161,963,262,988"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="46,686,48,735,59,806,69,845,83,883,103,918,128,949,149,963,146,967,125,953,99,921,79,885,64,846,53,807,43,736,40,686"/>
+<area shape="rect" id="Node000010" href="$arborescence_8c.html#ac248248ebcb492503e52068627f5fe91" title="Change le répertoire courant." alt="" coords="373,711,438,736"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="79,679,127,689,253,706,360,717,359,722,253,711,126,694,78,684"/>
+<area shape="rect" id="Node000011" href="$arborescence_8c.html#a7467868fcde9c080b05562fa728cf395" title="Modifie les permissions d&#39;un fichier ou dossier." alt="" coords="358,211,453,236"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="42,659,50,586,66,478,91,371,106,329,125,300,140,288,162,277,219,258,343,230,345,236,220,263,164,282,143,293,129,304,111,332,96,373,71,479,55,587,47,660"/>
+<area shape="rect" id="Node000012" href="$arborescence_8c.html#a2fbd32a61a608cdaa759a7fa08ef326f" title="Copie un fichier ou dossier vers une destination." alt="" coords="179,761,244,787"/>
+<area shape="poly" id="edge16_Node000001_Node000012" title=" " alt="" coords="58,683,88,711,128,740,167,758,165,763,125,744,85,715,54,687"/>
+<area shape="rect" id="Node000013" href="$arborescence_8c.html#a5141f09059285d7b4a582866484df402" title="Crée un nouveau fichier dans le répertoire courant." alt="" coords="362,812,449,837"/>
+<area shape="poly" id="edge46_Node000001_Node000013" title=" " alt="" coords="50,684,76,740,99,771,128,796,154,809,182,819,241,830,298,833,348,830,348,835,298,838,240,835,181,824,152,814,125,800,95,775,72,743,45,686"/>
+<area shape="rect" id="Node000016" href="$arborescence_8c.html#a6e941d66f44c17b79bdd749a8ca8ac57" title="Affiche une ligne de texte." alt="" coords="171,1012,252,1037"/>
+<area shape="poly" id="edge22_Node000001_Node000016" title=" " alt="" coords="48,685,57,751,74,846,98,939,113,975,129,999,142,1009,158,1016,156,1021,139,1014,125,1002,108,977,93,940,69,847,52,752,42,686"/>
+<area shape="rect" id="Node000017" href="$gestion__fichier_8c.html#ab610135a46bf930440763e0c6ce43486" title="afficher ou effacer les historiques de ligne de commande" alt="" coords="164,153,259,179"/>
+<area shape="poly" id="edge23_Node000001_Node000017" title=" " alt="" coords="41,660,47,569,61,431,72,358,86,291,103,235,125,196,149,178,152,182,129,200,108,237,91,292,77,359,66,432,52,570,47,660"/>
+<area shape="rect" id="Node000018" href="$arborescence_8c.html#a6c4fa25a347e9972b9e029c71ed9fd00" title="Liste les fichiers et dossiers dans le répertoire courant." alt="" coords="375,260,436,285"/>
+<area shape="poly" id="edge25_Node000001_Node000018" title=" " alt="" coords="42,659,52,594,69,501,93,408,108,372,125,347,142,334,166,323,229,303,361,276,362,282,231,308,168,328,145,339,129,351,113,374,98,410,74,502,57,595,48,660"/>
+<area shape="rect" id="Node000019" href="$arborescence_8c.html#acd0f7b49807b2fadf35b86dffb2fed29" title="Liste tous les fichiers et dossiers, y compris les fichiers cachés, dans le répertoire courant." alt="" coords="367,309,443,335"/>
+<area shape="poly" id="edge27_Node000001_Node000019" title=" " alt="" coords="40,660,42,610,53,538,63,499,78,460,98,424,125,392,141,380,165,370,225,351,353,326,354,332,226,357,167,375,144,385,128,396,103,427,83,462,68,501,58,539,48,611,46,660"/>
+<area shape="rect" id="Node000020" href="$arborescence_8c.html#a8e522d900e7a0dd937f6ad4566d83fc9" title="Liste les fichiers et dossiers avec des détails dans le répertoire courant." alt="" coords="369,460,441,485"/>
+<area shape="poly" id="edge29_Node000001_Node000020" title=" " alt="" coords="44,659,53,630,69,592,93,554,125,521,152,505,182,492,244,475,304,468,356,467,356,472,305,473,245,480,184,497,155,509,128,525,97,557,74,595,58,632,49,661"/>
+<area shape="rect" id="Node000021" href="$arborescence_8c.html#a3bb9bbca7eeffa784954293d8ca87d18" title="Liste tous les fichiers et dossiers avec des détails, y compris les fichiers cachés,..." alt="" coords="365,509,445,535"/>
+<area shape="poly" id="edge31_Node000001_Node000021" title=" " alt="" coords="47,659,75,610,98,583,125,561,182,536,243,522,301,516,352,516,352,521,302,522,244,528,184,541,128,566,101,587,79,613,51,661"/>
+<area shape="rect" id="Node000022" href="$gestion__fichier_8c.html#aca096e7269f361a89edee4d606e12013" title="Il affiche une page d&#39;aide pour une commande entrer en argument." alt="" coords="172,1061,251,1087"/>
+<area shape="poly" id="edge33_Node000001_Node000022" title=" " alt="" coords="47,685,55,760,71,869,95,977,111,1020,129,1048,143,1059,160,1066,158,1071,140,1063,125,1052,106,1022,90,979,66,870,50,760,42,686"/>
+<area shape="rect" id="Node000023" href="$arborescence_8c.html#a6c0b420e70006a2a80f3ce8d0b054f62" title="Crée un nouveau dossier dans le répertoire courant." alt="" coords="361,861,449,887"/>
+<area shape="poly" id="edge34_Node000001_Node000023" title=" " alt="" coords="48,685,56,717,70,760,94,803,110,822,128,839,154,853,181,865,239,878,297,882,348,879,348,885,297,887,239,883,179,870,151,858,125,843,106,826,90,806,65,762,50,719,43,686"/>
+<area shape="rect" id="Node000024" href="$arborescence_8c.html#ab470da3ee0c4fa1bc6f931fd71cff2a1" title="Déplace un fichier ou dossier vers une destination." alt="" coords="176,407,247,432"/>
+<area shape="poly" id="edge37_Node000001_Node000024" title=" " alt="" coords="42,659,48,619,62,564,86,503,104,475,125,449,142,436,162,427,164,432,145,441,129,453,108,478,91,506,67,565,53,620,47,660"/>
+<area shape="rect" id="Node000026" href="$arborescence_8c.html#ac90204e39291595ace81a322d8e20051" title="Affiche le chemin complet du répertoire courant." alt="" coords="173,1111,250,1136"/>
+<area shape="poly" id="edge40_Node000001_Node000026" title=" " alt="" coords="47,685,53,768,68,892,79,957,92,1016,109,1065,129,1098,143,1109,160,1116,158,1121,140,1113,125,1101,104,1067,87,1018,74,958,63,893,48,769,41,686"/>
+<area shape="rect" id="Node000028" href="$arborescence_8c.html#ac701c3663af3c6f46e81e321ae1c8dc3" title="Supprime un fichier dans le répertoire courant." alt="" coords="371,559,439,584"/>
+<area shape="poly" id="edge42_Node000001_Node000028" title=" " alt="" coords="51,658,81,625,102,608,126,594,186,575,249,565,308,563,358,564,358,569,308,568,249,571,187,580,128,599,105,612,85,629,55,662"/>
+<area shape="rect" id="Node000029" href="$arborescence_8c.html#af0987e7e9562defd988e5df8306f1c31" title="Supprime un dossier dans le répertoire courant." alt="" coords="169,609,254,635"/>
+<area shape="poly" id="edge44_Node000001_Node000029" title=" " alt="" coords="78,659,155,636,156,641,79,664"/>
+<area shape="rect" id="Node000030" href="$gestion__fichier_8c.html#af950d60376ca05c765ba6531d82a0408" title="cette fonction affche qui a le meilleur temps concernant une mission entrer en argument" alt="" coords="146,1160,277,1185"/>
+<area shape="poly" id="edge47_Node000001_Node000030" title=" " alt="" coords="46,685,52,777,65,916,76,988,90,1055,107,1110,129,1147,136,1154,133,1158,125,1150,102,1112,85,1057,70,989,60,916,46,777,41,686"/>
+<area shape="rect" id="Node000031" href="$affichage_8c.html#a448d55968909ab0f809276a961b2a1f6" title="Fonction pour nettoyer l&#39;écran." alt="" coords="159,1209,263,1235"/>
+<area shape="poly" id="edge48_Node000001_Node000031" title=" " alt="" coords="46,685,50,785,62,939,73,1020,87,1094,105,1155,116,1179,129,1196,148,1210,145,1214,125,1200,112,1181,100,1157,82,1095,67,1020,57,939,45,785,41,685"/>
+<area shape="rect" id="Node000032" href="$gestion__fichier_8c.html#a4d4769171b90c8209605cc8cef0a7e7d" title=" " alt="" coords="166,1259,257,1284"/>
+<area shape="poly" id="edge49_Node000001_Node000032" title=" " alt="" coords="46,685,48,793,59,962,69,1051,84,1133,104,1200,115,1226,129,1246,140,1255,154,1262,152,1267,137,1260,125,1249,111,1229,99,1202,79,1134,64,1052,54,963,43,793,41,686"/>
+<area shape="rect" id="Node000003" href="$arborescence_8c.html#a32c5992992d3a7928fa34a2ffc73eb63" title="Affiche les fichiers ayant le nombre maximum d&#39;ouvertures." alt="" coords="375,29,435,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="253,40,362,40,362,45,253,46"/>
+<area shape="rect" id="Node000004" href="$arborescence_8c.html#ab7ffc2f5e970bfdd99098fabedc6e3e9" title="Recherche le nombre maximum d&#39;ouvertures parmi les fichiers dans l&#39;arborescence." alt="" coords="344,103,467,128"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="254,51,297,65,366,94,364,99,295,70,252,56"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="377,31,371,21,374,11,386,5,405,3,428,6,438,15,435,19,426,11,405,8,388,10,379,15,377,20,382,28"/>
+<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="377,104,371,94,374,85,386,78,405,76,428,79,438,88,435,92,426,84,405,81,388,83,379,88,377,94,382,101"/>
+<area shape="poly" id="edge7_Node000005_Node000005" title=" " alt="" coords="183,105,177,96,180,86,192,80,211,77,234,81,244,89,241,93,232,86,211,83,194,85,185,89,183,95,188,102"/>
+<area shape="poly" id="edge13_Node000010_Node000007" title=" " alt="" coords="434,708,465,689,515,641,553,594,557,597,519,644,468,693,437,713"/>
+<area shape="poly" id="edge15_Node000011_Node000007" title=" " alt="" coords="454,234,469,245,497,281,519,321,537,363,550,405,567,485,573,545,568,545,561,485,545,407,532,365,514,323,492,284,465,249,450,238"/>
+<area shape="poly" id="edge17_Node000012_Node000007" title=" " alt="" coords="244,776,291,780,348,780,409,769,438,759,465,745,501,713,529,673,549,631,562,596,567,598,554,634,534,675,505,716,468,750,440,764,410,774,349,785,291,786,244,782"/>
+<area shape="poly" id="edge18_Node000012_Node000013" title=" " alt="" coords="245,780,350,808,348,813,244,785"/>
+<area shape="poly" id="edge21_Node000013_Node000007" title=" " alt="" coords="438,810,465,791,501,743,530,689,550,638,563,597,568,599,555,640,534,692,506,746,469,795,441,814"/>
+<area shape="rect" id="Node000014" href="$arborescence_8c.html#a52b4732bb5e50a17cef0f89051acd365" title="Ajoute un enfant (fichier ou dossier) à un dossier parent." alt="" coords="515,836,632,861"/>
+<area shape="poly" id="edge19_Node000013_Node000014" title=" " alt="" coords="449,828,501,836,501,841,448,833"/>
+<area shape="rect" id="Node000015" href="$arborescence_8c.html#a6c0724abc3ecc3bf67434ffcab617868" title="Crée un nouveau fichier ou dossier." alt="" coords="680,836,735,861"/>
+<area shape="poly" id="edge20_Node000014_Node000015" title=" " alt="" coords="632,846,666,846,666,851,632,851"/>
+<area shape="poly" id="edge24_Node000017_Node000006" title=" " alt="" coords="259,164,346,165,346,171,259,169"/>
+<area shape="poly" id="edge26_Node000018_Node000007" title=" " alt="" coords="437,277,454,284,468,295,493,324,514,357,544,427,562,493,572,545,566,545,557,494,539,428,509,359,489,327,465,299,451,288,435,282"/>
+<area shape="poly" id="edge28_Node000019_Node000007" title=" " alt="" coords="441,333,469,352,506,400,534,453,555,504,568,545,563,546,550,506,529,456,501,403,465,356,438,337"/>
+<area shape="poly" id="edge30_Node000020_Node000007" title=" " alt="" coords="443,483,468,494,510,521,547,548,544,552,507,525,465,499,440,487"/>
+<area shape="poly" id="edge32_Node000021_Node000007" title=" " alt="" coords="446,531,521,553,520,559,445,536"/>
+<area shape="poly" id="edge36_Node000023_Node000007" title=" " alt="" coords="448,860,465,848,489,819,509,786,539,716,557,649,566,597,572,598,563,650,544,718,514,789,493,822,468,852,451,864"/>
+<area shape="poly" id="edge35_Node000023_Node000014" title=" " alt="" coords="449,865,501,857,501,862,450,870"/>
+<area shape="poly" id="edge38_Node000024_Node000007" title=" " alt="" coords="242,404,288,389,346,377,377,375,409,377,439,383,468,396,488,410,506,427,535,467,555,509,568,545,563,547,550,511,530,470,502,431,485,414,465,400,438,389,408,382,377,381,347,383,289,394,244,409"/>
+<area shape="rect" id="Node000025" href="$arborescence_8c.html#a7edea57482ac8f7f759439e0d6731332" title="Déplace un fichier ou dossier d&#39;une source vers une destination." alt="" coords="366,411,445,436"/>
+<area shape="poly" id="edge39_Node000024_Node000025" title=" " alt="" coords="247,417,352,420,352,425,247,423"/>
+<area shape="rect" id="Node000027" href="$prompt_8c.html#ac778e6a7210b6ab52bc8d395d0a63145" title="trouver le chemin du repertoire actuelle et puis l&#39;inserer dans emplacement" alt="" coords="367,1111,444,1136"/>
+<area shape="poly" id="edge41_Node000026_Node000027" title=" " alt="" coords="250,1121,352,1121,352,1126,250,1126"/>
+<area shape="poly" id="edge43_Node000028_Node000007" title=" " alt="" coords="440,569,520,569,520,574,440,574"/>
+<area shape="poly" id="edge45_Node000029_Node000007" title=" " alt="" coords="254,617,351,608,466,593,520,582,521,587,467,598,352,613,254,622"/>
+</map>

@@ -1,0 +1,22 @@
+commande	:	echo
+
+description	:	afficher une chaine de caractere
+
+utilisation	:	echo [option]... [chaine_de_caractere]...
+
+option existant
+
+       -n	Ne pas faire une nouvelle ligne
+
+       -e	activer les échappements avec les anti-slash
+
+       -E	désactiver les échappements avec les anti-slash
+
+	--> quelques accompagnements de l'option '-e' :
+		\\     backslash
+
+		\n     new line
+
+		\t     horizontal tab
+
+

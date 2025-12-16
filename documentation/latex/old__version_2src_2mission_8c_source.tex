@@ -1,0 +1,1209 @@
+\doxysection{mission.\+c}
+\hypertarget{old__version_2src_2mission_8c_source}{}\label{old__version_2src_2mission_8c_source}\index{old\_version/src/mission.c@{old\_version/src/mission.c}}
+\mbox{\hyperlink{old__version_2src_2mission_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <ncurses.h>}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <locale.h>}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <signal.h>}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <sys/wait.h>}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}../include/sécure.h"{}}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}../include/affichage.h"{}}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}../include/gestion\_fichier.h"{}}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}../include/prompt.h"{}}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}../include/mission.h"{}}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}../include/menu.h"{}}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00026}\mbox{\hyperlink{old__version_2src_2mission_8c_a6442184118f9afe40f6f6991c86f8a09}{00026}}\ \textcolor{preprocessor}{\#define\ LIGNE\ 100}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00034}\mbox{\hyperlink{include_2mission_8h_af990e85f5156387409f04d308e0bca72}{00034}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_af990e85f5156387409f04d308e0bca72}{map\_initialisation}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00036}00036\ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *courant\ =\ NULL\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00038}00038\ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Poste\_Commandement"{}}\ ,\ 1)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00039}00039\ \ \ \ \ \ \ \ \ courant=\mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine,racine,\textcolor{stringliteral}{"{}Poste\_Commandement"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}cartes\_stratégiques"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}transmission"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}journal\_missions"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Quartier\_Généraux"{}}\ ,\ 1)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00044}00044\ \ \ \ \ \ \ \ \ courant=\mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine,racine,\textcolor{stringliteral}{"{}Quartier\_Généraux"{}}\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}bureau\_du\_général"{}}\ ,\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}salle\_briefing"{}}\ ,\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}système\_sécurité"{}}\ ,\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,\ racine\ ,\ \textcolor{stringliteral}{"{}Hangar"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00049}00049\ \ \ \ \ \ \ \ \ courant=\mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine,racine,\textcolor{stringliteral}{"{}Hangar"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}mechas"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}vehicules\_blindes"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00052}00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}carburant"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Caserne"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00054}00054\ \ \ \ \ \ \ \ \ courant=\mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine,racine,\textcolor{stringliteral}{"{}Caserne"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00055}00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}dortoirs"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}infirmerie"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00057}00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}armurerie"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Laboratoire"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00059}00059\ \ \ \ \ \ \ \ \ courant=\mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine,racine,\textcolor{stringliteral}{"{}Laboratoire"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00060}00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}prototypes"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}biogenierie"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00062}00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}archives\_secretes"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Zone\_Entrainement"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00064}00064\ \ \ \ \ \ \ \ \ courant=\mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine,racine,\textcolor{stringliteral}{"{}Zone\_Entrainement"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00065}00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}tir"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}combats"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00067}00067\ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Bunker\_Souterrain"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00068}00068\ \ \ \ \ \ \ \ \ courant=\mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine,racine,\textcolor{stringliteral}{"{}Bunker\_Souterrain"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00069}00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}salle\_serveurs"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00070}00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}chambre\_de\_contrôle"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00071}00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine,courant,\textcolor{stringliteral}{"{}zone\_niveau"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00072}00072\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00074}00074\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00082}\mbox{\hyperlink{include_2mission_8h_a6776c9e4b7e2bbcc3af33ceb1a939a2f}{00082}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_a6776c9e4b7e2bbcc3af33ceb1a939a2f}{load\_struct\_mission}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00083}00083\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00084}00084\ \ \ \ FILE\ *save\ =\ NULL\ ,\ *tiavina\ =\ NULL\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00085}00085\ \ \ \ \textcolor{keywordtype}{char}\ chemin\_level[30]\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00086}00086\ \ \ \ \textcolor{keywordtype}{char}\ chemin\_mission[30]\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00088}00088\ \ \ \ save\ =\ fopen(\ \textcolor{stringliteral}{"{}../save/temp.txt"{}}\ ,\ \textcolor{stringliteral}{"{}r"{}});\ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00089}00089\ \ \ \ \ \ \ fscanf(\ save\ ,\ \textcolor{stringliteral}{"{}\%s"{}}\ ,\ chemin\_level\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00090}00090\ \ \ \ \ \ \ fscanf(\ save\ ,\ \textcolor{stringliteral}{"{}\%s"{}}\ ,\ chemin\_mission\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00091}00091\ \ \ \ fclose(save);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00093}00093\ \ \ \ save\ =\ fopen(\ chemin\_mission\ ,\ \textcolor{stringliteral}{"{}rb"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00094}00094\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ save\ ==\ NULL\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00095}00095\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00096}00096\ \ \ \ \ \ \ \ \ \ return\ \ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00097}00097\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00098}00098\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00099}00099\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00100}00100\ \ \ \ \ \ \ \ \ \ fread(\ mission\ ,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structMission}{Mission}})\ ,\ \mbox{\hyperlink{include_2mission_8h_aec500f88025cfe421fd29ce2c4dd2e4f}{NOMBRE\_MISSION}}\ ,\ save\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00101}00101\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00102}00102\ \ \ \ fclose(\ save\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00104}00104\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00105}00105\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00113}\mbox{\hyperlink{include_2mission_8h_ab9e87cde0476b22876f8bd6ba3f89671}{00113}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_ab9e87cde0476b22876f8bd6ba3f89671}{sauvegarde\_dernier\_partie}}(\ \mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \textcolor{keywordtype}{int}\ rang\_mission\_actuel\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00114}00114\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00115}00115\ \ \ \ FILE\ *save\ =\ NULL\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00116}00116\ \ \ \ \textcolor{keywordtype}{char}\ chemin\_level[30]\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00117}00117\ \ \ \ \textcolor{keywordtype}{char}\ chemin\_mission[30]\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00119}00119\ \ \ \ \textcolor{comment}{//\ Sauvegarde\ du\ dernier\ partie\ términer\ pour\ que\ le\ joueur\ puisse\ continuer\ la\ où\ il\ etait\ la\ derniere\ fois}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00121}00121\ \ \ \ save\ =\ fopen(\ \textcolor{stringliteral}{"{}../save/temp.txt"{}}\ ,\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00122}00122\ \ \ \ \textcolor{keywordflow}{if}(\ save\ ==\ NULL\ )\ \textcolor{comment}{//\ Si\ le\ fichier\ est\ introuvable}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00123}00123\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00124}00124\ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erreur\ :\ fichier\ temp.txt\ introuvable\(\backslash\)n"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00125}00125\ \ \ \ \ \ \ exit(0)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00126}00126\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00127}00127\ \ \ \ fscanf(\ save\ ,\ \textcolor{stringliteral}{"{}\%s"{}}\ ,\ chemin\_level\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00128}00128\ \ \ \ fscanf(\ save\ ,\ \textcolor{stringliteral}{"{}\%s"{}}\ ,\ chemin\_mission\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00129}00129\ \ \ \ fclose(save);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00130}00130\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00131}00131\ \ \ \ save\ =\ fopen(\ chemin\_level\ ,\ \textcolor{stringliteral}{"{}w"{}}\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00132}00132\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00133}00133\ \ \ \ \textcolor{keywordflow}{if}(\ save\ ==\ NULL\ )\ \textcolor{comment}{//\ Si\ le\ fichier\ est\ introuvable}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00134}00134\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00135}00135\ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erreur\ :\ fichier\ level.txt\ introuvable\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00136}00136\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00137}00137\ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00138}00138\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00139}00139\ \ \ \ \ \ \ fprintf(save\ ,\ \textcolor{stringliteral}{"{}\%d"{}},\ rang\_mission\_actuel)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00140}00140\ \ \ \ \ \ \ fclose(save)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00141}00141\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00143}00143\ \ \ \ \textcolor{comment}{//\ Sauvegarde\ du\ status\ mission\ dans\ le\ fichier\ pour\ la\ fonction\ charger\_partie}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00145}00145\ \ \ \ save\ =\ fopen(\ chemin\_mission\ ,\ \textcolor{stringliteral}{"{}wb"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00147}00147\ \ \ \ \textcolor{keywordflow}{if}(save\ ==\ NULL)\ \textcolor{comment}{//\ Si\ le\ fichier\ est\ introuvable}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00148}00148\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00149}00149\ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erreur\ :\ fichier\ level.txt\ introuvable\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00150}00150\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00151}00151\ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00152}00152\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00153}00153\ \ \ \ \ \ \ fwrite(mission\ ,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structMission}{Mission}})\ ,\ \mbox{\hyperlink{include_2mission_8h_aec500f88025cfe421fd29ce2c4dd2e4f}{NOMBRE\_MISSION}}\ ,\ save\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00154}00154\ \ \ \ \ \ \ fclose(save);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00155}00155\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00157}00157\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00159}00159\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00167}\mbox{\hyperlink{old__version_2src_2mission_8c_a05238cf0bfb33a0098cdae8685b48240}{00167}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_a05238cf0bfb33a0098cdae8685b48240}{réinitialisation\_mission}}(\mbox{\hyperlink{structMission}{Mission}}\ mission[])}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00168}00168\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00169}00169\ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00170}00170\ \ \ \ FILE\ *save\ =\ NULL;\ \textcolor{comment}{//\ fichier\ de\ sauvegarde\ du\ dernière\ mission}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00171}00171\ \ \ \ \textcolor{keywordtype}{char}\ chemin\_level[30]\ =\ \{\textcolor{stringliteral}{"{}"{}}\}\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00172}00172\ \ \ \ \textcolor{keywordtype}{char}\ chemin\_mission[30]\ =\ \{\textcolor{stringliteral}{"{}"{}}\}\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00173}00173\ \ \ \ \textcolor{keywordtype}{char}\ chemin\_point[30]\ =\ \{\textcolor{stringliteral}{"{}"{}}\}\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00174}00174\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00175}00175\ \ \ \ \textcolor{comment}{//\ Reinitialisation\ du\ structure\ mission\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00177}00177\ \ \ \ \textcolor{keywordflow}{for}(\ i\ =\ 0\ ;\ i\ <\ \mbox{\hyperlink{include_2mission_8h_aec500f88025cfe421fd29ce2c4dd2e4f}{NOMBRE\_MISSION}}\ ;\ ++i\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00178}00178\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00179}00179\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00180}00180\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00181}00181\ \ \ \ \ \ \ \ \ \ mission[i].\mbox{\hyperlink{structMission_a8b775c979b158c38dde4618672d20990}{debloqué}}\ =\ 1\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00182}00182\ \ \ \ \ \ \ \ \ \ strcpy(mission[i].titre\ ,\ \textcolor{stringliteral}{"{}MISSION-\/1\ :\ PWD"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00183}00183\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00184}00184\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00185}00185\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00186}00186\ \ \ \ \ \ \ \ \ \ mission[i].\mbox{\hyperlink{structMission_a8b775c979b158c38dde4618672d20990}{debloqué}}\ =\ 0\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00187}00187\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00188}00188\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00189}00189\ \ \ \ \ \ \ mission[i].\mbox{\hyperlink{structMission_aa09095dbae31fbc672b3c03544c48105}{terminé}}\ =\ 0\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00190}00190\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00192}00192\ \ \ \ save\ =\ fopen(\ \textcolor{stringliteral}{"{}../save/temp.txt"{}}\ ,\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00193}00193\ \ \ \ fscanf(\ save\ ,\ \textcolor{stringliteral}{"{}\%s"{}}\ ,\ chemin\_level\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00194}00194\ \ \ \ fscanf(\ save\ ,\ \textcolor{stringliteral}{"{}\%s"{}}\ ,\ chemin\_mission\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00195}00195\ \ \ \ fscanf(\ save\ ,\ \textcolor{stringliteral}{"{}\%s"{}}\ ,\ chemin\_point\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00196}00196\ \ \ \ fclose(save);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00198}00198\ \ \ \ \textcolor{comment}{//\ Sauvegarde\ du\ status\ mission\ dans\ le\ fichier\ pour\ la\ fonction\ charger\_partie}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00199}00199\ \ \ \ save\ =\ fopen(\ chemin\_mission\ ,\ \textcolor{stringliteral}{"{}wb"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00200}00200\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!save)\ \textcolor{comment}{//\ Si\ le\ fichier\ est\ introuvable}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00201}00201\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00202}00202\ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erreur\ :\ fichier\ mission.bin\ introuvable\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00203}00203\ \ \ \ \ \ \ \ \ \ exit(0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00204}00204\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00205}00205\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00206}00206\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00207}00207\ \ \ \ \ \ \ \ \ \ fwrite(mission\ ,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structMission}{Mission}})\ ,\ \mbox{\hyperlink{include_2mission_8h_aec500f88025cfe421fd29ce2c4dd2e4f}{NOMBRE\_MISSION}}\ ,\ save\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00208}00208\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00209}00209\ \ \ \ fclose(save);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00210}00210\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00211}00211\ \ \ \ \textcolor{comment}{//\ Reinitialiser\ le\ rang\ du\ mission\ à\ 0}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00212}00212\ \ \ \ save\ =\ fopen(\ chemin\_level\ ,\ \textcolor{stringliteral}{"{}w"{}}\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00213}00213\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!save)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00214}00214\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00215}00215\ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erreur\ :\ fichier\ level.txt\ introuvable\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00216}00216\ \ \ \ \ \ \ \ \ \ exit(0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00217}00217\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00218}00218\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00219}00219\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00220}00220\ \ \ \ \ \ \ \ \ \ fprintf(save,\ \textcolor{stringliteral}{"{}\%d"{}},\ 0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00221}00221\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00222}00222\ \ \ \ fclose(save);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00223}00223\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00224}00224\ \ \ \ \textcolor{comment}{//\ Reinitialisation\ du\ point\ à\ 0}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00225}00225\ \ \ \ save\ =\ fopen(\ chemin\_point\ ,\ \textcolor{stringliteral}{"{}w"{}}\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00226}00226\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!save)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00227}00227\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00228}00228\ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erreur\ :\ fichier\ level.txt\ introuvable\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00229}00229\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00230}00230\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00231}00231\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00232}00232\ \ \ \ \ \ \ \ \ \ fprintf(save,\ \textcolor{stringliteral}{"{}\%d"{}},\ 0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00233}00233\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00234}00234\ \ \ \ fclose(save);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00236}00236\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00238}00238\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00248}\mbox{\hyperlink{include_2mission_8h_adbaaaaf0ae83783163a1eedabd8789af}{00248}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af}{verification\_reussite}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine\ ,\ \textcolor{keywordtype}{bool}\ reuissite\ ,\ \textcolor{keywordtype}{int}\ num\_mission\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00249}00249\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00250}00250\ \ \ \ \textcolor{comment}{//\ Ecriture\ de\ la\ rapport\ apropos\ du\ mission}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00251}00251\ \ \ \ \ \textcolor{comment}{//\ \ rapport\_mission(num\_mission\ ,\ reuissite)\ ;}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00252}00252\ \ \ \ \textcolor{keywordflow}{if}(reuissite)\ \textcolor{comment}{//\ mission\ reussie\ ecrit\ félicitation}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00253}00253\ \ \ \ \{\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00254}00254\ \ \ \ \ \ \ \textcolor{comment}{//\ Changement\ statu\ mission\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00255}00255\ \ \ \ \ \ \ mission[num\_mission\ -\/\ 1\ ].\mbox{\hyperlink{structMission_aa09095dbae31fbc672b3c03544c48105}{terminé}}\ =\ 1\ ;\ \ \textcolor{comment}{//\ Mission\ actuel\ términé}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00256}00256\ \ \ \ \ \ \ mission[num\_mission\ ].\mbox{\hyperlink{structMission_a8b775c979b158c38dde4618672d20990}{debloqué}}\ =\ 1\ ;\ \textcolor{comment}{//\ Mission\ suivant\ débloqué}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00257}00257\ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_ab9e87cde0476b22876f8bd6ba3f89671}{sauvegarde\_dernier\_partie}}(\ mission\ ,\ num\_mission\ +\ 1);\ \textcolor{comment}{//\ Sauvegarde\ du\ dernier\ rang}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00258}00258\ \ \ \ \ \ \ \mbox{\hyperlink{include_2prompt_8h_aa99f29d159bdefecc6f70f00361524d6}{increment\_score}}(mission[num\_mission].point);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00261}00261\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{include_2affichage_8h_aec5388c7f9e8520721ea945ac8c1ebfd}{felicitation}}())\ \textcolor{comment}{//\ Si\ le\ joueur\ souhaite\ continuer\ la\ partie}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00262}00262\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2menu_8h_a3f8bf4a7d071108da45a49c477f5fd1b}{load\_game}}(mission\ ,\ num\_mission\ +\ 1\ ,\ racine\ )\ ;\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00264}00264\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00265}00265\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ Si\ le\ joueur\ veut\ retourner\ au\ menu\ principal}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00266}00266\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2menu_8h_a0f8a0c90aa152f4542ce093e8d914c08}{menu\_pricipale}}(\ mission\ ,\ racine\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00268}00268\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00269}00269\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00270}00270\ \ \ \ \textcolor{keywordflow}{else}\ \ \textcolor{comment}{//\ Mission\ Faild}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00271}00271\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00272}00272\ \ \ \ \ \ \ \mbox{\hyperlink{include_2prompt_8h_a27629766e8e7b540919e4090001e7219}{decrement\_score}}(1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00273}00273\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{include_2affichage_8h_ae21a5950a0de87f29d2be52ff4c120ff}{echec}}())\ \textcolor{comment}{//\ Si\ le\ joueur\ veut\ recommencer\ le\ mission}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00274}00274\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2menu_8h_a3f8bf4a7d071108da45a49c477f5fd1b}{load\_game}}(\ mission\ ,\ num\_mission\ ,\ racine\ );\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00276}00276\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00277}00277\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \ \ \ \ \ \ \textcolor{comment}{//\ S'il\ veut\ retourner\ au\ menu\ principale}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00278}00278\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2menu_8h_a0f8a0c90aa152f4542ce093e8d914c08}{menu\_pricipale}}(\ mission\ ,\ racine\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00280}00280\ \ \ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00281}00281\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00282}00282\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00283}00283\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00284}00284\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00291}\mbox{\hyperlink{include_2mission_8h_a060574dcb2ecd963a2e4e0af59808810}{00291}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_a060574dcb2ecd963a2e4e0af59808810}{intro}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00292}00292\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00293}00293\ \ \ \ setlocale(LC\_ALL,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00294}00294\ \ \ \ \mbox{\hyperlink{old__version_2include_2affichage_8h_a0ede45a3b41cb6bde728e8608ee0876c}{affiche\_fichier\_tableau\_curse}}(\textcolor{stringliteral}{"{}BIEVENUE\ SUR\ BASH\ COMMANDO"{}},\ \textcolor{stringliteral}{"{}../data/intro.txt"{}});\ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00295}00295\ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00296}00296\ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_ac3914327e4aa282b233f138bbf3912bf}{mission\_1}}(mission\ ,\ racine);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00297}00297\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00298}00298\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00300}00300\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00311}\mbox{\hyperlink{include_2mission_8h_ade573c5eee8265efcab5053e371befe1}{00311}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(\mbox{\hyperlink{structfichier}{fichier}}\ *racine\ ,\ \textcolor{keywordtype}{char}\ *commande\ ,\ \textcolor{keywordtype}{char}\ *titre\ ,\ \textcolor{keywordtype}{char}\ *chemin\ ,\ \textcolor{keywordtype}{char}\ *rep\_courant\ \ ,\ \mbox{\hyperlink{structMission}{Mission}}\ *miss\_actuelle\ ,\ \textcolor{keywordtype}{int}\ rang\_mission\ ,\ \textcolor{keywordtype}{int}\ autoverifi)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00312}00312\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00313}00313\ \ \ \ \textcolor{keywordtype}{bool}\ sortir\ =\ false\ ,\ reussite\ \ =\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00314}00314\ \ \ \ \textcolor{keywordtype}{int}\ nbMot\ ,\ i\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00315}00315\ \ \ \ clock\_t\ debut\ ,\ fin;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00316}00316\ \ \ \ \textcolor{keywordtype}{double}\ temps\_seconde;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00317}00317\ \ \ \ \textcolor{keywordtype}{char}\ **\mbox{\hyperlink{structligne}{ligne}}\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00318}00318\ \ \ \ \textcolor{keywordtype}{char}\ *temps\_ecoule\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00319}00319\ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *tmp\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00320}00320\ \ \ \ \textcolor{keywordtype}{char}\ \ *ligne\_complet\ =\ calloc(\ \mbox{\hyperlink{old__version_2src_2mission_8c_a6442184118f9afe40f6f6991c86f8a09}{LIGNE}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00321}00321\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00322}00322\ \ \ \ tmp\ =\ racine\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00323}00323\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00324}00324\ \ \ \ \mbox{\hyperlink{structligne}{ligne}}\ =\ calloc(\ \mbox{\hyperlink{old__version_2src_2mission_8c_a6442184118f9afe40f6f6991c86f8a09}{LIGNE}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}\ *));}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00325}00325\ \ \ \ temps\_ecoule\ =\ calloc(\ \mbox{\hyperlink{old__version_2src_2mission_8c_a6442184118f9afe40f6f6991c86f8a09}{LIGNE}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00326}00326\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00327}00327\ \ \ \ \textcolor{keywordflow}{for}(nbMot=0\ ;\ nbMot<\mbox{\hyperlink{old__version_2src_2mission_8c_a6442184118f9afe40f6f6991c86f8a09}{LIGNE}}\ ;\ nbMot++)\textcolor{comment}{//\ atao\ anaty\ tableau\ 2D\ ilay\ ligne\ amzay\ mora\ ny\ ahafantarana\ ny\ argument\ ex\ :\ ls\ -\/l\ -\/-\/>\ ligne[0]="{}ls"{}\ ;\ ligne[1]="{}-\/l"{}\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00328}00328\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00329}00329\ \ \ \ \ \ \ \mbox{\hyperlink{structligne}{ligne}}[nbMot]\ =\ calloc(\ \mbox{\hyperlink{include_2prompt_8h_ae21f7b47b9a3f60e7ae2a76eeeb58150}{MOT}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00330}00330\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00331}00331\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00332}00332\ \ \ \ debut\ =\ clock();}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00333}00333\ \ \ \ \textcolor{keywordflow}{while}(\ !(sortir)\ )\ \textcolor{comment}{//\ faire\ une\ prompt\ tant\ que\ la\ commande\ sortir\ est\ false}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00334}00334\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00335}00335\ \ \ \ \ \ \ \mbox{\hyperlink{include_2prompt_8h_a8224c0f5c6caf14e2630ab7bd877fc07}{affiche\_prompt}}(tmp);\ \textcolor{comment}{//\ affiche\ une\ prompt\ avec\ rep\_actuel\ :\ fichier\ *tmp}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00336}00336\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(nbMot=0\ ;\ nbMot<\mbox{\hyperlink{old__version_2src_2mission_8c_a6442184118f9afe40f6f6991c86f8a09}{LIGNE}}\ ;\ nbMot++)\textcolor{comment}{//\ atao\ anaty\ tableau\ 2D\ ilay\ ligne\ amzay\ mora\ ny\ ahafantarana\ ny\ argument\ ex\ :\ ls\ -\/l\ -\/-\/>\ ligne[0]="{}ls"{}\ ;\ ligne[1]="{}-\/l"{}\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00337}00337\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structligne}{ligne}}[nbMot][0]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00339}00339\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00340}00340\ \ \ \ \ \ \ nbMot\ =\ \mbox{\hyperlink{include_2prompt_8h_a1bf8c82ba6228acf03ee3fc9d9ab2315}{prend\_ligne\_command}}(\mbox{\hyperlink{structligne}{ligne}}\ ,\ \mbox{\hyperlink{old__version_2src_2mission_8c_a6442184118f9afe40f6f6991c86f8a09}{LIGNE}},\ tmp);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00341}00341\ \ \ \ \ \ \ \textcolor{comment}{//\ Recuperation\ du\ repertoire\ courant}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00342}00342\ \ \ \ \ \ \ \mbox{\hyperlink{include_2prompt_8h_ac778e6a7210b6ab52bc8d395d0a63145}{get\_pwd}}(\ tmp\ ,\ rep\_courant\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00343}00343\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00344}00344\ \ \ \ \ \ \ ligne\_complet[0]=\textcolor{charliteral}{'\(\backslash\)0'}\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00345}00345\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(strcmp(\mbox{\hyperlink{structligne}{ligne}}[0]\ ,\ commande\ )\ ==\ 0)\ \textcolor{comment}{//\ la\ mission\ est\ reussi\ si\ l'utilisateur\ ecrit\ la\ commande\ voulue}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00346}00346\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00347}00347\ \ \ \ \ \ \ \ \ \ reussite\ =\ true\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00348}00348\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00349}00349\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00350}00350\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(i=0\ ;\ i<nbMot\ ;\ i++)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ strcat(ligne\_complet\ ,\ \mbox{\hyperlink{structligne}{ligne}}[i]);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i\ !=\ (nbMot-\/1))}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strcat(ligne\_complet\ ,\ \textcolor{stringliteral}{"{}\ "{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(strcmp(ligne\_complet\ ,\ commande)\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ reussite\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00363}00363\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00364}00364\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00365}00365\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ strcmp(\mbox{\hyperlink{structligne}{ligne}}[0]\ ,\ \textcolor{stringliteral}{"{}mission"{}}\ )\ ==\ 0\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00366}00366\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\ titre\ ,\ chemin\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00368}00368\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00369}00369\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(strcmp(\mbox{\hyperlink{structligne}{ligne}}[0]\ ,\ \textcolor{stringliteral}{"{}indice"{}}\ )\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00370}00370\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(nbMot\ !=\ 1)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}(EE\ :\ Pas\ d'argument\ autorisee\ !\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2gestion__fichier_8h_a65ff929a2d03935078e95374dbf120e2}{voir\_indice}}(miss\_actuelle)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00379}00379\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00380}00380\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (strcmp(\mbox{\hyperlink{structligne}{ligne}}[0]\ ,\ \textcolor{stringliteral}{"{}stat"{}}\ )\ ==\ 0)\ \textcolor{comment}{//\ Si\ l'user\ veut\ checker\ le\ status\ de\ la\ mission}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00381}00381\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(autoverifi\ ==\ 1)\ \textcolor{comment}{//\ Si\ l'auto\ verification\ est\ activée}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(reussite\ ==\ \textcolor{keyword}{true}\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Mission\ terminé\ soldat\ !\(\backslash\)nVous\ pouvez\ taper\ sur\ exit\ !\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Mission\ non\ terminé\ soldat\ !\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ \mbox{\hyperlink{old__version_2src_2mission_8c_a5519f0d20d640f61e785c215524a3a32}{verification\_mission}}(miss\_actuelle\ ,\ rang\_mission\ ,\ racine\ ,\ rep\_courant)\ ==\ \textcolor{keyword}{true}\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Mission\ terminé\ soldat\ !\(\backslash\)nVous\ pouvez\ taper\ sur\ exit\ !\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Mission\ non\ terminé\ soldat\ !\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00404}00404\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00405}00405\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00406}00406\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00407}00407\ \ \ \ \ \ \ \ \ \ tmp\ =\ \mbox{\hyperlink{include_2prompt_8h_a80c6641adc25aa31aed09e7338f911d7}{execute}}(\mbox{\hyperlink{structligne}{ligne}}\ ,\ tmp\ ,\ nbMot\ );\ \textcolor{comment}{//\ return\ NULL\ si\ la\ ligne\ ecrit\ est\ "{}exit"{}}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00408}00408\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00409}00409\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00410}00410\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tmp\ ==\ NULL\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00411}00411\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00413}00413\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00414}00414\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00415}00415\ \ \ \ fin\ =\ clock();}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00416}00416\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00417}00417\ \ \ \ temps\_seconde\ =\ (double)\ (fin\ -\/\ debut);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00418}00418\ \ \ \ temps\_seconde\ /=\ CLOCKS\_PER\_SEC;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00419}00419\ \ \ \ sprintf(temps\_ecoule\ ,\ \textcolor{stringliteral}{"{}TEMPS\_DERNIER\_PROMPT=\%lf"{}}\ ,\ temps\_seconde);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00420}00420\ \ \ \ putenv(temps\_ecoule);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00421}00421\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00422}00422\ \ \ \ free(ligne\_complet);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00423}00423\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00424}00424\ \ \ \ \textcolor{keywordflow}{return}\ (reussite);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00425}00425\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00426}00426\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00427}00427\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00428}00428\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00435}\mbox{\hyperlink{include_2mission_8h_ac3914327e4aa282b233f138bbf3912bf}{00435}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_ac3914327e4aa282b233f138bbf3912bf}{mission\_1}}(\ \mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine\ )\ \textcolor{comment}{//\ Afficher\ le\ répertoire\ courant}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00436}00436\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00437}00437\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00438}00438\ \ \ \ \textcolor{keywordtype}{bool}\ reussite\ =\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00439}00439\ \ \ \ \textcolor{keywordtype}{char}\ *courant\ =\ calloc(\mbox{\hyperlink{include_2prompt_8h_ae21f7b47b9a3f60e7ae2a76eeeb58150}{MOT}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}))\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00440}00440\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00441}00441\ \ \ \ mission[1].\mbox{\hyperlink{structMission_a2dee8b7fcecc7c2d190e9304b43ea886}{point}}\ =\ 0\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00442}00442\ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00443}00443\ \ \ \ \textcolor{comment}{//\ affiche\_fichier\_tableau\_curse("{}MISSION\ 1"{},\ "{}../data/mission\_1.txt"{});}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00444}00444\ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\ \textcolor{stringliteral}{"{}MISSION\ 1"{}}\ ,\ \textcolor{stringliteral}{"{}../data/pwd.txt"{}}\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00445}00445\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00446}00446\ \ \ \ reussite\ =\ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(racine\ ,\ \textcolor{stringliteral}{"{}pwd"{}}\ ,\ \textcolor{stringliteral}{"{}MISSION\ 1"{}}\ ,\ \textcolor{stringliteral}{"{}../data/pwd.txt"{}}\ ,\ courant\ ,\ (mission+1)\ ,\ 1\ ,\ 1\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00447}00447\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00448}00448\ \ \ \ \textcolor{keywordflow}{if}(reussite\ ==\ \textcolor{keyword}{true}\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00449}00449\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00450}00450\ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\ \textcolor{stringliteral}{"{}MISSION\ 1"{}}\ ,\ \textcolor{stringliteral}{"{}../data/cours\_1.txt"{}}\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00451}00451\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00452}00452\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00453}00453\ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af}{verification\_reussite}}(\ mission\ ,\ racine\ ,\ reussite\ ,\ 1\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00454}00454\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00455}00455\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00456}00456\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00457}00457\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00464}\mbox{\hyperlink{include_2mission_8h_ac3eb824d03b78b6e9e71124e50ca221b}{00464}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_ac3eb824d03b78b6e9e71124e50ca221b}{mission\_2}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00465}00465\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00466}00466\ \ \ \ \ \textcolor{keywordtype}{bool}\ reussite\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00467}00467\ \ \ \ \ \textcolor{keywordtype}{char}\ *courant\ =\ calloc(\mbox{\hyperlink{include_2prompt_8h_ae21f7b47b9a3f60e7ae2a76eeeb58150}{MOT}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00468}00468\ \ \ \ \ mission[2].\mbox{\hyperlink{structMission_a2dee8b7fcecc7c2d190e9304b43ea886}{point}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00469}00469\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00470}00470\ \ \ \ \ strcpy(mission[2].titre,\ \textcolor{stringliteral}{"{}MISSION-\/2\ :\ LS"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00471}00471\ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ 2"{}},\ \textcolor{stringliteral}{"{}../data/mission\_2.txt"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00472}00472\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00473}00473\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/\ FILS\ 1\ :\ Chrono\ -\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00474}00474\ \ \ \ \ pid\_t\ pid\_chrono\ =\ fork();}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00475}00475\ \ \ \ \ \textcolor{keywordflow}{if}(pid\_chrono\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00476}00476\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00477}00477\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ max\_sec\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00478}00478\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ max\_sec*10;\ ++i)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00479}00479\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00480}00480\ \ \ \ \ \ \ \ \ \ \ \ \ usleep(100000);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00481}00481\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00482}00482\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00483}00483\ \ \ \ \ \ \ \ \ \ exit(1);\ \textcolor{comment}{//\ code\ 1\ =\ temps\ écoulé}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00484}00484\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00485}00485\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00486}00486\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/\ FILS\ 2\ :\ Mission\ -\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00487}00487\ \ \ \ \ pid\_t\ pid\_mission\ =\ fork();}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00488}00488\ \ \ \ \ \textcolor{keywordflow}{if}(pid\_mission\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00489}00489\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00490}00490\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ exécute\ prompt\_mission\ dans\ un\ sous-\/fils}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00491}00491\ \ \ \ \ \ \ \ \ \ \ \ \ reussite\ =\ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(racine,\ \textcolor{stringliteral}{"{}ls"{}},\ \textcolor{stringliteral}{"{}MISSION\ 2"{}},\ \textcolor{stringliteral}{"{}../data/mission\_2.txt"{}},courant,\ (mission+2),\ 2,\ 1)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00492}00492\ \ \ \ \ \ \ \ \ \ \ \ \ exit(reussite\ ?\ 0\ :\ 2\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00493}00493\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00494}00494\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00495}00495\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/\ PÈRE\ :\ supervise\ fils\ chrono\ et\ fils\ mission\ -\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00496}00496\ \ \ \ \ \textcolor{keywordtype}{int}\ status;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00497}00497\ \ \ \ \ pid\_t\ fini;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00498}00498\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00499}00499\ \ \ \ \ \textcolor{keywordflow}{while}(1)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00500}00500\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00501}00501\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ vérifie\ si\ le\ fils\ mission\ a\ terminé}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00502}00502\ \ \ \ \ \ \ \ \ fini\ =\ waitpid(pid\_mission,\ \&status,\ WNOHANG);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00503}00503\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fini\ ==\ pid\_mission)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00504}00504\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00505}00505\ \ \ \ \ \ \ \ \ \ \ \ \ reussite\ =\ (WIFEXITED(status)\ \&\&\ WEXITSTATUS(status)\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00506}00506\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ tuer\ le\ chrono\ si\ la\ mission\ a\ fini}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00507}00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kill(pid\_chrono,\ SIGKILL);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00508}00508\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00509}00509\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00510}00510\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00511}00511\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ vérifie\ si\ le\ chrono\ a\ fini}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00512}00512\ \ \ \ \ \ \ \ \ fini\ =\ waitpid(pid\_chrono,\ \&status,\ WNOHANG);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00513}00513\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fini\ ==\ pid\_chrono)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00514}00514\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00515}00515\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ temps\ écoulé\ →\ tuer\ le\ fils\ mission}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00516}00516\ \ \ \ \ \ \ \ \ \ \ \ \ kill(pid\_mission,\ SIGKILL);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00517}00517\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}"{}}\ ,\ \textcolor{stringliteral}{"{}../data/vide"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00518}00518\ \ \ \ \ \ \ \ \ \ \ \ \ reussite\ =\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00519}00519\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00520}00520\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00521}00521\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00522}00522\ \ \ \ \ \ \ \ \ usleep(5000);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00523}00523\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00524}00524\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00525}00525\ \ \ \ \ \textcolor{comment}{//\ nettoyage\ des\ fils}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00526}00526\ \ \ \ \ waitpid(pid\_chrono,\ NULL,\ 0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00527}00527\ \ \ \ \ waitpid(pid\_mission,\ NULL,\ 0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00528}00528\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00529}00529\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/\ étape\ suivante\ si\ la\ mission\ réussie\ -\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00530}00530\ \ \ \ \ \textcolor{keywordflow}{if}(reussite)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00531}00531\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00532}00532\ \ \ \ \ \ \ \ \ reussite\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00533}00533\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ 2"{}},\ \textcolor{stringliteral}{"{}../data/mission\_2\_1.txt"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00534}00534\ \ \ \ \ \ \ \ \ reussite\ =\ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(racine,\ \textcolor{stringliteral}{"{}ls\ Quartier\_Généraux/"{}},\ \textcolor{stringliteral}{"{}MISSION\ 2"{}},\textcolor{stringliteral}{"{}../data/mission\_2\_1.txt"{}},\ courant,\ (mission+2),\ 2,\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00535}00535\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00536}00536\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00537}00537\ \ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af}{verification\_reussite}}(mission,\ racine,\ reussite,\ 2);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00538}00538\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00539}00539\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00540}00540\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00541}00541\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00550}\mbox{\hyperlink{include_2mission_8h_a5519f0d20d640f61e785c215524a3a32}{00550}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{old__version_2src_2mission_8c_a5519f0d20d640f61e785c215524a3a32}{verification\_mission}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \textcolor{keywordtype}{int}\ rang\_mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine\ ,\ \textcolor{keywordtype}{char}*\ courant)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00551}00551\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00552}00552\ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_courant\ =\ NULL\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00553}00553\ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_courant\_1\ =\ NULL\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00554}00554\ \ \ \ \textcolor{keywordtype}{char}\ chemin[]\ =\{\textcolor{stringliteral}{"{}Caserne/amurerie"{}}\};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00555}00555\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00556}00556\ \ \ \ \textcolor{keywordflow}{switch}\ (rang\_mission)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00557}00557\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00558}00558\ \ \ \ \textcolor{keywordflow}{case}\ 3\ :}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00559}00559\ \ \ \ \ \ \ \textcolor{comment}{//\ Verification\ si\ l'user\ est\ dans\ camp}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00560}00560\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00561}00561\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ strcmp(courant\ ,\ \textcolor{stringliteral}{"{}/AK-\/07/Zone\_Entrainement/combats/"{}})\ ==\ 0\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00562}00562\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00563}00563\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ true\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00564}00564\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00565}00565\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00566}00566\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00567}00567\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00568}00568\ \ \ \ \ \ \ \}\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00569}00569\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00570}00570\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00571}00571\ \ \ \ \textcolor{keywordflow}{case}\ 4\ :}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00572}00572\ \ \ \ \ \ \ \textcolor{comment}{//\ Verification\ si\ l'user\ est\ dans\ camp}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00573}00573\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00574}00574\ \ \ \ \ \ \ \textcolor{comment}{//\ On\ se\ deplace\ d'abord\ dans\ le\ repertoire\ "{}/AK-\/07/Caserne/dortoirs"{}}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00575}00575\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Caserne"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00576}00576\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}dortoirs"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00577}00577\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00578}00578\ \ \ \ \ \ \ \textcolor{comment}{//\ On\ cherche\ dans\ le\ reperptoire\ si\ l'user\ à\ bien\ crée\ "{}tente\_1"{}}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00579}00579\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{include_2arborescence_8h_a0249217c5659201e1b06aad32054c2cc}{chercher}}(\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}tente\_1"{}})\ !=\ NULL\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00580}00580\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00581}00581\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ true\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00582}00582\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00583}00583\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00584}00584\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00585}00585\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00586}00586\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00587}00587\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00588}00588\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00589}00589\ \ \ \ \textcolor{keywordflow}{case}\ 5\ :}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00590}00590\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00591}00591\ \ \ \ \textcolor{comment}{//\ On\ se\ deplace\ d'abord\ dans\ le\ repertoire\ "{}/AK-\/07/Caserne/dortoirs"{}}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00592}00592\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Caserne"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00593}00593\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}dortoirs"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00594}00594\ \ \ \ \textcolor{comment}{//\ On\ cherche\ dans\ le\ reperptoire\ si\ l'user\ à\ bien\ supprimer\ la\ tente\_2\ et\ tente\_3}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00595}00595\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ (\mbox{\hyperlink{include_2arborescence_8h_a0249217c5659201e1b06aad32054c2cc}{chercher}}(\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}tente\_2"{}})\ ==\ NULL\ )\ \&\&\ (\mbox{\hyperlink{include_2arborescence_8h_a0249217c5659201e1b06aad32054c2cc}{chercher}}(\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}tente\_3"{}})\ ==\ NULL\ )\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00596}00596\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00597}00597\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ true\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00598}00598\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00599}00599\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00600}00600\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00601}00601\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00602}00602\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00603}00603\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00604}00604\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00605}00605\ \ \ \ \textcolor{keywordflow}{case}\ 6\ :}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00606}00606\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00607}00607\ \ \ \ \ \ \ \textcolor{comment}{//\ On\ cherche\ dans\ le\ reperptoire\ \ "{}/AK-\/07/Caserne/armurerie"{}\ si\ l'user\ a\ bien\ fabriquer\ "{}pistolet"{}}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00608}00608\ \ \ \ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Caserne"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00609}00609\ \ \ \ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}armurerie"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00610}00610\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ (\mbox{\hyperlink{include_2arborescence_8h_a0249217c5659201e1b06aad32054c2cc}{chercher}}(\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}pistolet"{}})\ !=\ NULL\ )\ )\ \textcolor{comment}{//\ Si\ pistolet\ trouvé}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00611}00611\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00612}00612\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ true\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00613}00613\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00614}00614\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00615}00615\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00616}00616\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00617}00617\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00618}00618\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00619}00619\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00620}00620\ \ \ \ \textcolor{keywordflow}{case}\ 7\ :}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00621}00621\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00622}00622\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Zone\_Entrainement"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00623}00623\ \ \ \ \ \ \ \textcolor{comment}{//\ On\ cherche\ dans\ le\ reperptoire\ si\ l'user\ à\ bien\ supprimer\ la\ tente\_2\ et\ tente\_3}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00624}00624\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ (\mbox{\hyperlink{include_2arborescence_8h_a0249217c5659201e1b06aad32054c2cc}{chercher}}(\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}fichier\_indesirable"{}})\ ==\ NULL\ )\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00625}00625\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00626}00626\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ true\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00627}00627\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00628}00628\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00629}00629\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00630}00630\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00631}00631\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00632}00632\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00633}00633\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00634}00634\ \ \ \ \textcolor{keywordflow}{case}\ 8\ :}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00635}00635\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00636}00636\ \ \ \ \textcolor{comment}{//\ Déplacement\ dans\ le\ repertoire\ du\ partie\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00637}00637\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Caserne"{}}\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00638}00638\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}dortoirs"{}}\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00639}00639\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}tente\_1"{}}\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00640}00640\ \ \ \ \textcolor{comment}{//\ On\ cherche\ dans\ le\ reperptoire\ si\ l'user\ à\ bien\ copier\ la\ table\ et\ le\ lit\ dans\ la\ tente\_2\ et\ tente\_3}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00641}00641\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ (\mbox{\hyperlink{include_2arborescence_8h_a0249217c5659201e1b06aad32054c2cc}{chercher}}(\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}table"{}})\ !=\ NULL\ )\ \&\&\ (\mbox{\hyperlink{include_2arborescence_8h_a0249217c5659201e1b06aad32054c2cc}{chercher}}(\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}lit"{}})\ !=\ NULL\ )\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00642}00642\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00643}00643\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ true\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00644}00644\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00645}00645\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00646}00646\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00647}00647\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00648}00648\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00649}00649\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00650}00650\ \ \ \ break\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00651}00651\ \ \ \ \textcolor{keywordflow}{case}\ 9\ :}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00652}00652\ \ \ \ \ \ \ \textcolor{comment}{//\ Deplacement\ dans\ les\ repertoire\ a\ vérifier\ [Hangar\ et\ Zone\_Entrainement]}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00653}00653\ \ \ \ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Hangar"{}}\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00654}00654\ \ \ \ \ \ \ \ \ \ repertoire\_courant\_1\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Zone\_Entrainement"{}}\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00655}00655\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00656}00656\ \ \ \ \ \ \ \textcolor{comment}{//\ On\ cherche\ dans\ le\ reperptoire\ si\ l'user\ à\ bien\ déplacer\ la\ caisse\ dans\ le\ Hangar\ vers\ la\ Zone\_Entrainement}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00657}00657\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ \mbox{\hyperlink{include_2arborescence_8h_a0249217c5659201e1b06aad32054c2cc}{chercher}}(\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}caisse"{}})\ ==\ NULL\ \&\&\ \mbox{\hyperlink{include_2arborescence_8h_a0249217c5659201e1b06aad32054c2cc}{chercher}}(\ repertoire\_courant\_1\ ,\ \textcolor{stringliteral}{"{}caisse"{}})\ !=\ NULL\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00658}00658\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00659}00659\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ true\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00660}00660\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00661}00661\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00662}00662\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00663}00663\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00664}00664\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00665}00665\ \ \ \ break\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00666}00666\ \ \ \ \textcolor{keywordflow}{case}\ 141\ :}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00667}00667\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00668}00668\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verification\ si\ l'user\ est\ dans\ le\ Coffre\ Fort}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00669}00669\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ strcmp(courant\ ,\ \textcolor{stringliteral}{"{}/AK-\/07/Zone\_Entrainement/Coffre\_Fort/"{}})\ ==\ 0\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00670}00670\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00671}00671\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ true\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00672}00672\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00673}00673\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00674}00674\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00675}00675\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00676}00676\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00677}00677\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00678}00678\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00679}00679\ \ \ \ \textcolor{keywordflow}{case}\ 14\ :}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00680}00680\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00681}00681\ \ \ \ \ \ \ \textcolor{comment}{//\ Deplacement\ dans\ les\ repertoire\ a\ vérifier\ [\ /AK-\/07/Laboratoire/archives\_secretes/\ \&\&\ /AK-\/07/Quartier\_Généraux/bureau\_du\_général/\ ]}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00682}00682\ \ \ \ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Laboratoire"{}}\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00683}00683\ \ \ \ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_a0249217c5659201e1b06aad32054c2cc}{chercher}}(repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}archives\_secretes"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00684}00684\ \ \ \ \ \ \ \ \ \ repertoire\_courant\_1\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Quartier\_Généraux"{}}\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00685}00685\ \ \ \ \ \ \ \ \ \ repertoire\_courant\_1\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine\ ,\ repertoire\_courant\_1\ ,\ \textcolor{stringliteral}{"{}bureau\_du\_général"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00686}00686\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00687}00687\ \ \ \ \ \ \ \textcolor{comment}{//\ On\ cherche\ dans\ le\ reperptoire\ si\ le\ repertoire\ est\ bien\ protégé,\ le\ joueur\ n'est\ plus\ dans\ le\ l'archives\_secretes\ et\ le\ fichier\ démandé\ est\ dans\ le\ bureau\ du\ géneral}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00688}00688\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ strcmp(\ repertoire\_courant-\/>\mbox{\hyperlink{structfichier_a4343b7ba14763da20c59015a637335df}{perm}}\ ,\ \textcolor{stringliteral}{"{}-\/-\/-\/"{}}\ )\ ==\ 0\ \&\&\ \mbox{\hyperlink{include_2arborescence_8h_a0249217c5659201e1b06aad32054c2cc}{chercher}}(\ repertoire\_courant\_1\ ,\ \textcolor{stringliteral}{"{}X4-\/77-\/DELTA"{}}\ )\ !=\ NULL\ \&\&\ strcmp(courant\ ,\ \textcolor{stringliteral}{"{}/AK-\/07/Laboratoire/archives\_secretes/"{}}\ )\ !=\ 0\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00689}00689\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00690}00690\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ true\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00691}00691\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00692}00692\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00693}00693\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00694}00694\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00695}00695\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00696}00696\ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00697}00697\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00698}00698\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00699}00699\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00700}00700\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00707}\mbox{\hyperlink{include_2mission_8h_ae2620c79968764049bb9ad4a30ef1811}{00707}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_ae2620c79968764049bb9ad4a30ef1811}{mission\_3}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine\ )\ \textcolor{comment}{//\ se\ déplacer\ dans\ un\ dossier}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00708}00708\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00709}00709\ \ \ \ \textcolor{keywordtype}{bool}\ reussite\ =\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00710}00710\ \ \ \ \textcolor{keywordtype}{char}\ *courant\ =\ calloc(\mbox{\hyperlink{include_2prompt_8h_ae21f7b47b9a3f60e7ae2a76eeeb58150}{MOT}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}))\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00711}00711\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00712}00712\ \ \ \ strcpy(mission[3].titre\ ,\ \textcolor{stringliteral}{"{}MISSION-\/3\ :\ CD"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00713}00713\ \ \ \ strcpy(mission[3].indice\ ,\ \textcolor{stringliteral}{"{}tu\ dois\ simplement\ entrer\ le\ dossier\ combats\ qui\ est\ dans\ la\ zone\ d'entrainement"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00714}00714\ \ \ \ mission[3].\mbox{\hyperlink{structMission_a2dee8b7fcecc7c2d190e9304b43ea886}{point}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00715}00715\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00716}00716\ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ 3"{}},\ \textcolor{stringliteral}{"{}../data/mission\_3.txt"{}});\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00717}00717\ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(racine\ ,\ \textcolor{stringliteral}{"{}ls"{}}\ ,\ \textcolor{stringliteral}{"{}MISSION\ 3"{}}\ ,\ \textcolor{stringliteral}{"{}../data/mission\_3.txt"{}}\ ,\ courant\ ,\ (mission+3)\ ,\ 3\ ,\ 0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00718}00718\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00719}00719\ \ \ \ reussite\ =\ \mbox{\hyperlink{old__version_2src_2mission_8c_a5519f0d20d640f61e785c215524a3a32}{verification\_mission}}(\ mission\ ,\ 3\ ,\ racine\ ,\ courant)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00720}00720\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00721}00721\ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af}{verification\_reussite}}(\ mission\ ,\ racine\ ,\ reussite\ ,\ 3\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00722}00722\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00723}00723\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00724}00724\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00725}00725\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00732}\mbox{\hyperlink{include_2mission_8h_afa874f5eadd06f5d5deed916d7e6b099}{00732}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_afa874f5eadd06f5d5deed916d7e6b099}{mission\_4}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine\ )\ \textcolor{comment}{//\ création\ des\ dossiers}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00733}00733\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00734}00734\ \ \ \ \textcolor{keywordtype}{bool}\ reussite\ =\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00735}00735\ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_courant\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00736}00736\ \ \ \ \textcolor{keywordtype}{char}\ *courant\ =\ calloc(\mbox{\hyperlink{include_2prompt_8h_ae21f7b47b9a3f60e7ae2a76eeeb58150}{MOT}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}))\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00737}00737\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00738}00738\ \ \ \ strcpy(mission[4].titre\ ,\ \textcolor{stringliteral}{"{}MISSION-\/4\ :\ mkdir"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00739}00739\ \ \ \ mission[4].\mbox{\hyperlink{structMission_a2dee8b7fcecc7c2d190e9304b43ea886}{point}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00740}00740\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00741}00741\ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ 4"{}},\ \textcolor{stringliteral}{"{}../data/mission\_4.txt"{}});\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00742}00742\ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(racine\ ,\ \textcolor{stringliteral}{"{}mkdir"{}}\ ,\ \textcolor{stringliteral}{"{}MISSION\ 4"{}}\ ,\ \textcolor{stringliteral}{"{}../data/mission\_4.txt"{}}\ ,\ courant\ ,\ (mission+4)\ ,\ 4\ ,\ 0\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00743}00743\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00744}00744\ \ \ \ reussite\ =\ \mbox{\hyperlink{old__version_2src_2mission_8c_a5519f0d20d640f61e785c215524a3a32}{verification\_mission}}(\ mission\ ,\ 4\ ,\ racine\ ,\ courant);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00745}00745\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00746}00746\ \ \ \ \textcolor{keywordflow}{if}\ (reussite\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00747}00747\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00748}00748\ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ ACCOMPLIE"{}},\ \textcolor{stringliteral}{"{}../data/felicitation\_4.txt"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00749}00749\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00750}00750\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00751}00751\ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af}{verification\_reussite}}(\ mission\ ,\ racine\ ,\ reussite\ ,\ 4\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00752}00752\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00753}00753\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00754}00754\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00755}00755\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00762}\mbox{\hyperlink{include_2mission_8h_a8c6f3f918eadb32c897c19a1274a66e4}{00762}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_a8c6f3f918eadb32c897c19a1274a66e4}{mission\_5}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine\ )\ \ \ \textcolor{comment}{//\ Supprimer\ des\ dossiers}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00763}00763\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00764}00764\ \ \ \ \textcolor{keywordtype}{bool}\ reussite\ =\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00765}00765\ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_courant\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00766}00766\ \ \ \ \textcolor{keywordtype}{char}\ *courant\ =\ calloc(\mbox{\hyperlink{include_2prompt_8h_ae21f7b47b9a3f60e7ae2a76eeeb58150}{MOT}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}))\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00767}00767\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00768}00768\ \ \ \ strcpy(mission[5].titre\ ,\ \textcolor{stringliteral}{"{}MISSION-\/5\ :\ rmdir"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00769}00769\ \ \ \ mission[5].\mbox{\hyperlink{structMission_a2dee8b7fcecc7c2d190e9304b43ea886}{point}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00770}00770\ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ 5"{}},\ \textcolor{stringliteral}{"{}../data/mission\_5.txt"{}});\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00771}00771\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00772}00772\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00773}00773\ \ \ \ \textcolor{comment}{//\ On\ se\ deplace\ d'abord\ dans\ le\ repertoire\ "{}/AK-\/07/Caserne/dortoirs"{}}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00774}00774\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Caserne"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00775}00775\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}dortoirs"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00776}00776\ \ \ \ \ \ \ \textcolor{comment}{//\ Creation\ du\ reperotoire\ tente\_2\ et\ tente\_3}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00777}00777\ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}tente\_2"{}},\ 0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00778}00778\ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}tente\_3"{}},\ 0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00779}00779\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00780}00780\ \ \ \ \mbox{\hyperlink{include_2affichage_8h_af224e7350ef55d51f3d042f289f48262}{screen\_clear}}();}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00781}00781\ \ \ \ \textcolor{comment}{//\ lancement\ du\ prompt\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00782}00782\ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(racine\ ,\ \textcolor{stringliteral}{"{}mkdir"{}}\ ,\ \textcolor{stringliteral}{"{}MISSION\ 5"{}}\ ,\ \textcolor{stringliteral}{"{}../data/mission\_5.txt"{}}\ ,\ courant\ ,\ (mission+5)\ ,\ 5\ ,\ 0\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00783}00783\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00784}00784\ \ \ \ reussite\ =\ \mbox{\hyperlink{old__version_2src_2mission_8c_a5519f0d20d640f61e785c215524a3a32}{verification\_mission}}(\ mission\ ,\ 5\ ,\ racine\ ,\ courant);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00785}00785\ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af}{verification\_reussite}}(\ mission\ ,\ racine\ ,\ reussite\ ,\ 5\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00786}00786\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00787}00787\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00788}00788\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00795}\mbox{\hyperlink{include_2mission_8h_ae29788b4f43a31672492ec70912055d8}{00795}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_ae29788b4f43a31672492ec70912055d8}{mission\_6}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine\ )\ \textcolor{comment}{//\ cree\ un\ fichier\ pistolet}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00796}00796\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00797}00797\ \ \ \ \textcolor{keywordtype}{bool}\ reussite\ =\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00798}00798\ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_courant\ =\ NULL\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00799}00799\ \ \ \ \textcolor{keywordtype}{char}\ *courant\ =\ calloc(\mbox{\hyperlink{include_2prompt_8h_ae21f7b47b9a3f60e7ae2a76eeeb58150}{MOT}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}))\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00800}00800\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00801}00801\ \ \ \ strcpy(mission[6].titre\ ,\ \textcolor{stringliteral}{"{}MISSION-\/6\ :\ touch"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00802}00802\ \ \ \ mission[6].\mbox{\hyperlink{structMission_a2dee8b7fcecc7c2d190e9304b43ea886}{point}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00803}00803\ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ 6"{}},\ \textcolor{stringliteral}{"{}../data/mission\_6.txt"{}});\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00804}00804\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00805}00805\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00806}00806\ \ \ \ \textcolor{comment}{//\ lancement\ du\ prompt\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00807}00807\ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(racine\ ,\ \textcolor{stringliteral}{"{}rm"{}}\ ,\ \textcolor{stringliteral}{"{}MISSION\ 6"{}}\ ,\ \textcolor{stringliteral}{"{}../data/mission\_6.txt"{}}\ ,\ courant\ ,\ (mission+6)\ ,\ 6\ ,\ 0\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00808}00808\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00809}00809\ \ \ \ reussite\ =\ \mbox{\hyperlink{old__version_2src_2mission_8c_a5519f0d20d640f61e785c215524a3a32}{verification\_mission}}(\ mission\ ,\ 6\ ,\ racine\ ,\ courant);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00810}00810\ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af}{verification\_reussite}}(\ mission\ ,\ racine\ ,\ reussite\ ,\ 6\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00811}00811\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00812}00812\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00819}\mbox{\hyperlink{include_2mission_8h_afa9f6a6ec1e13e9ae480305cfb253502}{00819}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_afa9f6a6ec1e13e9ae480305cfb253502}{mission\_7}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00820}00820\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00821}00821\ \ \ \ \textcolor{keywordtype}{bool}\ reussite\ =\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00822}00822\ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_courant\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00823}00823\ \ \ \ \textcolor{keywordtype}{char}\ *courant;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00824}00824\ \ \ \ courant\ =\ calloc(\mbox{\hyperlink{include_2prompt_8h_ae21f7b47b9a3f60e7ae2a76eeeb58150}{MOT}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}))\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00825}00825\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00826}00826\ \ \ \ \textcolor{comment}{//\ Preparation\ de\ la\ terrain\ de\ jeu}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00827}00827\ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Zone\_Entrainement"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00828}00828\ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(\ racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}fichier\_indesirable"{}}\ ,0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00829}00829\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00830}00830\ \ \ \ strcpy(mission[7].titre\ ,\ \textcolor{stringliteral}{"{}MISSION-\/7\ :\ rm"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00831}00831\ \ \ \ mission[7].\mbox{\hyperlink{structMission_a2dee8b7fcecc7c2d190e9304b43ea886}{point}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00832}00832\ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ 7"{}},\ \textcolor{stringliteral}{"{}../data/mission\_7.txt"{}});\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00833}00833\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00834}00834\ \ \ \ \mbox{\hyperlink{include_2affichage_8h_af224e7350ef55d51f3d042f289f48262}{screen\_clear}}();}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00835}00835\ \ \ \ \textcolor{comment}{//\ lancement\ du\ prompt\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00836}00836\ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(racine\ ,\ \textcolor{stringliteral}{"{}rm"{}}\ ,\ \textcolor{stringliteral}{"{}MISSION\ 7"{}}\ ,\ \textcolor{stringliteral}{"{}../data/mission\_7.txt"{}}\ ,\ courant\ ,\ (mission+7)\ ,\ 7\ ,\ 0\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00837}00837\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00838}00838\ \ \ \ reussite\ =\ \mbox{\hyperlink{old__version_2src_2mission_8c_a5519f0d20d640f61e785c215524a3a32}{verification\_mission}}(mission\ ,\ 7\ ,\ racine\ ,\ courant)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00839}00839\ \ \ \ \textcolor{keywordflow}{if}(\ reussite\ ==\ \textcolor{keyword}{true}\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00840}00840\ \ \ \ \{\ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00841}00841\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ ACCOMPLIE"{}},\ \textcolor{stringliteral}{"{}../data/felicitation\_7.txt"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00842}00842\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00843}00843\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00844}00844\ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af}{verification\_reussite}}(\ mission\ ,\ racine\ ,\ reussite\ ,\ 7\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00845}00845\ \ \ \ free(courant);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00846}00846\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00847}00847\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00854}\mbox{\hyperlink{include_2mission_8h_a01eed157c6371b2cf91cb9eae24735e9}{00854}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_a01eed157c6371b2cf91cb9eae24735e9}{mission\_8}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine\ )\ \textcolor{comment}{//\ Copier\ avec\ cp\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00855}00855\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00856}00856\ \ \ \ \textcolor{keywordtype}{bool}\ reussite\ =\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00857}00857\ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_courant\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00858}00858\ \ \ \ \textcolor{keywordtype}{char}\ *courant\ =\ calloc(\mbox{\hyperlink{include_2prompt_8h_ae21f7b47b9a3f60e7ae2a76eeeb58150}{MOT}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}))\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00859}00859\ \ \ \ \textcolor{keywordtype}{char}\ tente\_1[]\ =\ \{\textcolor{stringliteral}{"{}Caserne/dortoirs/tente\_1"{}}\};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00860}00860\ \ \ \ \textcolor{keywordtype}{char}\ tente\_2[]\ =\ \{\textcolor{stringliteral}{"{}Caserne/dortoirs/tente\_2"{}}\};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00861}00861\ \ \ \ \textcolor{keywordtype}{char}\ tente\_3[]\ =\ \{\textcolor{stringliteral}{"{}Caserne/dortoirs/tente\_3"{}}\};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00862}00862\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00863}00863\ \ \ \ strcpy(mission[8].titre\ ,\ \textcolor{stringliteral}{"{}MISSION-\/8\ :\ cp"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00864}00864\ \ \ \ mission[8].\mbox{\hyperlink{structMission_a2dee8b7fcecc7c2d190e9304b43ea886}{point}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00865}00865\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00866}00866\ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ 8"{}},\ \textcolor{stringliteral}{"{}../data/mission\_8.txt"{}});\ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00867}00867\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00868}00868\ \ \ \ \textcolor{comment}{//\ Preparation\ du\ terrain\ du\ jeu}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00869}00869\ \ \ \ \textcolor{comment}{//\ Creation\ d'un\ table\ dans\ la\ tente\_2\ et\ un\ lit\ dans\ la\ tente\_3.}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00870}00870\ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine\ ,\ racine\ ,\ tente\_2\ ,\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00871}00871\ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine\ ,\ racine\ ,\ tente\_3\ ,\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00872}00872\ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine\ ,\ racine\ ,\ tente\_1\ ,\ 1);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00873}00873\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00874}00874\ \ \ \ \textcolor{comment}{//\ Creation\ du\ table}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00875}00875\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Caserne"{}}\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00876}00876\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}dortoirs"{}}\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00877}00877\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}tente\_2"{}}\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00878}00878\ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}table"{}}\ ,\ 1\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00879}00879\ \ \ \ \textcolor{comment}{//\ Creation\ du\ lit}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00880}00880\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Caserne"{}}\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00881}00881\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}dortoirs"{}}\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00882}00882\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}tente\_3"{}}\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00883}00883\ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}lit"{}}\ ,\ 1\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00884}00884\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00885}00885\ \ \ \ \mbox{\hyperlink{include_2affichage_8h_af224e7350ef55d51f3d042f289f48262}{screen\_clear}}();}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00886}00886\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00887}00887\ \ \ \ \textcolor{comment}{//\ lancement\ du\ prompt\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00888}00888\ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(racine\ ,\ \textcolor{stringliteral}{"{}cp"{}}\ ,\ \textcolor{stringliteral}{"{}MISSION\ 8"{}}\ ,\ \textcolor{stringliteral}{"{}../data/mission\_8.txt"{}}\ ,\ courant\ ,\ (mission+8)\ ,\ 8\ ,\ 0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00889}00889\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00890}00890\ \ \ \ reussite\ =\ \mbox{\hyperlink{old__version_2src_2mission_8c_a5519f0d20d640f61e785c215524a3a32}{verification\_mission}}(mission\ ,\ 8\ ,\ racine\ ,\ courant);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00891}00891\ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af}{verification\_reussite}}(\ mission\ ,\ racine\ ,\ reussite\ ,\ 8\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00892}00892\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00893}00893\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00894}00894\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00895}00895\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00902}\mbox{\hyperlink{include_2mission_8h_a84a07b104a844f83537192cf9ff865fa}{00902}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_a84a07b104a844f83537192cf9ff865fa}{mission\_9}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine\ )\ \textcolor{comment}{//\ Déplacer\ avec\ mv}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00903}00903\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00904}00904\ \ \ \ \textcolor{keywordtype}{bool}\ reussite\ =\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00905}00905\ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_courant\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00906}00906\ \ \ \ \textcolor{keywordtype}{char}\ *courant;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00907}00907\ \ \ \ courant\ =\ calloc(\mbox{\hyperlink{include_2prompt_8h_ae21f7b47b9a3f60e7ae2a76eeeb58150}{MOT}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}))\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00908}00908\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00909}00909\ \ \ \ strcpy(mission[9].titre\ ,\ \textcolor{stringliteral}{"{}MISSION-\/9\ :\ echo"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00910}00910\ \ \ \ mission[9].\mbox{\hyperlink{structMission_a2dee8b7fcecc7c2d190e9304b43ea886}{point}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00911}00911\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00912}00912\ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ 9"{}},\ \textcolor{stringliteral}{"{}../data/mission\_9.txt"{}});\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00913}00913\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00914}00914\ \ \ \ \textcolor{comment}{//\ Déplacement\ dans\ le\ repertoire\ du\ partie\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00915}00915\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Hangar"{}}\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00916}00916\ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}caisse"{}}\ ,\ 0\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00917}00917\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00918}00918\ \ \ \ \mbox{\hyperlink{include_2affichage_8h_af224e7350ef55d51f3d042f289f48262}{screen\_clear}}();}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00919}00919\ \ \ \ \ \ \ \textcolor{comment}{//\ lancement\ du\ prompt\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00920}00920\ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(racine\ ,\ \textcolor{stringliteral}{"{}mv"{}}\ ,\ \textcolor{stringliteral}{"{}MISSION\ 9"{}}\ ,\ \textcolor{stringliteral}{"{}../data/mission\_9.txt"{}}\ ,\ courant\ ,\ (mission+9)\ ,\ 9\ ,\ 0\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00921}00921\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00922}00922\ \ \ \ reussite\ =\ \mbox{\hyperlink{old__version_2src_2mission_8c_a5519f0d20d640f61e785c215524a3a32}{verification\_mission}}(mission\ ,\ 9\ ,\ racine\ ,\ courant\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00923}00923\ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af}{verification\_reussite}}(\ mission\ ,\ racine\ ,\ reussite\ ,\ 9\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00924}00924\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00925}00925\ \ \ \ free(courant);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00926}00926\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00927}00927\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00928}00928\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00935}\mbox{\hyperlink{include_2mission_8h_a597303e4bb80f7822f16c5b572f8ee9e}{00935}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_a597303e4bb80f7822f16c5b572f8ee9e}{mission\_10}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00936}00936\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00937}00937\ \ \ \ \textcolor{keywordtype}{bool}\ reussite\ =\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00938}00938\ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_courant\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00939}00939\ \ \ \ \textcolor{keywordtype}{char}\ *courant;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00940}00940\ \ \ \ courant\ =\ calloc(\mbox{\hyperlink{include_2prompt_8h_ae21f7b47b9a3f60e7ae2a76eeeb58150}{MOT}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}))\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00941}00941\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00942}00942\ \ \ \ strcpy(mission[10].titre\ ,\ \textcolor{stringliteral}{"{}MISSION-\/10\ :\ echo"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00943}00943\ \ \ \ mission[10].\mbox{\hyperlink{structMission_a2dee8b7fcecc7c2d190e9304b43ea886}{point}}\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00944}00944\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00945}00945\ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ 10"{}},\ \textcolor{stringliteral}{"{}../data/mission\_10.txt"{}});\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00946}00946\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00947}00947\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00948}00948\ \ \ \ \textcolor{comment}{//\ Deplacement\ dans\ la\ terrain\ de\ jeu}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00949}00949\ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Zone\_Entrainement"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00950}00950\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00951}00951\ \ \ \ \textcolor{comment}{//\ lancement\ du\ prompt\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00952}00952\ \ \ \ reussite\ =\ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}echo"{}}\ ,\ \textcolor{stringliteral}{"{}MISSION\ 10"{}}\ ,\ \textcolor{stringliteral}{"{}../data/mission\_10.txt"{}}\ ,\ courant\ ,\ (mission+10)\ ,\ 10\ ,\ 1\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00953}00953\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00954}00954\ \ \ \ \textcolor{comment}{//\ On\ verfie\ s'il\ a\ au\ moins\ taper\ echo}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00955}00955\ \ \ \ \textcolor{keywordflow}{if}\ (\ reussite\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00956}00956\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00957}00957\ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ ACCOMPLIE"{}},\ \textcolor{stringliteral}{"{}../data/felicitation\_10.txt"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00958}00958\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00959}00959\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00960}00960\ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af}{verification\_reussite}}(\ mission\ ,\ racine\ ,\ reussite\ ,\ 10\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00961}00961\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00962}00962\ \ \ \ free(courant);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00963}00963\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00964}00964\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00965}00965\ \textcolor{comment}{/*****************************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00972}\mbox{\hyperlink{include_2mission_8h_a35e102f5291c73343f8b01dedd397897}{00972}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_a35e102f5291c73343f8b01dedd397897}{mission\_11}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00973}00973\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00974}00974\ \ \ \ \textcolor{keywordtype}{bool}\ reussite\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00975}00975\ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_courant\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00976}00976\ \ \ \ \textcolor{keywordtype}{char}\ *courant;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00977}00977\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00978}00978\ \ \ \ reussite\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00979}00979\ \ \ \ courant\ =\ calloc(\ \mbox{\hyperlink{include_2prompt_8h_ae21f7b47b9a3f60e7ae2a76eeeb58150}{MOT}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}))\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00980}00980\ \ \ \ repertoire\_courant\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00981}00981\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00982}00982\ \ \ \ strcpy(mission[11].titre\ ,\ \textcolor{stringliteral}{"{}MISSION-\/11\ :\ cat"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00983}00983\ \ \ \ mission[11].\mbox{\hyperlink{structMission_a2dee8b7fcecc7c2d190e9304b43ea886}{point}}\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00984}00984\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00985}00985\ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ 11"{}},\ \textcolor{stringliteral}{"{}../data/mission\_11.txt"{}});\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00986}00986\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00987}00987\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00988}00988\ \ \ \ \textcolor{comment}{//\ Preparation\ :\ terrain\ de\ jeu}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00989}00989\ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Laboratoire"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00990}00990\ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}archives\_secretes"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00991}00991\ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}convers.crpt"{}}\ ,\ 0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00992}00992\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00993}00993\ \ \ \ \textcolor{comment}{//\ lancement\ du\ prompt\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00994}00994\ \ \ \ reussite\ =\ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(racine\ ,\ \textcolor{stringliteral}{"{}cat\ convers.crpt"{}}\ ,\ \textcolor{stringliteral}{"{}MISSION\ 11"{}}\ ,\ \textcolor{stringliteral}{"{}../data/mission\_11.txt"{}}\ ,\ courant\ ,\ (mission+11)\ ,\ 11\ ,\ 1\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00995}00995\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00996}00996\ \ \ \ \textcolor{comment}{//\ On\ verfie\ s'il\ a\ fait\ le\ mission\ correspondant}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00997}00997\ \ \ \ \textcolor{keywordflow}{if}\ (\ reussite\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00998}00998\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l00999}00999\ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ ACCOMPLIE"{}},\ \textcolor{stringliteral}{"{}../data/felicitation\_11.txt"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01000}01000\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01001}01001\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01002}01002\ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af}{verification\_reussite}}(\ mission\ ,\ racine\ ,\ reussite\ ,\ 11\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01003}01003\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01004}01004\ \ \ \ free(courant);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01005}01005\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01006}01006\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01007}01007\ \textcolor{comment}{/*****************************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01014}\mbox{\hyperlink{include_2mission_8h_a6eef36863d5898b56239c646fd310f3b}{01014}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_a6eef36863d5898b56239c646fd310f3b}{mission\_12}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01015}01015\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01016}01016\ \ \ \ \textcolor{keywordtype}{bool}\ reussite\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01017}01017\ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_courant\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01018}01018\ \ \ \ \textcolor{keywordtype}{char}\ *courant;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01019}01019\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01020}01020\ \ \ \ reussite\ =\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01021}01021\ \ \ \ courant\ =\ calloc(\mbox{\hyperlink{include_2prompt_8h_ae21f7b47b9a3f60e7ae2a76eeeb58150}{MOT}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}))\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01022}01022\ \ \ \ repertoire\_courant\ =\ NULL\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01023}01023\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01024}01024\ \ \ \ strcpy(mission[12].titre\ ,\ \textcolor{stringliteral}{"{}MISSION-\/12\ :\ head"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01025}01025\ \ \ \ mission[12].\mbox{\hyperlink{structMission_a2dee8b7fcecc7c2d190e9304b43ea886}{point}}\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01026}01026\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01027}01027\ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ 12"{}},\ \textcolor{stringliteral}{"{}../data/mission\_12.txt"{}});\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01028}01028\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01029}01029\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01030}01030\ \ \ \ \textcolor{comment}{//\ Preparation\ :\ terrain\ de\ jeu}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01031}01031\ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Laboratoire"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01032}01032\ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}archives\_secretes"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01033}01033\ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}convers.crpt"{}}\ ,\ 0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01034}01034\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01035}01035\ \ \ \ \textcolor{comment}{//\ lancement\ du\ prompt\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01036}01036\ \ \ \ reussite\ =\ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(racine\ ,\ \textcolor{stringliteral}{"{}head\ -\/n\ 5\ convers.crpt"{}}\ ,\ \textcolor{stringliteral}{"{}MISSION\ 12"{}}\ ,\ \textcolor{stringliteral}{"{}../data/mission\_12.txt"{}}\ ,\ courant\ ,\ (mission+12)\ ,\ 12\ ,\ 1\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01037}01037\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01038}01038\ \ \ \ \textcolor{comment}{//\ On\ verfie\ s'il\ a\ fait\ le\ mission\ correspondant}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01039}01039\ \ \ \ \textcolor{keywordflow}{if}\ (\ reussite\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01040}01040\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01041}01041\ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ ACCOMPLIE"{}},\ \textcolor{stringliteral}{"{}../data/felicitation\_12.txt"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01042}01042\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01043}01043\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01044}01044\ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af}{verification\_reussite}}(\ mission\ ,\ racine\ ,\ reussite\ ,\ 12\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01045}01045\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01046}01046\ \ \ \ free(courant);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01047}01047\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01048}01048\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01049}01049\ \textcolor{comment}{/*****************************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01056}\mbox{\hyperlink{include_2mission_8h_a46ed1e33b45d68cbed3cd26b0a31ff12}{01056}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_a46ed1e33b45d68cbed3cd26b0a31ff12}{mission\_13}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01057}01057\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01058}01058\ \ \ \ \textcolor{keywordtype}{bool}\ reussite\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01059}01059\ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_courant\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01060}01060\ \ \ \ \textcolor{keywordtype}{char}\ *courant;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01061}01061\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01062}01062\ \ \ \ reussite\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01063}01063\ \ \ \ courant\ =\ calloc(\mbox{\hyperlink{include_2prompt_8h_ae21f7b47b9a3f60e7ae2a76eeeb58150}{MOT}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}))\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01064}01064\ \ \ \ repertoire\_courant\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01065}01065\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01066}01066\ \ \ \ strcpy(mission[13].titre\ ,\ \textcolor{stringliteral}{"{}MISSION-\/13\ :\ tail"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01067}01067\ \ \ \ mission[13].\mbox{\hyperlink{structMission_a2dee8b7fcecc7c2d190e9304b43ea886}{point}}\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01068}01068\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01069}01069\ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ 13"{}},\ \textcolor{stringliteral}{"{}../data/mission\_13.txt"{}});\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01070}01070\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01071}01071\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01072}01072\ \ \ \ \textcolor{comment}{//\ Preparation\ :\ terrain\ de\ jeu}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01073}01073\ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Laboratoire"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01074}01074\ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}archives\_secretes"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01075}01075\ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}convers.crpt"{}}\ ,\ 0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01076}01076\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01077}01077\ \ \ \ \textcolor{comment}{//\ lancement\ du\ prompt\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01078}01078\ \ \ \ reussite\ =\ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(racine\ ,\ \textcolor{stringliteral}{"{}tail\ -\/n\ 3\ convers.crpt"{}}\ ,\ \textcolor{stringliteral}{"{}MISSION\ 13"{}}\ ,\ \textcolor{stringliteral}{"{}../data/mission\_13.txt"{}}\ ,\ courant\ ,\ (mission+13)\ ,\ 13\ ,\ 1\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01079}01079\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01080}01080\ \ \ \ \textcolor{comment}{//\ On\ verfie\ s'il\ a\ fait\ le\ mission\ correspondant}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01081}01081\ \ \ \ \textcolor{keywordflow}{if}\ (\ reussite\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01082}01082\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01083}01083\ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ ACCOMPLIE"{}},\ \textcolor{stringliteral}{"{}../data/felicitation\_13.txt"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01084}01084\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01085}01085\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01086}01086\ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af}{verification\_reussite}}(\ mission\ ,\ racine\ ,\ reussite\ ,\ 13\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01087}01087\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01088}01088\ \ \ \ free(courant);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01089}01089\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01090}01090\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01091}01091\ \textcolor{comment}{/*****************************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01092}\mbox{\hyperlink{old__version_2src_2mission_8c_a3032547878aefcb457e23da1d08f5fb0}{01092}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_a3032547878aefcb457e23da1d08f5fb0}{entrainement\_14\_1}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01093}01093\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01094}01094\ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_courant\ =\ NULL\ ,\ *repertoire\_courant1\ =\ NULL\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01095}01095\ \ \ \ \textcolor{keywordtype}{char}\ *courant\ =\ calloc(\mbox{\hyperlink{include_2prompt_8h_ae21f7b47b9a3f60e7ae2a76eeeb58150}{MOT}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}))\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01096}01096\ \ \ \ \textcolor{keywordtype}{bool}\ reuissite\ =\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01097}01097\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01098}01098\ \ \ \ \textcolor{comment}{//\ Preparation\ du\ terrain\ d'entraînement}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01099}01099\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Zone\_Entrainement"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01100}01100\ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a6c0b420e70006a2a80f3ce8d0b054f62}{my\_mkdir}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}Coffre\_Fort"{}}\ ,\ 1\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01101}01101\ \ \ \ \ \ \ repertoire\_courant1\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}Coffre\_Fort"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01102}01102\ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant1\ ,\ \textcolor{stringliteral}{"{}Gilet"{}}\ ,\ 0)\ ;\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01103}01103\ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant1\ ,\ \textcolor{stringliteral}{"{}Munitions"{}}\ ,\ 0)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01104}01104\ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant1\ ,\ \textcolor{stringliteral}{"{}AK-\/47"{}}\ ,\ 0)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01105}01105\ \ \ \ \ \ \ strcpy(repertoire\_courant1-\/>perm\ ,\ \textcolor{stringliteral}{"{}-\/-\/-\/"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01106}01106\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01107}01107\ \ \ \ \textcolor{comment}{//\ Lancement\ du\ jeu}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01108}01108\ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}ENTRAÎNEMENT"{}},\ \textcolor{stringliteral}{"{}../data/test\_14.txt"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01109}01109\ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}chmod"{}}\ ,\ \textcolor{stringliteral}{"{}MISSION\ 14"{}}\ ,\ \textcolor{stringliteral}{"{}../data/test\_14.txt"{}}\ ,\ courant\ ,\ (mission+14)\ ,\ 141\ ,\ 0\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01110}01110\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01111}01111\ \ \ \ \textcolor{comment}{//\ Vérification\ du\ statuts\ mission\ \ \ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01112}01112\ \ \ \ \ \ \ reuissite\ =\ \mbox{\hyperlink{old__version_2src_2mission_8c_a5519f0d20d640f61e785c215524a3a32}{verification\_mission}}(mission\ ,\ 141\ ,\ racine\ ,\ courant\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01113}01113\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(reuissite)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01114}01114\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01115}01115\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}Entraînement\ réussi"{}},\ \textcolor{stringliteral}{"{}../data/felicitation\_14\_1.txt"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01116}01116\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01117}01117\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01118}01118\ \ \ \ \ \ \ free(courant);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01119}01119\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01120}01120\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01121}\mbox{\hyperlink{old__version_2src_2mission_8c_abccce48c6c65d1d40bf0b992b7b32615}{01121}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_abccce48c6c65d1d40bf0b992b7b32615}{prepa\_14}}(\mbox{\hyperlink{structfichier}{fichier}}\ *\ racine)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01122}01122\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01123}01123\ \ \ \ \mbox{\hyperlink{structfichier}{fichier}}\ *repertoire\_courant\ =\ NULL\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01124}01124\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01125}01125\ \ \ \ \textcolor{comment}{//\ Preparation\ :\ terrain\ de\ jeu}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01126}01126\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ racine\ ,\ \textcolor{stringliteral}{"{}Laboratoire"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01127}01127\ \ \ \ \ \ \ repertoire\_courant\ =\ \mbox{\hyperlink{include_2arborescence_8h_ac248248ebcb492503e52068627f5fe91}{my\_cd}}(\ racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}archives\_secretes"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01128}01128\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}R+8"{}}\ ,\ 0)\ ;\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01129}01129\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}.Satan\_2"{}}\ ,\ 0)\ ;\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01130}01130\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}enigma"{}}\ ,\ 0)\ ;\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01131}01131\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}sigma"{}}\ ,\ 0)\ ;\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01132}01132\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}Q-\/2"{}}\ ,\ 0)\ ;\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01133}01133\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}Section\_14"{}}\ ,\ 0)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01134}01134\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}.Manhattan"{}}\ ,\ 0)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01135}01135\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}Blame"{}}\ ,\ 0)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01136}01136\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}.Abdul"{}}\ ,\ 0)\ ;\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01137}01137\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}Falcon"{}}\ ,\ 0)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01138}01138\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}Eclipse"{}}\ ,\ 0)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01139}01139\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}Shadow"{}}\ ,\ 0)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01140}01140\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}.Vortex"{}}\ ,\ 0)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01141}01141\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}.Ironclad"{}}\ ,\ 0)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01142}01142\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}Phantom"{}}\ ,\ 0)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01143}01143\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}Aurora"{}}\ ,\ 0)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01144}01144\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2arborescence_8h_a5141f09059285d7b4a582866484df402}{my\_touch}}(racine\ ,\ repertoire\_courant\ ,\ \textcolor{stringliteral}{"{}.Titan"{}}\ ,\ 0)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01145}01145\ \ \ \ \ \ \ strcpy(\ repertoire\_courant-\/>\mbox{\hyperlink{structfichier_a4343b7ba14763da20c59015a637335df}{perm}}\ ,\ \textcolor{stringliteral}{"{}-\/-\/-\/"{}}\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01146}01146\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01147}\mbox{\hyperlink{old__version_2src_2mission_8c_a5b37737fc91326eca59f11e1a6f324af}{01147}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{old__version_2src_2mission_8c_a5b37737fc91326eca59f11e1a6f324af}{demande\_avis}}()}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01148}01148\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01149}01149\ \ \ \ \textcolor{keywordtype}{int}\ choix\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01150}01150\ \ \ \ \textcolor{keywordtype}{char}\ texte[]=\{\textcolor{stringliteral}{"{}Souhaites-\/tu\ commencer\ par\ l'entraînement\ ou\ pas\ soldat\ ??[Y/N]\ :"{}}\}\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01151}01151\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01152}01152\ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_af224e7350ef55d51f3d042f289f48262}{screen\_clear}}();}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01153}01153\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01154}01154\ \ \ \ \ \ \ initscr();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ initialise\ ncurses}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01155}01155\ \ \ \ \ \ \ clear();}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01156}01156\ \ \ \ \ \ \ noecho();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ne\ pas\ afficher\ les\ touches\ tapées}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01157}01157\ \ \ \ \ \ \ cbreak();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ entrée\ sans\ mise\ en\ tampon}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01158}01158\ \ \ \ \ \ \ curs\_set(0);\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ cache\ le\ curseur}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01159}01159\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01160}01160\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01161}01161\ \ \ \ \ \ \ \ \ \ mvprintw(\ LINES\ /2\ ,\ (COLS\ -\/strlen(texte))\ /2\ ,\ \textcolor{stringliteral}{"{}\%s"{}}\ ,\ texte\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01162}01162\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01163}01163\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01164}01164\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01165}01165\ \ \ \ \ \ \ \ \ \ \ \ \ choix\ =\ getch();}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01166}01166\ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (choix\ !=\ \textcolor{charliteral}{'Y'}\ \&\&\ choix\ !=\ \textcolor{charliteral}{'y'}\ \&\&\ choix\ !=\ \textcolor{charliteral}{'N'}\ \&\&\ choix\ \&\&\ \textcolor{charliteral}{'n'})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01167}01167\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01168}01168\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (choix\ ==\ \textcolor{charliteral}{'Y'}\ ||\ choix\ ==\ \textcolor{charliteral}{'y'}\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01169}01169\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01170}01170\ \ \ \ \ \ \ \ \ \ \ \ \ endwin();\ \textcolor{comment}{//\ restaure\ le\ terminal}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01171}01171\ \ \ \ \ \ \ \ \ \ \ \ \ clear();\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01172}01172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01173}01173\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01174}01174\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01175}01175\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01176}01176\ \ \ \ \ \ \ \ \ \ \ \ \ endwin();\ \textcolor{comment}{//\ restaure\ le\ terminal}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01177}01177\ \ \ \ \ \ \ \ \ \ \ \ \ clear();}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01178}01178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01179}01179\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01180}01180\ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01187}\mbox{\hyperlink{include_2mission_8h_a10949bd060a3de8fd48a66f2bc16e2dd}{01187}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2mission_8c_a10949bd060a3de8fd48a66f2bc16e2dd}{mission\_14}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine)\ \textcolor{comment}{//\ Chmod}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01188}01188\ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01189}01189\ \ \ \ \textcolor{keywordtype}{bool}\ reussite\ =\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01190}01190\ \ \ \ \textcolor{keywordtype}{char}\ *courant\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01191}01191\ \ \ \ \textcolor{keywordtype}{int}\ max\_sec\ =\ 90\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01192}01192\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01193}01193\ \ \ \ courant\ =\ calloc(\mbox{\hyperlink{include_2prompt_8h_ae21f7b47b9a3f60e7ae2a76eeeb58150}{MOT}}\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}))\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01194}01194\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01195}01195\ \ \ \ strcpy(mission[14].titre\ ,\ \textcolor{stringliteral}{"{}MISSION-\/14\ :\ chmod"{}})\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01196}01196\ \ \ \ mission[14].\mbox{\hyperlink{structMission_a2dee8b7fcecc7c2d190e9304b43ea886}{point}}\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01197}01197\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01198}01198\ \ \ \ \textcolor{comment}{//\ Demande\ si\ le\ joueur\ veut\ recommencer\ au\ cours\ au\ passer\ juste\ au\ mission}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01199}01199\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ mission[13].terminé\ ==\ 1\ )}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01200}01200\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01201}01201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{old__version_2src_2mission_8c_a5b37737fc91326eca59f11e1a6f324af}{demande\_avis}}()\ ==\ 1\ )\ \textcolor{comment}{//\ Si\ l'user\ deide\ de\ tout\ recommencer}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01202}01202\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01203}01203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lancement\ du\ première\ entrainement}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01204}01204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}Chmod"{}},\ \textcolor{stringliteral}{"{}../data/cours\_14.txt"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01205}01205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_a3032547878aefcb457e23da1d08f5fb0}{entrainement\_14\_1}}(mission\ ,\ racine\ )\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01206}01206\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01207}01207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Preparation\ :\ terrain\ de\ jeu}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01208}01208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_abccce48c6c65d1d40bf0b992b7b32615}{prepa\_14}}(racine);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01209}01209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_af224e7350ef55d51f3d042f289f48262}{screen\_clear}}()\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01210}01210\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01211}01211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ lancement\ du\ vraie\ mission\ 14\ .\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01212}01212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}Chmod"{}},\ \textcolor{stringliteral}{"{}../data/mission\_14.txt"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01213}01213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_afa277671dcffca9c421e651a31599e63}{afficher\_tableau\_avec\_titre\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ 14\ -\/\ TEMPS\ LIMITE\ :\ 90\ secondes"{}}\ ,\ \textcolor{stringliteral}{"{}../data/vide"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01214}01214\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01215}01215\ \ \ \ \ \ \ \ \ \ \ \ \ pid\_t\ pid\_chrono\ =\ fork();}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01216}01216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(pid\_chrono\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01217}01217\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01218}01218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ max\_sec*10;\ ++i)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01219}01219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01220}01220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ usleep(100000);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01221}01221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01222}01222\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01223}01223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exit(1);\ \textcolor{comment}{//\ code\ 1\ =\ temps\ écoulé}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01224}01224\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01225}01225\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01226}01226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/\ FILS\ 2\ :\ Mission\ -\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01227}01227\ \ \ \ \ \ \ \ \ \ \ \ \ pid\_t\ pid\_mission\ =\ fork();}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01228}01228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(pid\_mission\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01229}01229\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01230}01230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ exécute\ prompt\_mission\ dans\ un\ sous-\/fils}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01231}01231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(racine\ ,\ \textcolor{stringliteral}{"{}chmod"{}}\ ,\ \textcolor{stringliteral}{"{}MISSION\ 14"{}}\ ,\ \textcolor{stringliteral}{"{}../data/mission\_14.txt"{}}\ ,\ courant\ ,\ (mission+14)\ ,\ 14\ ,\ 0\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01232}01232\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01233}01233\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01234}01234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/\ PÈRE\ :\ supervise\ fils\ chrono\ et\ fils\ mission\ -\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01235}01235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ status;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01236}01236\ \ \ \ \ \ \ \ \ \ \ \ \ pid\_t\ fini;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01237}01237\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01238}01238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(1)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01239}01239\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01240}01240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ vérifie\ si\ le\ fils\ mission\ a\ terminé}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01241}01241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fini\ =\ waitpid(pid\_mission,\ \&status,\ WNOHANG);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01242}01242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fini\ ==\ pid\_mission)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01243}01243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01244}01244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ tuer\ le\ chrono\ si\ la\ mission\ a\ fini}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01245}01245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kill(pid\_chrono,\ SIGKILL);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01246}01246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01247}01247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01248}01248\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01249}01249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ vérifie\ si\ le\ chrono\ a\ fini}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01250}01250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fini\ =\ waitpid(pid\_chrono,\ \&status,\ WNOHANG);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01251}01251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fini\ ==\ pid\_chrono)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01252}01252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01253}01253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ temps\ écoulé\ →\ tuer\ le\ fils\ mission}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01254}01254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kill(pid\_mission,\ SIGKILL);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01255}01255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}TEMPS\ ÉCOULÉ\ !"{}}\ ,\ \textcolor{stringliteral}{"{}../data/vide"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01256}01256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reussite\ =\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01257}01257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01258}01258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01259}01259\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01260}01260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ usleep(5000);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01261}01261\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01262}01262\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01263}01263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ nettoyage\ des\ fils}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01264}01264\ \ \ \ \ \ \ \ \ \ \ \ \ waitpid(pid\_chrono,\ NULL,\ 0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01265}01265\ \ \ \ \ \ \ \ \ \ \ \ \ waitpid(pid\_mission,\ NULL,\ 0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01266}01266\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01267}01267\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01268}01268\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01269}01269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Preparation\ :\ terrain\ de\ jeu}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01270}01270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_abccce48c6c65d1d40bf0b992b7b32615}{prepa\_14}}(racine);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01271}01271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_af224e7350ef55d51f3d042f289f48262}{screen\_clear}}()\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01272}01272\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01273}01273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ lancement\ du\ vraie\ mission\ 14\ .\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01274}01274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}Chmod"{}},\ \textcolor{stringliteral}{"{}../data/mission\_14.txt"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01275}01275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(racine\ ,\ \textcolor{stringliteral}{"{}chmod"{}}\ ,\ \textcolor{stringliteral}{"{}MISSION\ 14"{}}\ ,\ \textcolor{stringliteral}{"{}../data/mission\_14.txt"{}}\ ,\ courant\ ,\ (mission+14)\ ,\ 14\ ,\ 0\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01276}01276\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01277}01277\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01278}01278\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01279}01279\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ Si\ la\ mission\ n'etait\ pas\ encore\ términé\ avant\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01280}01280\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01281}01281\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lancement\ du\ première\ entrainement}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01282}01282\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}Chmod"{}},\ \textcolor{stringliteral}{"{}../data/cours\_14.txt"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01283}01283\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ entrainement\_14\_1(mission\ ,\ racine\ )\ ;}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01284}01284\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01285}01285\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Preparation\ :\ terrain\ de\ jeu}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01286}01286\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_abccce48c6c65d1d40bf0b992b7b32615}{prepa\_14}}(racine);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01287}01287\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_af224e7350ef55d51f3d042f289f48262}{screen\_clear}}()\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01288}01288\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01289}01289\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ lancement\ du\ vraie\ mission\ 14\ .\ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01290}01290\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ 14"{}},\ \textcolor{stringliteral}{"{}../data/mission\_14.txt"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01291}01291\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}MISSION\ 14\ -\/\ TEMPS\ LIMITE\ :\ 90\ secondes"{}}\ ,\ \textcolor{stringliteral}{"{}../data/vide"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01292}01292\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01293}01293\ \ \ \ \ \ \ \ \ \ \ \ \ pid\_t\ pid\_chrono\ =\ fork();}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01294}01294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(pid\_chrono\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01295}01295\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01296}01296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ max\_sec*10;\ ++i)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01297}01297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01298}01298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ usleep(100000);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01299}01299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01300}01300\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01301}01301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exit(1);\ \textcolor{comment}{//\ code\ 1\ =\ temps\ écoulé}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01302}01302\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01303}01303\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01304}01304\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/\ FILS\ 2\ :\ Mission\ -\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01305}01305\ \ \ \ \ \ \ \ \ \ \ \ \ pid\_t\ pid\_mission\ =\ fork();}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01306}01306\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(pid\_mission\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01307}01307\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01308}01308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ exécute\ prompt\_mission\ dans\ un\ sous-\/fils}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01309}01309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_ade573c5eee8265efcab5053e371befe1}{prompt\_mission}}(racine\ ,\ \textcolor{stringliteral}{"{}chmod"{}}\ ,\ \textcolor{stringliteral}{"{}MISSION\ 14"{}}\ ,\ \textcolor{stringliteral}{"{}../data/mission\_14.txt"{}}\ ,\ courant\ ,\ (mission+14)\ ,\ 14\ ,\ 0\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01310}01310\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01311}01311\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01312}01312\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/\ PÈRE\ :\ supervise\ fils\ chrono\ et\ fils\ mission\ -\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01313}01313\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ status;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01314}01314\ \ \ \ \ \ \ \ \ \ \ \ \ pid\_t\ fini;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01315}01315\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01316}01316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(1)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01317}01317\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01318}01318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ vérifie\ si\ le\ fils\ mission\ a\ terminé}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01319}01319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fini\ =\ waitpid(pid\_mission,\ \&status,\ WNOHANG);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01320}01320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fini\ ==\ pid\_mission)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01321}01321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01322}01322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ tuer\ le\ chrono\ si\ la\ mission\ a\ fini}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01323}01323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kill(pid\_chrono,\ SIGKILL);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01324}01324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01325}01325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01326}01326\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01327}01327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ vérifie\ si\ le\ chrono\ a\ fini}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01328}01328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fini\ =\ waitpid(pid\_chrono,\ \&status,\ WNOHANG);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01329}01329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fini\ ==\ pid\_chrono)}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01330}01330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01331}01331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ temps\ écoulé\ →\ tuer\ le\ fils\ mission}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01332}01332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kill(pid\_mission,\ SIGKILL);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01333}01333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a6ebe7015fe1fddc8d04a86cbb7ba1524}{affiche\_fichier\_tableau\_curse\_position\_exacte}}(\textcolor{stringliteral}{"{}TEMPS\ ÉCOULÉ\ !"{}}\ ,\ \textcolor{stringliteral}{"{}../data/vide"{}});}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01334}01334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reussite\ =\ false\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01335}01335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01336}01336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01337}01337\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01338}01338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ usleep(5000);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01339}01339\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01340}01340\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01341}01341\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ nettoyage\ des\ fils}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01342}01342\ \ \ \ \ \ \ \ \ \ \ \ \ waitpid(pid\_chrono,\ NULL,\ 0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01343}01343\ \ \ \ \ \ \ \ \ \ \ \ \ waitpid(pid\_mission,\ NULL,\ 0);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01344}01344\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01345}01345\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01346}01346\ \ \ \ \textcolor{comment}{//\ Vérification\ de\ la\ réussite\ de\ la\ mission\ \ \ }}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01347}01347\ \ \ \ \ \ \ reussite\ =\ \mbox{\hyperlink{old__version_2src_2mission_8c_a5519f0d20d640f61e785c215524a3a32}{verification\_mission}}(mission\ ,\ 14\ ,\ racine\ ,\ courant)\ ;}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01348}01348\ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2mission_8c_adbaaaaf0ae83783163a1eedabd8789af}{verification\_reussite}}(\ mission\ ,\ racine\ ,\ reussite\ ,\ 14\ );}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01349}01349\ }
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01350}01350\ \ \ \ free(courant);}
+\DoxyCodeLine{\Hypertarget{old__version_2src_2mission_8c_source_l01351}01351\ \}}
+
+\end{DoxyCode}

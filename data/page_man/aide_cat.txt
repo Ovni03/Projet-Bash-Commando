@@ -1,0 +1,17 @@
+commande	:	cat
+
+description	:	afficher le contenus d'une fichier
+
+utilisation	:	cat [option]... [fichier]...
+
+			{plusieurs fichiers peut être afficher en même temps}
+
+option existant
+
+	-n	afficher les numéros de ligne
+
+	-E	affiche '$' en fin de ligne
+
+	-b	numérote les lignes non vide
+
+

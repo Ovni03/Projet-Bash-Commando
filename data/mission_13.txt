@@ -1,0 +1,16 @@
+MISSION :
+
+    c'est comme la mission 11  mais tu ne doit me dire que les 
+    cinq dernier ligne .
+
+COMMANDE :
+
+    tail -n N [nom_de_fichier] : Cette commande affiche le N dernier ligne du fichier en argument
+
+    - Sans l'option n il affiche les 10 dernier par defaut
+
+HELP :
+
+    Va dans le batiment Laboratoire et deplace dans archives_secretes !
+    
+                    

@@ -1,0 +1,190 @@
+\doxysection{include/menu.h File Reference}
+\hypertarget{menu_8h}{}\label{menu_8h}\index{include/menu.h@{include/menu.h}}
+{\ttfamily \#include "{}../include/affichage.\+h"{}}\newline
+{\ttfamily \#include "{}../include/sécure.\+h"{}}\newline
+{\ttfamily \#include "{}../include/mission.\+h"{}}\newline
+Include dependency graph for menu.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{menu_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_8h_a0f8a0c90aa152f4542ce093e8d914c08}{menu\+\_\+pricipale}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+void \mbox{\hyperlink{menu_8h_a3f8bf4a7d071108da45a49c477f5fd1b}{load\+\_\+game}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission, int rang\+\_\+du\+\_\+dernier\+\_\+mission, \mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}racine)
+\item 
+void \mbox{\hyperlink{menu_8h_a57bd833ab5b3e3631255a74890ae43ed}{ptit\+\_\+prompt}} (char \texorpdfstring{$\ast$}{*}nom)
+\item 
+int \mbox{\hyperlink{menu_8h_af87ff8258b49b4091909740cfededd17}{charger\+\_\+partie}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission)
+\item 
+void \mbox{\hyperlink{menu_8h_a700680a6adb8f0c5c16d725dd3c4e31a}{quit\+\_\+game}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission)
+\item 
+void \mbox{\hyperlink{menu_8h_a69bd562bd8eef2aece5748bfc6f6c2c5}{loging}} ()
+\begin{DoxyCompactList}\small\item\em Fonction pour gérer la connexion de l\textquotesingle{}utilisateur. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_8h_aab4636cb9924e3ab41d607451e09ed94}{dossier\+Existe}} (const char \texorpdfstring{$\ast$}{*}chemin)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{menu_8h_af87ff8258b49b4091909740cfededd17}\label{menu_8h_af87ff8258b49b4091909740cfededd17} 
+\index{menu.h@{menu.h}!charger\_partie@{charger\_partie}}
+\index{charger\_partie@{charger\_partie}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{charger\_partie()}{charger\_partie()}}
+{\footnotesize\ttfamily int charger\+\_\+partie (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00112}{112}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8h_af87ff8258b49b4091909740cfededd17_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8h_aab4636cb9924e3ab41d607451e09ed94}\label{menu_8h_aab4636cb9924e3ab41d607451e09ed94} 
+\index{menu.h@{menu.h}!dossierExiste@{dossierExiste}}
+\index{dossierExiste@{dossierExiste}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{dossierExiste()}{dossierExiste()}}
+{\footnotesize\ttfamily int dossier\+Existe (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{chemin }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00018}{18}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{menu_8h_aab4636cb9924e3ab41d607451e09ed94_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8h_a3f8bf4a7d071108da45a49c477f5fd1b}\label{menu_8h_a3f8bf4a7d071108da45a49c477f5fd1b} 
+\index{menu.h@{menu.h}!load\_game@{load\_game}}
+\index{load\_game@{load\_game}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{load\_game()}{load\_game()}}
+{\footnotesize\ttfamily void load\+\_\+game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{int}]{rang\+\_\+du\+\_\+dernier\+\_\+mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00095}{95}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{menu_8h_a3f8bf4a7d071108da45a49c477f5fd1b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8h_a3f8bf4a7d071108da45a49c477f5fd1b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8h_a69bd562bd8eef2aece5748bfc6f6c2c5}\label{menu_8h_a69bd562bd8eef2aece5748bfc6f6c2c5} 
+\index{menu.h@{menu.h}!loging@{loging}}
+\index{loging@{loging}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{loging()}{loging()}}
+{\footnotesize\ttfamily loging (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction pour gérer la connexion de l\textquotesingle{}utilisateur. 
+
+\+: Fonction qui récupère le loging du joueur et accorde le sauvegarde qui lui est attribué s\textquotesingle{}il a déja jouer si non crée un nouveau dossier de sauvegarde pour l\textquotesingle{}user 
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00036}{36}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{menu_8h_a69bd562bd8eef2aece5748bfc6f6c2c5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{menu_8h_a69bd562bd8eef2aece5748bfc6f6c2c5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8h_a0f8a0c90aa152f4542ce093e8d914c08}\label{menu_8h_a0f8a0c90aa152f4542ce093e8d914c08} 
+\index{menu.h@{menu.h}!menu\_pricipale@{menu\_pricipale}}
+\index{menu\_pricipale@{menu\_pricipale}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menu\_pricipale()}{menu\_pricipale()}}
+{\footnotesize\ttfamily void menu\+\_\+pricipale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission,  }\item[{\mbox{\hyperlink{structfichier}{fichier}} \texorpdfstring{$\ast$}{*}}]{racine }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00261}{261}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{menu_8h_a0f8a0c90aa152f4542ce093e8d914c08_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8h_a0f8a0c90aa152f4542ce093e8d914c08_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8h_a57bd833ab5b3e3631255a74890ae43ed}\label{menu_8h_a57bd833ab5b3e3631255a74890ae43ed} 
+\index{menu.h@{menu.h}!ptit\_prompt@{ptit\_prompt}}
+\index{ptit\_prompt@{ptit\_prompt}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{ptit\_prompt()}{ptit\_prompt()}}
+{\footnotesize\ttfamily void ptit\+\_\+prompt (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{nom }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00240}{240}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8h_a57bd833ab5b3e3631255a74890ae43ed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8h_a700680a6adb8f0c5c16d725dd3c4e31a}\label{menu_8h_a700680a6adb8f0c5c16d725dd3c4e31a} 
+\index{menu.h@{menu.h}!quit\_game@{quit\_game}}
+\index{quit\_game@{quit\_game}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{quit\_game()}{quit\_game()}}
+{\footnotesize\ttfamily void quit\+\_\+game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{menu_8c_source_l00229}{229}} of file \mbox{\hyperlink{menu_8c_source}{menu.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8h_a700680a6adb8f0c5c16d725dd3c4e31a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8h_a700680a6adb8f0c5c16d725dd3c4e31a_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,9 @@
+ Soldat !!
+ 
+ Desormais vous avez votre propre tente la tente_1.
+ Continue comme ça et vous êtes sur le bon chemin de devenir un véritable Bash Commando.
+ 
+ A la suite vous apprendrez comment détruire un lieu précis avec la commande "rmdir"
+ 
+ Bonne chance soldat !!
+ 

@@ -1,0 +1,9 @@
+<map id="affichage" name="affichage">
+<area shape="rect" id="Node000001" title="Affiche les fichiers les plus ouverts dans l&#39;arborescence." alt="" coords="5,67,88,92"/>
+<area shape="rect" id="Node000002" href="$arborescence_8c.html#a32c5992992d3a7928fa34a2ffc73eb63" title="Affiche les fichiers ayant le nombre maximum d&#39;ouvertures." alt="" coords="167,29,227,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,67,154,50,155,55,89,72"/>
+<area shape="rect" id="Node000003" href="$arborescence_8c.html#ab7ffc2f5e970bfdd99098fabedc6e3e9" title="Recherche le nombre maximum d&#39;ouvertures parmi les fichiers dans l&#39;arborescence." alt="" coords="136,103,259,128"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="89,86,131,97,130,102,87,92"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="172,31,167,21,170,11,180,5,197,3,218,6,227,15,223,19,215,11,197,8,182,10,174,15,172,20,177,28"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="172,104,167,94,170,85,180,78,197,76,218,80,227,88,223,92,215,84,197,81,182,83,174,88,172,94,177,101"/>
+</map>

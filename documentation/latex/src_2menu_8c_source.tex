@@ -1,0 +1,309 @@
+\doxysection{menu.\+c}
+\hypertarget{src_2menu_8c_source}{}\label{src_2menu_8c_source}\index{src/menu.c@{src/menu.c}}
+\mbox{\hyperlink{src_2menu_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}../include/menu.h"{}}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}../include/arborescence.h"{}}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}../include/prompt.h"{}}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}../include/mission.h"{}}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <sys/stat.h>}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <ncurses.h>}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00012}\mbox{\hyperlink{src_2menu_8c_a3d3bf5a2f88b1dba6c6bc13bf889c3cc}{00012}}\ \textcolor{preprocessor}{\#define\ LARGEUR\ 70\ }\textcolor{comment}{//\ Largeur\ du\ tableau\ curses}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00018}\mbox{\hyperlink{src_2menu_8c_aab4636cb9924e3ab41d607451e09ed94}{00018}}\ int\ dossierExiste(const\ char\ *chemin)}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{struct\ \ }stat\ info\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (stat(chemin\ ,\ \&info)\ !=\ 0\ )\ \textcolor{comment}{//\ Si\ le\ dossier\ n'existe\ pas}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00025}00025\ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ S\_ISDIR\ vérifie\ que\ c'est\ bien\ un\ dossier}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_ISDIR(info.st\_mode)\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00029}00029\ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00036}\mbox{\hyperlink{src_2menu_8c_a5b4df09ad4bc42bbe037a1364efd9ec3}{00036}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2menu_8c_a5b4df09ad4bc42bbe037a1364efd9ec3}{loging}}()}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00037}00037\ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{old__version_2src_2menu_8c_a5b4df09ad4bc42bbe037a1364efd9ec3}{loging}}\ =\ NULL\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00039}00039\ \ \ \ \ FILE\ *fichier\_temporaire\ =\ NULL\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{char}\ *chemin\ =\ calloc(50\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00042}00042\ \ \ \ \ fichier\_temporaire\ =\ fopen(\textcolor{stringliteral}{"{}../save/temp.txt"{}}\ ,\ \textcolor{stringliteral}{"{}w+"{}});}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ !fichier\_temporaire\ )}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00045}00045\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erreur\ :\ Fichier\ temporaire\ introuvable\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ exit(0);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00049}00049\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{old__version_2src_2menu_8c_a5b4df09ad4bc42bbe037a1364efd9ec3}{loging}}\ =\ calloc(50\ ,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//\ Erreur\ de\ recuperation\ du\ loging}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{if}(\ \mbox{\hyperlink{include_2prompt_8h_a7561703c0e5c30615f04d1caa4279ac9}{getNomJoueur}}(\mbox{\hyperlink{old__version_2src_2menu_8c_a5b4df09ad4bc42bbe037a1364efd9ec3}{loging}})\ ==\ -\/1)}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00054}00054\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erreur\ :\ Impossible\ de\ récupérer\ le\ loging\ !!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00055}00055\ \ \ \ \ \ \ \ \ exit(0);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00057}00057\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00058}00058\ \ \ \ \ fprintf(fichier\_temporaire\ ,\ \textcolor{stringliteral}{"{}../save/\%s"{}},\ \mbox{\hyperlink{old__version_2src_2menu_8c_a5b4df09ad4bc42bbe037a1364efd9ec3}{loging}});}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00059}00059\ \ \ \ \ rewind(fichier\_temporaire);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00060}00060\ \ \ \ \ fscanf(\ fichier\_temporaire\ ,\ \textcolor{stringliteral}{"{}\%s"{}}\ ,\ chemin\ );}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ Verification\ si\ le\ joueure\ possede\ deja\ un\ sauvegarde\ si\ no\ créer}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{old__version_2src_2menu_8c_aab4636cb9924e3ab41d607451e09ed94}{dossierExiste}}(chemin)\ ==\ 0\ )}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00064}00064\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ mkdir(chemin\ ,\ 0755\ )\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00066}00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erreur\ :\ Impossible\ de\ crée\ le\ dossier.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00071}00071\ \ \ \ \ \textcolor{comment}{//\ ecriture\ du\ chemin\ de\ level.txt\ dans\ temp.txt}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00072}00072\ \ \ \ \ rewind(fichier\_temporaire);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00073}00073\ \ \ \ \ fprintf(fichier\_temporaire\ ,\ \textcolor{stringliteral}{"{}\%s/level.txt\(\backslash\)n"{}},\ chemin\ );}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00075}00075\ \ \ \ \ \textcolor{comment}{//\ Ecriture\ du\ chemin\ de\ mission.bin\ dans\ temp.txt}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00076}00076\ \ \ \ \ fprintf(fichier\_temporaire\ ,\ \textcolor{stringliteral}{"{}\%s/mission.bin\(\backslash\)n"{}},\ chemin\ );}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00078}00078\ \ \ \ \ \textcolor{comment}{//\ Ecriture\ du\ chemin\ de\ point}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00079}00079\ \ \ \ \ fprintf(fichier\_temporaire\ ,\ \textcolor{stringliteral}{"{}\%s/pTSci"{}},\ chemin\ );}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00081}00081\ \ \ \ \ free(\mbox{\hyperlink{old__version_2src_2menu_8c_a5b4df09ad4bc42bbe037a1364efd9ec3}{loging}});}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00082}00082\ \ \ \ \ fclose(fichier\_temporaire);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00084}00084\ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00086}00086\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00095}\mbox{\hyperlink{src_2menu_8c_a3f8bf4a7d071108da45a49c477f5fd1b}{00095}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2menu_8c_a3f8bf4a7d071108da45a49c477f5fd1b}{load\_game}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \textcolor{keywordtype}{int}\ rang\_du\_dernier\_mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine)}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00096}00096\ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00097}00097\ \ \ \ \ \textcolor{comment}{//\ Création\ du\ tableau\ de\ pointeurs\ pointant\ sur\ les\ fonctions\ mission}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00098}00098\ \ \ \ \ void\ (*fonctions\_mission[])(\mbox{\hyperlink{structMission}{Mission}}\ *\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *)\ =\ \{\ \mbox{\hyperlink{include_2mission_8h_a060574dcb2ecd963a2e4e0af59808810}{intro}}\ ,\ \mbox{\hyperlink{include_2mission_8h_ac3914327e4aa282b233f138bbf3912bf}{mission\_1}}\ ,\ \mbox{\hyperlink{include_2mission_8h_ac3eb824d03b78b6e9e71124e50ca221b}{mission\_2}}\ ,\ \mbox{\hyperlink{include_2mission_8h_ae2620c79968764049bb9ad4a30ef1811}{mission\_3}}\ \ ,\ \mbox{\hyperlink{include_2mission_8h_afa874f5eadd06f5d5deed916d7e6b099}{mission\_4}}\ ,\ \mbox{\hyperlink{include_2mission_8h_a8c6f3f918eadb32c897c19a1274a66e4}{mission\_5}}\ ,\ \mbox{\hyperlink{include_2mission_8h_ae29788b4f43a31672492ec70912055d8}{mission\_6}}\ ,\ \mbox{\hyperlink{include_2mission_8h_afa9f6a6ec1e13e9ae480305cfb253502}{mission\_7}}\ ,\ \mbox{\hyperlink{include_2mission_8h_a01eed157c6371b2cf91cb9eae24735e9}{mission\_8}}\ ,\ \mbox{\hyperlink{include_2mission_8h_a84a07b104a844f83537192cf9ff865fa}{mission\_9}}\ ,\ \ \mbox{\hyperlink{include_2mission_8h_a597303e4bb80f7822f16c5b572f8ee9e}{mission\_10}}\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ ,\ \ \mbox{\hyperlink{include_2mission_8h_a35e102f5291c73343f8b01dedd397897}{mission\_11}}\ ,\ \ \mbox{\hyperlink{include_2mission_8h_a6eef36863d5898b56239c646fd310f3b}{mission\_12}}\ ,\ \ \mbox{\hyperlink{include_2mission_8h_a46ed1e33b45d68cbed3cd26b0a31ff12}{mission\_13}}\ ,\ \mbox{\hyperlink{include_2mission_8h_a10949bd060a3de8fd48a66f2bc16e2dd}{mission\_14}}\ \};}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00101}00101\ \ \ \ \ \textcolor{comment}{//\ Appel\ du\ mission\ du\ dérnier\ mission\ ;\ }}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00102}00102\ \ \ \ \ fonctions\_mission[rang\_du\_dernier\_mission](\ mission\ ,\ racine\ );}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00103}00103\ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00105}00105\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00112}\mbox{\hyperlink{src_2menu_8c_af87ff8258b49b4091909740cfededd17}{00112}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{old__version_2src_2menu_8c_af87ff8258b49b4091909740cfededd17}{charger\_partie}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission)}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00113}00113\ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00114}00114\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0\ ,\ nb\_ligne\ ,\ j\ =\ 0\ ,\ nbMot\ =\ 0\ ,\ MAX\ =\ 0\ ,}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00115}00115\ \ \ \ \ touch\ =\ 0\ ,\ hauteur\ =\ 0\ ,\ largeur\ =\ 0\ ,\ posix\ =\ 0\ ,\ posy\ =\ 0\ ,\ choix\ \ =\ 0;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00116}00116\ \ \ \ \ \textcolor{keywordtype}{char}\ TAB[\mbox{\hyperlink{include_2mission_8h_aec500f88025cfe421fd29ce2c4dd2e4f}{NOMBRE\_MISSION}}][50]\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00118}00118\ \ \ \ \ FILE\ *\mbox{\hyperlink{structfichier}{fichier}}=fopen(\ \textcolor{stringliteral}{"{}../data/selection\_partie.txt"{}}\ ,\ \textcolor{stringliteral}{"{}r"{}}\ );}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\ i\ <\ \mbox{\hyperlink{include_2mission_8h_aec500f88025cfe421fd29ce2c4dd2e4f}{NOMBRE\_MISSION}}\ \&\&\ mission[i].debloqué\ ==\ 1\ \&\&\ fgets(TAB[i]\ ,\ 50\ ,\ \mbox{\hyperlink{structfichier}{fichier}})\ )}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00121}00121\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ nbMot\ =\ strlen(TAB[i]);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ TAB[i][nbMot-\/1]==\ \textcolor{charliteral}{'\(\backslash\)n'})\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TAB[i][nbMot-\/1]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nbMot\ >\ MAX\ )}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAX\ =\ nbMot\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ i++\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ nb\_ligne\ =\ i\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00137}00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00139}00139\ \ \ \ \ fclose(\mbox{\hyperlink{structfichier}{fichier}});}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00141}00141\ \ \ \ \ \textcolor{comment}{//\ Pour\ ajouter\ un\ peu\ de\ marge\ au\ tableau}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00142}00142\ \ \ \ \ \ \ \ \ hauteur\ =\ i\ +\ 6\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00143}00143\ \ \ \ \ \ \ \ \ largeur\ =\ MAX\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00144}00144\ \ \ \ \ \textcolor{comment}{//\ Pour\ trouver\ le\ centre\ du\ terminal}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00145}00145\ \ \ \ \ \ \ \ \ posix\ =\ (COLS\ -\/\ \mbox{\hyperlink{old__version_2src_2menu_8c_a3d3bf5a2f88b1dba6c6bc13bf889c3cc}{LARGEUR}})\ /\ 2\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00146}00146\ \ \ \ \ \ \ \ \ posy\ =\ (LINES\ -\/\ i)\ /\ 2\ \ \ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00147}00147\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00148}00148\ \ \ \ \ \textcolor{comment}{//\ Création\ du\ tableau\ win}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00149}00149\ \ \ \ \ \ \ \ \ WINDOW\ *win\ =\ newwin(hauteur\ ,\ \mbox{\hyperlink{old__version_2src_2menu_8c_a3d3bf5a2f88b1dba6c6bc13bf889c3cc}{LARGEUR}}\ ,\ posy\ ,\ posix\ )\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00151}00151\ \ \ \ \ \textcolor{comment}{//\ Config\ curses}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00152}00152\ \ \ \ \ \ \ \ \ keypad(win\ ,\ \textcolor{keyword}{true}\ );}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00153}00153\ \ \ \ \ \ \ \ \ curs\_set(0);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00154}00154\ \ \ \ \ \ \ \ \ noecho();}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00155}00155\ \ \ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{while}(1)}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00157}00157\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Effacer\ la\ fenêtre\ (pas\ l'écran\ principal)}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00159}00159\ \ \ \ \ \ \ \ \ werase(win);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00160}00160\ \ \ \ \ \ \ \ \ wborder(win,\ \textcolor{charliteral}{'|'},\ \textcolor{charliteral}{'|'},\ \textcolor{charliteral}{'-\/'},\ \textcolor{charliteral}{'-\/'},\ \textcolor{charliteral}{'+'},\ \textcolor{charliteral}{'+'},\ \textcolor{charliteral}{'+'},\ \textcolor{charliteral}{'+'});}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Affichage\ Selection\ partie}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00163}00163\ \ \ \ \ \ \ \ \ wattron(win,\ COLOR\_RED\ |\ A\_BOLD);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00164}00164\ \ \ \ \ \ \ \ \ mvwprintw(win,\ 1,\ (\mbox{\hyperlink{old__version_2src_2menu_8c_a3d3bf5a2f88b1dba6c6bc13bf889c3cc}{LARGEUR}}\ -\/\ strlen(\textcolor{stringliteral}{"{}SELECTION\ PARTIE"{}}))\ /\ 2,\ \textcolor{stringliteral}{"{}SELECTION\ PARTIE"{}});}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00165}00165\ \ \ \ \ \ \ \ \ wattroff(win,\ COLOR\_RED\ |\ A\_BOLD);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Affichage\ des\ missions\ débloquées}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00168}00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (j\ =\ 0\ ;\ j\ <\ nb\_ligne\ ;\ j++)}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00169}00169\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(j\ ==\ choix)}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wattron(win,\ COLOR\_GREEN\ |\ A\_BOLD);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mvwprintw(win,\ j\ +\ 3,\ 2\ ,\ \textcolor{stringliteral}{"{}==>\ \%s"{}},\ TAB[j]);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wattroff(win,\ COLOR\_GREEN\ |\ A\_BOLD);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mvwprintw(win,\ j\ +\ 3,\ 6,\ \textcolor{stringliteral}{"{}\%s"{}},\ TAB[j]);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00180}00180\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instructions}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00183}00183\ \ \ \ \ \ \ \ \ mvwprintw(win,\ hauteur\ -\/\ 2\ ,\ 2,\ \textcolor{stringliteral}{"{}Utilisez\ les\ flèches\ et\ appuyez\ sur\ ENTRÉE\ ou\ q\ "{}});}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00185}00185\ \ \ \ \ \ \ \ \ wrefresh(win);\ \ \textcolor{comment}{//\ Rafraîchir\ la\ fenêtre}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00187}00187\ \ \ \ \ \ \ \ \ touch\ =\ wgetch(win);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (touch\ ==\ KEY\_UP\ \&\&\ choix\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00190}00190\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ choix-\/-\/\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00192}00192\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(touch\ ==\ KEY\_DOWN\ \&\&\ choix\ <\ nb\_ligne\ -\/\ 1)}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00194}00194\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ choix++\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00196}00196\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00197}00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\ touch\ ==\ KEY\_UP\ \&\&\ choix\ ==\ 0\ )}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00198}00198\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ choix\ =\ nb\_ligne\ -\/\ 1\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00200}00200\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00201}00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\ touch\ ==\ KEY\_DOWN\ \&\&\ choix\ ==\ nb\_ligne\ -\/\ 1\ )}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00202}00202\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ choix\ =\ 0\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00204}00204\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00205}00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (touch\ ==\ \textcolor{charliteral}{'\(\backslash\)n'}\ ||\ touch\ ==\ KEY\_ENTER)}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00206}00206\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ delwin(win);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ clear();}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ refresh();}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ choix\ ;\ \textcolor{comment}{//\ Retourne\ le\ rang\ de\ la\ mission\ choisie\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00211}00211\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00212}00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (touch\ ==\ 27\ ||\ touch\ ==\ \textcolor{charliteral}{'q'})\ \ \textcolor{comment}{//\ ESC\ ou\ 'q'\ pour\ quitter}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00213}00213\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ delwin(win);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ clear();}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ refresh();}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;\ \textcolor{comment}{//\ Indiquer\ que\ l'utilisateur\ a\ annulé\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00218}00218\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00219}00219\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00220}00220\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00221}00221\ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00223}00223\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00229}\mbox{\hyperlink{src_2menu_8c_a700680a6adb8f0c5c16d725dd3c4e31a}{00229}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2menu_8c_a700680a6adb8f0c5c16d725dd3c4e31a}{quit\_game}}(\ \mbox{\hyperlink{structMission}{Mission}}\ *mission\ )\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00230}00230\ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00231}00231\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)033[1;31m"{}});}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00232}00232\ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a7ad679ded74015890f90157f1194734f}{affiche\_fichier}}(\textcolor{stringliteral}{"{}../ascii/quit.txt"{}});}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00233}00233\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)033[0m"{}});\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00234}00234\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00235}00235\ \ \ \ \ free(mission);\ \textcolor{comment}{//\ liberation\ du\ mémoire\ alloué\ au\ struct\ mission}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00236}00236\ \ \ \ \ exit\ (0)\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00237}00237\ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00240}\mbox{\hyperlink{src_2menu_8c_a57bd833ab5b3e3631255a74890ae43ed}{00240}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2menu_8c_a57bd833ab5b3e3631255a74890ae43ed}{ptit\_prompt}}(\textcolor{keywordtype}{char}\ *nom)}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00241}00241\ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00243}00243\ \ \ \ \ \textcolor{keywordtype}{char}\ *user\ =\ getenv(\textcolor{stringliteral}{"{}USER"{}});}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00245}00245\ \ \ \ \ \textcolor{keywordflow}{if}(\ strcmp(\ \textcolor{stringliteral}{"{}USER"{}}\ ,\ nom\ )\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00246}00246\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00247}00247\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)t==>\ \(\backslash\)033[1;33m\%s\(\backslash\)033[0m\(\backslash\)033[1;34m@\(\backslash\)033[0m\(\backslash\)033[1;31mBash-\/Commando:\(\backslash\)033[0m\ "{}},\ user);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00248}00248\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00249}00249\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00250}00250\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00251}00251\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)t==>\ \(\backslash\)033[1;33m\%s\(\backslash\)033[0m\(\backslash\)033[1;34m@\(\backslash\)033[0m\(\backslash\)033[1;31mBash-\/Commando:\(\backslash\)033[0m\ "{}},\ nom);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00252}00252\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00253}00253\ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00261}\mbox{\hyperlink{src_2menu_8c_a0f8a0c90aa152f4542ce093e8d914c08}{00261}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{old__version_2src_2menu_8c_a0f8a0c90aa152f4542ce093e8d914c08}{menu\_pricipale}}(\mbox{\hyperlink{structMission}{Mission}}\ *mission\ ,\ \mbox{\hyperlink{structfichier}{fichier}}\ *racine\ )}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00262}00262\ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00263}00263\ \ \ \ \ \textcolor{keywordtype}{int}\ choix\ =\ 0\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00264}00264\ \ \ \ \ \textcolor{keywordtype}{int}\ compteur\ =\ 0\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00265}00265\ \ \ \ \ FILE\ *save\ =\ NULL\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00266}00266\ \ \ \ \ \textcolor{keywordtype}{int}\ rang\_du\_dernier\_mission\ =\ 0\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00267}00267\ \ \ \ \ \textcolor{keywordtype}{char}\ chemin\_level[30]\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00268}00268\ \ \ \ \ \textcolor{keywordtype}{char}\ chemin\_mission[30]\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00270}00270\ \ \ \ \ \textcolor{keywordflow}{while}(1)}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00271}00271\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00272}00272\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00273}00273\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (compteur\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_a7ad679ded74015890f90157f1194734f}{affiche\_fichier}}(\textcolor{stringliteral}{"{}../ascii/menu.txt"{}}\ );\ \ \ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)t\%d\ :\ Commande\ introuvable\(\backslash\)n"{}},\ choix);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00282}00282\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2menu_8c_a57bd833ab5b3e3631255a74890ae43ed}{ptit\_prompt}}(\textcolor{stringliteral}{"{}USER"{}});}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ choix=\mbox{\hyperlink{include_2s_xC3_xA9cure_8h_a061e87d58e78f436eff6731db40fbc0d}{lireEntier}}();}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ compteur\ ++\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00286}00286\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{while}(\ choix\ <=\ 0\ ||\ choix\ >\ 4\ );}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00287}00287\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00288}00288\ \ \ \ \ \ \ \ \ compteur\ =\ 0\ ;\ \textcolor{comment}{//\ Réinitialisation\ du\ compteur\ a\ zero}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00289}00289\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (choix)}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00290}00290\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00291}00291\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1\ :}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Regarde\ la\ dérniere\ mission\ jouer\ par\ l'utilisateur}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ save\ =\ fopen(\ \textcolor{stringliteral}{"{}../save/temp.txt"{}}\ ,\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ fscanf(\ save\ ,\ \textcolor{stringliteral}{"{}\%s"{}}\ ,\ chemin\_level\ );}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ fscanf(\ save\ ,\ \textcolor{stringliteral}{"{}\%s"{}}\ ,\ chemin\_mission\ );}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ fclose(save);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ save\ =\ fopen(\ chemin\_level\ ,\ \textcolor{stringliteral}{"{}r"{}}\ )\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00298}00298\ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ save\ ==\ NULL\ )}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Si\ le\ fichier\ n'existe\ pas\ ,\ on\ commence\ une\ nouvelle\ partie}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2menu_8c_a3f8bf4a7d071108da45a49c477f5fd1b}{load\_game}}(\ mission\ ,\ 0\ ,\ racine);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fscanf(\ save\ ,\ \textcolor{stringliteral}{"{}\%d"{}}\ ,\ \&rang\_du\_dernier\_mission\ )\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fclose(\ save\ )\ ;\ \ \ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2menu_8c_a3f8bf4a7d071108da45a49c477f5fd1b}{load\_game}}(\ mission\ ,\ rang\_du\_dernier\_mission\ ,\ racine);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00310}00310\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00311}00311\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00312}00312\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2\ :}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2affichage_8h_af224e7350ef55d51f3d042f289f48262}{screen\_clear}}();}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ endwin();}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ initscr();}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ clear();}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ refresh();}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ choix\ =\ \mbox{\hyperlink{old__version_2src_2menu_8c_af87ff8258b49b4091909740cfededd17}{charger\_partie}}(mission);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (choix\ !=\ -\/1\ )}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2menu_8c_a3f8bf4a7d071108da45a49c477f5fd1b}{load\_game}}(mission\ ,\ choix+1\ ,\ racine\ );}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ endwin();\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00324}00324\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00325}00325\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3\ :}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{include_2mission_8h_a716e01c785c35126dacc0f303323e73e}{réinitialisation\_mission}}(mission);}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00327}00327\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00328}00328\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4\ :}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{old__version_2src_2menu_8c_a700680a6adb8f0c5c16d725dd3c4e31a}{quit\_game}}(\ mission\ );}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ return\ ;}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00331}00331\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00332}00332\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Option\ invalide\ !!!\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00334}00334\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00335}00335\ \ \ \ \ \}\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{src_2menu_8c_source_l00336}00336\ \}}
+
+\end{DoxyCode}

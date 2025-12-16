@@ -1,0 +1,14 @@
+commande	:	rmdir
+
+description	:	supprimer un repertoire
+
+utilisation	:	rm [option]... [repertoire]...
+			{ la suppression de plusieurs repertoires en même temps est possible }
+
+option existant
+
+	-p	supprime le repertoire et le parent s'il est en argument comme : 'parent/fils'
+
+	-v	affiche tous ce qui a été fait par la commande
+
+

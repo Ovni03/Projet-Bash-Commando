@@ -1,0 +1,20 @@
+commande	:	rm
+
+description	:	supprimer un fichier
+
+utilisation	:	rm [option]... [fichier]...
+			{ la suppression de plusieurs fichiers en même temps est possible }
+
+option existant
+
+	-d	supprime une repertoire vide
+
+	-f	ne demande pas d'avis mais supprime même si le fichier n'est pas vide
+
+	-i	ne suppime pas directement mais demande une confirmation
+
+ 	-R, -r	fait une suppression recursive donc la hierarchie des sous dossiers
+
+	-v	affiche tous ce qui a été fait
+
+

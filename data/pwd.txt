@@ -1,0 +1,24 @@
+MISSION :
+
+    Découvrir l'endroit exact ou tu te trouve dans la zone d'operation.
+
+COMMANDE :
+   
+    > pwd : cette commande te montre ton emplacement actuel sur la carte du terrain.
+        
+        . Elle affiche le chemin complet(absolue) dépuis le début de la carte jusqu'a l'endroit ou tu te tien.
+        . Très utile pour ne pas te pèrdre entre les camps, dépots ou zone sécrètes.
+    
+    > stat : Elle permet de savoir si la mission est achevée ou pas.
+    
+    > exit : Elle permet de passer à la partie suivante ou d'aller au menu principale.
+
+    > mission : Elle te permet de revoir ta mission actuelle en cas d'oublie.
+
+    > aide [commande] : Elle explique la commande au cas où tu ne te souviens pas.
+    
+HELP :
+   
+    Tape pwd pour vérifier ou tu te trouves actuellement.
+    
+    

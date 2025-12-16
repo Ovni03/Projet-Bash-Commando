@@ -1,0 +1,7 @@
+commande	:	clear
+
+description	:	nettoyer le terminal de prompt
+
+utilisation	:	clear
+
+

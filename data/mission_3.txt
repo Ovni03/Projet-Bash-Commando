@@ -1,0 +1,24 @@
+MISSION :
+    
+    Soldat !!!
+    Jusqu'ici on vous a appris comment savoir votre emplacement actuel et tout les objets qui se trouves aux alentours.
+    Maintenant, ta mission est d'aller dans un endroit nommé "combats".
+    Trouve-le en utilisant la commande : pwd, ls et cd .
+
+COMMANDE :
+
+    cd [nom_du_lieu] : Cette commande te permet de marcher vers un nouveau lieu.
+
+    - Tu entres dans un batiment comme si tu poussais une porte.
+    - Tu peux reculer avec "cd .."
+    - Tu peux aller dans une zone precise si tu connais son nom.
+
+ATTENTION :
+    
+    Le nom des lieux doit être recopié à la lettre sinon,le lieu sera introuvable.
+
+HELP :
+    Tape "cd .." pour revenir d'un pas en arriere.
+    Tape "cd camp" pour entrer dans un lieu nomme "camp".
+
+.

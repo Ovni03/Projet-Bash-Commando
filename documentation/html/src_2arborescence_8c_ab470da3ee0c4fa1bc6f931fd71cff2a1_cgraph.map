@@ -1,0 +1,7 @@
+<map id="my_mv" name="my_mv">
+<area shape="rect" id="Node000001" title="Déplace un fichier ou dossier vers une destination." alt="" coords="5,31,76,56"/>
+<area shape="rect" id="Node000002" href="$old__version_2src_2arborescence_8c.html#a0249217c5659201e1b06aad32054c2cc" title="Cherche un fichier ou dossier par son nom dans le répertoire courant." alt="" coords="124,5,203,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,34,110,26,111,32,77,39"/>
+<area shape="rect" id="Node000003" href="$old__version_2src_2arborescence_8c.html#a7edea57482ac8f7f759439e0d6731332" title="Déplace un fichier ou dossier d&#39;une source vers une destination." alt="" coords="124,55,203,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="77,48,111,54,110,60,76,53"/>
+</map>

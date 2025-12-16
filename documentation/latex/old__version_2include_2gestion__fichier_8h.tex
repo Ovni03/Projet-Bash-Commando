@@ -1,0 +1,285 @@
+\doxysection{old\+\_\+version/include/gestion\+\_\+fichier.h File Reference}
+\hypertarget{old__version_2include_2gestion__fichier_8h}{}\label{old__version_2include_2gestion__fichier_8h}\index{old\_version/include/gestion\_fichier.h@{old\_version/include/gestion\_fichier.h}}
+
+
+regroupe tous les fonctions qui manipule les fichiers  
+
+
+{\ttfamily \#include "{}../include/mission.\+h"{}}\newline
+Include dependency graph for gestion\+\_\+fichier.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{old__version_2include_2gestion__fichier_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{old__version_2include_2gestion__fichier_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{old__version_2include_2gestion__fichier_8h_a2d90bdfdc632e4ffbafc22e2b18ed8fd}{head\+\_\+fichier}} (char \texorpdfstring{$\ast$}{*}nom\+\_\+fichier, int max)
+\begin{DoxyCompactList}\small\item\em il affiche des premiers lignes d\textquotesingle{}une fichier entrer en parametre \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{old__version_2include_2gestion__fichier_8h_a1e0663e3fb9c24f9f880e2fb809cff1d}{affiche\+\_\+ligne}} (char \texorpdfstring{$\ast$}{*}chemin, int num\+\_\+ligne, char \texorpdfstring{$\ast$}{*}emplacement)
+\begin{DoxyCompactList}\small\item\em Lire une ligne precise dans un fichier depart de la fin si negative. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{old__version_2include_2gestion__fichier_8h_aca096e7269f361a89edee4d606e12013}{my\+\_\+man}} (char \texorpdfstring{$\ast$}{*}nom\+\_\+commande)
+\begin{DoxyCompactList}\small\item\em Il affiche une page d\textquotesingle{}aide pour une commande entrer en argument. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{old__version_2include_2gestion__fichier_8h_af950d60376ca05c765ba6531d82a0408}{qui\+\_\+est\+\_\+meilleur}} (int n\+\_\+miss)
+\begin{DoxyCompactList}\small\item\em cette fonction affche qui a le meilleur temps concernant une mission entrer en argument \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{old__version_2include_2gestion__fichier_8h_a65ff929a2d03935078e95374dbf120e2}{voir\+\_\+indice}} (\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}mission)
+\begin{DoxyCompactList}\small\item\em Elle affiche une petite aide apropos d\textquotesingle{}une mission en decrementant le score du joueur actuelle. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{old__version_2include_2gestion__fichier_8h_ac2e44299ab62f6ffa5f85b6c014a5ade}{lire\+\_\+histoire}} ()
+\begin{DoxyCompactList}\small\item\em cette fonction lit le fichier historique des commandes \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{old__version_2include_2gestion__fichier_8h_a4d4769171b90c8209605cc8cef0a7e7d}{tail\+\_\+fichier}} (char \texorpdfstring{$\ast$}{*}nom\+\_\+fichier, int min)
+\item 
+void \mbox{\hyperlink{old__version_2include_2gestion__fichier_8h_a2c34a7ad4e3ffcbef0ebc72f6c106abd}{cat\+\_\+fichier}} (char \texorpdfstring{$\ast$}{*}nom\+\_\+fichier, bool num)
+\begin{DoxyCompactList}\small\item\em afficher le fichier entrée en parametre \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{old__version_2include_2gestion__fichier_8h_ab610135a46bf930440763e0c6ce43486}{my\+\_\+history}} (bool effacer)
+\begin{DoxyCompactList}\small\item\em afficher ou effacer les historiques de ligne de commande \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{old__version_2include_2gestion__fichier_8h_a95e90300d3ea98c36036a700d4e1b13f}{insert\+\_\+fin}} (char \texorpdfstring{$\ast$}{*}nom\+\_\+fichier, char \texorpdfstring{$\ast$}{*}chaine\+\_\+caractere)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+regroupe tous les fonctions qui manipule les fichiers 
+
+\begin{DoxyAuthor}{Author}
+ANDRIAMIHARY Valisoa 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+29 Août 2025 \begin{DoxyVerb}toutes les manipulartions de fichier comme les enregistrements et les affichages sont regroupés
+dans celle-ci ; ces fonctions sont definies dans gestion_fichier.c
+\end{DoxyVerb}
+ 
+\end{DoxyDate}
+
+
+Definition in file \mbox{\hyperlink{old__version_2include_2gestion__fichier_8h_source}{gestion\+\_\+fichier.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{old__version_2include_2gestion__fichier_8h_a1e0663e3fb9c24f9f880e2fb809cff1d}\label{old__version_2include_2gestion__fichier_8h_a1e0663e3fb9c24f9f880e2fb809cff1d} 
+\index{gestion\_fichier.h@{gestion\_fichier.h}!affiche\_ligne@{affiche\_ligne}}
+\index{affiche\_ligne@{affiche\_ligne}!gestion\_fichier.h@{gestion\_fichier.h}}
+\doxysubsubsection{\texorpdfstring{affiche\_ligne()}{affiche\_ligne()}}
+{\footnotesize\ttfamily int affiche\+\_\+ligne (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{chemin,  }\item[{int}]{num\+\_\+ligne,  }\item[{char \texorpdfstring{$\ast$}{*}}]{emplacement }\end{DoxyParamCaption})}
+
+
+
+Lire une ligne precise dans un fichier depart de la fin si negative. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chemin} & le chemin vers la fichier \\
+\hline
+{\em num\+\_\+ligne} & le numero de ligne à afficher \\
+\hline
+{\em emplacement} & le variable qui va contenir la ligne voulue \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+renvoie une valeur negative si le fichier n\textquotesingle{}est pas existant 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source_l00061}{61}} of file \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source}{gestion\+\_\+fichier.\+c}}.
+
+\Hypertarget{old__version_2include_2gestion__fichier_8h_a2c34a7ad4e3ffcbef0ebc72f6c106abd}\label{old__version_2include_2gestion__fichier_8h_a2c34a7ad4e3ffcbef0ebc72f6c106abd} 
+\index{gestion\_fichier.h@{gestion\_fichier.h}!cat\_fichier@{cat\_fichier}}
+\index{cat\_fichier@{cat\_fichier}!gestion\_fichier.h@{gestion\_fichier.h}}
+\doxysubsubsection{\texorpdfstring{cat\_fichier()}{cat\_fichier()}}
+{\footnotesize\ttfamily void cat\+\_\+fichier (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{nom\+\_\+fichier,  }\item[{bool}]{num }\end{DoxyParamCaption})}
+
+
+
+afficher le fichier entrée en parametre 
+
+afficher le contenu d\textquotesingle{}un fichier
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom\+\_\+fichier} & nom de la fichier à afficher\\
+\hline
+{\em nom\+\_\+fichier} & le nom de fichier à afficher \\
+\hline
+{\em num} & affiche le numero de ligne si true est la valeur de celle ci \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source_l00029}{29}} of file \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source}{gestion\+\_\+fichier.\+c}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{old__version_2include_2gestion__fichier_8h_a2c34a7ad4e3ffcbef0ebc72f6c106abd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{old__version_2include_2gestion__fichier_8h_a2d90bdfdc632e4ffbafc22e2b18ed8fd}\label{old__version_2include_2gestion__fichier_8h_a2d90bdfdc632e4ffbafc22e2b18ed8fd} 
+\index{gestion\_fichier.h@{gestion\_fichier.h}!head\_fichier@{head\_fichier}}
+\index{head\_fichier@{head\_fichier}!gestion\_fichier.h@{gestion\_fichier.h}}
+\doxysubsubsection{\texorpdfstring{head\_fichier()}{head\_fichier()}}
+{\footnotesize\ttfamily void head\+\_\+fichier (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{nom\+\_\+fichier,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+
+
+il affiche des premiers lignes d\textquotesingle{}une fichier entrer en parametre 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom\+\_\+fichier} & le nom de la fichier \\
+\hline
+{\em max} & le nombre de ligne à afficher \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source_l00204}{204}} of file \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source}{gestion\+\_\+fichier.\+c}}.
+
+\Hypertarget{old__version_2include_2gestion__fichier_8h_a95e90300d3ea98c36036a700d4e1b13f}\label{old__version_2include_2gestion__fichier_8h_a95e90300d3ea98c36036a700d4e1b13f} 
+\index{gestion\_fichier.h@{gestion\_fichier.h}!insert\_fin@{insert\_fin}}
+\index{insert\_fin@{insert\_fin}!gestion\_fichier.h@{gestion\_fichier.h}}
+\doxysubsubsection{\texorpdfstring{insert\_fin()}{insert\_fin()}}
+{\footnotesize\ttfamily void insert\+\_\+fin (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{nom\+\_\+fichier,  }\item[{char \texorpdfstring{$\ast$}{*}}]{chaine\+\_\+caractere }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source_l00149}{149}} of file \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source}{gestion\+\_\+fichier.\+c}}.
+
+\Hypertarget{old__version_2include_2gestion__fichier_8h_ac2e44299ab62f6ffa5f85b6c014a5ade}\label{old__version_2include_2gestion__fichier_8h_ac2e44299ab62f6ffa5f85b6c014a5ade} 
+\index{gestion\_fichier.h@{gestion\_fichier.h}!lire\_histoire@{lire\_histoire}}
+\index{lire\_histoire@{lire\_histoire}!gestion\_fichier.h@{gestion\_fichier.h}}
+\doxysubsubsection{\texorpdfstring{lire\_histoire()}{lire\_histoire()}}
+{\footnotesize\ttfamily int lire\+\_\+histoire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+cette fonction lit le fichier historique des commandes 
+
+\begin{DoxyReturn}{Returns}
+une valeur negatif si le fichier histoire est vide ou inexistant 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source_l00287}{287}} of file \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source}{gestion\+\_\+fichier.\+c}}.
+
+\Hypertarget{old__version_2include_2gestion__fichier_8h_ab610135a46bf930440763e0c6ce43486}\label{old__version_2include_2gestion__fichier_8h_ab610135a46bf930440763e0c6ce43486} 
+\index{gestion\_fichier.h@{gestion\_fichier.h}!my\_history@{my\_history}}
+\index{my\_history@{my\_history}!gestion\_fichier.h@{gestion\_fichier.h}}
+\doxysubsubsection{\texorpdfstring{my\_history()}{my\_history()}}
+{\footnotesize\ttfamily int my\+\_\+history (\begin{DoxyParamCaption}\item[{bool}]{effacer }\end{DoxyParamCaption})}
+
+
+
+afficher ou effacer les historiques de ligne de commande 
+
+
+\begin{DoxyParams}{Parameters}
+{\em effacer} & effacer le contenu historique si true \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+une valeur negative si la lecture a echouée 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source_l00437}{437}} of file \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source}{gestion\+\_\+fichier.\+c}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{old__version_2include_2gestion__fichier_8h_ab610135a46bf930440763e0c6ce43486_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{old__version_2include_2gestion__fichier_8h_aca096e7269f361a89edee4d606e12013}\label{old__version_2include_2gestion__fichier_8h_aca096e7269f361a89edee4d606e12013} 
+\index{gestion\_fichier.h@{gestion\_fichier.h}!my\_man@{my\_man}}
+\index{my\_man@{my\_man}!gestion\_fichier.h@{gestion\_fichier.h}}
+\doxysubsubsection{\texorpdfstring{my\_man()}{my\_man()}}
+{\footnotesize\ttfamily int my\+\_\+man (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{nom\+\_\+commande }\end{DoxyParamCaption})}
+
+
+
+Il affiche une page d\textquotesingle{}aide pour une commande entrer en argument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom\+\_\+commande} & le nom de la commmande à afficher l\textquotesingle{}aide \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+une valeur negative en cas d\textquotesingle{}erreur 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source_l00412}{412}} of file \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source}{gestion\+\_\+fichier.\+c}}.
+
+\Hypertarget{old__version_2include_2gestion__fichier_8h_af950d60376ca05c765ba6531d82a0408}\label{old__version_2include_2gestion__fichier_8h_af950d60376ca05c765ba6531d82a0408} 
+\index{gestion\_fichier.h@{gestion\_fichier.h}!qui\_est\_meilleur@{qui\_est\_meilleur}}
+\index{qui\_est\_meilleur@{qui\_est\_meilleur}!gestion\_fichier.h@{gestion\_fichier.h}}
+\doxysubsubsection{\texorpdfstring{qui\_est\_meilleur()}{qui\_est\_meilleur()}}
+{\footnotesize\ttfamily void qui\+\_\+est\+\_\+meilleur (\begin{DoxyParamCaption}\item[{int}]{n\+\_\+miss }\end{DoxyParamCaption})}
+
+
+
+cette fonction affche qui a le meilleur temps concernant une mission entrer en argument 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+\_\+miss} & le numero de la mission \\
+\hline
+\end{DoxyParams}
+traitement de donnée obtenus d\textquotesingle{}après la lecture du fichier de score
+
+traitement de donnée obtenus d\textquotesingle{}après la lecture du fichier de score
+
+Definition at line \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source_l00354}{354}} of file \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source}{gestion\+\_\+fichier.\+c}}.
+
+\Hypertarget{old__version_2include_2gestion__fichier_8h_a4d4769171b90c8209605cc8cef0a7e7d}\label{old__version_2include_2gestion__fichier_8h_a4d4769171b90c8209605cc8cef0a7e7d} 
+\index{gestion\_fichier.h@{gestion\_fichier.h}!tail\_fichier@{tail\_fichier}}
+\index{tail\_fichier@{tail\_fichier}!gestion\_fichier.h@{gestion\_fichier.h}}
+\doxysubsubsection{\texorpdfstring{tail\_fichier()}{tail\_fichier()}}
+{\footnotesize\ttfamily void tail\+\_\+fichier (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{nom\+\_\+fichier,  }\item[{int}]{min }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source_l00228}{228}} of file \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source}{gestion\+\_\+fichier.\+c}}.
+
+\Hypertarget{old__version_2include_2gestion__fichier_8h_a65ff929a2d03935078e95374dbf120e2}\label{old__version_2include_2gestion__fichier_8h_a65ff929a2d03935078e95374dbf120e2} 
+\index{gestion\_fichier.h@{gestion\_fichier.h}!voir\_indice@{voir\_indice}}
+\index{voir\_indice@{voir\_indice}!gestion\_fichier.h@{gestion\_fichier.h}}
+\doxysubsubsection{\texorpdfstring{voir\_indice()}{voir\_indice()}}
+{\footnotesize\ttfamily void voir\+\_\+indice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMission}{Mission}} \texorpdfstring{$\ast$}{*}}]{mission }\end{DoxyParamCaption})}
+
+
+
+Elle affiche une petite aide apropos d\textquotesingle{}une mission en decrementant le score du joueur actuelle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mission} & l\textquotesingle{}adresse du mission que l\textquotesingle{}on veut voir l\textquotesingle{}indice \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source_l00314}{314}} of file \mbox{\hyperlink{old__version_2src_2gestion__fichier_8c_source}{gestion\+\_\+fichier.\+c}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{old__version_2include_2gestion__fichier_8h_a65ff929a2d03935078e95374dbf120e2_cgraph}
+\end{center}
+\end{figure}

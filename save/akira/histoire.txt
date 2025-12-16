@@ -1,0 +1,661 @@
+
+ls 
+pwd 
+stat 
+exit 
+ls 
+stat 
+exit 
+ls Quartier_Généraux/ 
+stat 
+ls 
+stat 
+exit 
+ls Quartier_Généraux/ 
+stat 
+exit 
+ls 
+ls 
+clear 
+ls 
+cd Laboratoire/ 
+ls 
+cd archives_secretes/ 
+stat 
+stat 
+clear 
+mission 
+mission 
+mission 
+mission 
+mission 
+mission 
+clear 
+clear 
+ls 
+ls Quartier_Généraux/ 
+ls 
+cd Laboratoire/ 
+ls 
+cd archives_secretes/ 
+clear 
+ls 
+chmod 7 archives_secretes/ 
+ls 
+cd archives_secretes/ 
+ls 
+cat sigma 
+ls -l 
+ls 
+clear 
+ls 
+demos ls 
+clear 
+ls 
+touch val 
+cat val 
+clear 
+clear 
+ls 
+clear 
+ls 
+clear 
+cat val 
+cat te 
+clear 
+cat .Abdul 
+clear 
+ls 
+clear 
+ls 
+cat .Abdul 
+clear 
+cat tsisy 
+clear 
+ls 
+cat .Abdul 
+ls -a 
+ls 
+cat le 
+cat .Abdul 
+cd Laboratoire/ 
+ls -l 
+chmod 7 archives_secretes/ 
+cd archives_secretes/ 
+ls -a 
+cat .Abdul 
+clear 
+ls 
+cat Aurora 
+clear 
+mission 
+clear 
+ls 
+touch cal 
+cat cal 
+ls 
+mission 
+
+mission 
+mission 
+clear 
+mission 
+ls 
+cd Zone_Entrainement/ 
+ls 
+mission 
+ls 
+cd Zone_Entrainement/ 
+ls 
+
+clear 
+ls 
+ls 
+exit 
+ls 
+clear 
+ls -l .. 
+ls 
+cd Coffre_Fort/ 
+ls 
+ls 
+ls 
+ls Coffre_Fort/ 
+ls 
+chmod 
+ls 
+chmod +r Coffre_Fort/ 
+ls -l 
+ls Coffre_Fort/ 
+cd Coffre_Fort/ 
+mission 
+ls -l 
+chmod +w Coffre_Fort/ 
+ls Coffre_Fort/ 
+touch Coffre_Fort/gil 
+stat 
+stat 
+ls 
+cd Coffre_Fort/ 
+chmod 7 Coffre_Fort/ 
+cd Coffre_Fort/ 
+stat 
+cd .. 
+stat 
+cd Coffre_Fort/ 
+ls 
+clear 
+ls 
+stat 
+ls 
+ls 
+stat 
+chmod 7 Coffre_Fort/ 
+cd Coffre_Fort/ 
+ls 
+stat 
+exit 
+chmod 7 Coffre_Fort/ 
+cd Coffre_Fort/ 
+stat 
+exit 
+mission 
+exit 
+
+clear 
+ls 
+stat 
+ls 
+clear 
+ls 
+cd C 
+cd Coffre_Fort/ 
+ls 
+clear 
+cd .. 
+cd .. 
+ls 
+cd Quartier_Généraux/ 
+ls 
+cd .. 
+ls Poste_Commandement/ 
+clear 
+ls 
+ls Q 
+ls Quartier_Généraux/ 
+cd Quartier_Généraux/bureau_du_général/ 
+ls 
+clear 
+ls 
+ls 
+cd .. 
+ls 
+cd Laboratoire/ 
+ls 
+cd archives_secretes/ 
+ls 
+chmod 7 Coffre_Fort/ 
+cd Coffre_Fort/ 
+stat 
+exit 
+stat 
+ls 
+cd Quartier_Généraux/ 
+ls 
+stat 
+stat 
+touch Quartier_Généraux/bureau_du_général/X4-77-DELTA 
+mission 
+ls 
+cd Quartier_Généraux/ 
+ls 
+cd bureau_du_général/ 
+touch X4-77-DELTA 
+ls 
+stat 
+clear 
+cd .. 
+cd 
+cd .. 
+clear 
+stat 
+clear 
+exit 
+
+ls 
+clear 
+ls 
+ls 
+
+chmod 7 Coffre_Fort/ 
+cd Coffre_Fort/ 
+stat 
+exit 
+cd Quartier_Généraux/ 
+touch bureau_du_général/X4-77-DELTA 
+cd Quartier_Généraux/bureau_du_général/ 
+ls 
+clear 
+touch X4-77-DELTA 
+stat 
+exit 
+clear 
+ls 
+pwd 
+stat 
+exit 
+ls 
+
+
+
+ls 
+stat 
+
+ls 
+exit 
+
+ls 
+exit 
+
+ls 
+exit 
+ls 
+exit 
+ls 
+exit 
+ls 
+exit 
+
+
+
+ls 
+ls 
+clear 
+ls 
+ce 
+ls 
+stat 
+stat 
+stat 
+ls 
+clear 
+ls 
+mission 
+cd Quartier_Généraux/ 
+clear 
+ls 
+ls 
+
+
+
+ls 
+clear 
+ls / 
+ls 
+ls 
+clear 
+touch Quartier_Généraux/bureau_du_général/tay 
+mkdir Quartier_Généraux/bureau_du_général/ta 
+mkdir Quartier_Généraux/bureau_du_général/ta 
+mkdir ta 
+ls 
+clear 
+ls 
+mkdir ta 
+mkdir ta 
+mkdir Quartier_Généraux/bureau_du_général/ta 
+ls Quartier_Généraux/bureau_du_général/ 
+mkdir Quartier_Généraux/bureau_du_général/ta 
+ls Quartier_Généraux/bureau_du_général/ 
+ls 
+mkdir Quartier_Généraux/bureau_du_général/tat 
+ls Quartier_Généraux/bureau_du_général/ 
+ls Quartier_Généraux/bureau_du_général/ 
+mkdir Quartier_Généraux/bureau_du_général/ta 
+mkdir Quartier_Généraux/bureau_du_général/ta 
+mkdir Quartier_Généraux/bureau_du_général/ta/ta 
+mkdir Quartier_Généraux/bureau_du_général/ta/te 
+ls 
+ls Quartier_Généraux/bureau_du_général/ta/ta 
+ls Quartier_Généraux/bureau_du_général/ta 
+clear 
+ls / 
+ls / 
+cd / 
+ls Quartier_Généraux/bureau_du_général/ 
+ls 
+ls Poste_Commandement/cartes_stratégiques/ 
+clear 
+ls Quartier_Généraux/bureau_du_général/ 
+ls 
+ls Hangar/ 
+ls Hangar/mechas/ 
+clear 
+ls Quartier_Généraux/bureau_du_général/ 
+ls Quartier_Généraux/bureau_du_général/ 
+ls 
+ls Quartier_Généraux/bureau_du_général/ 
+ls 
+ls Hangar/mechas/ 
+ls Poste_Commandement/cartes_stratégiques/ 
+ls Quartier_Généraux/bureau_du_général/ 
+ls Quartier_Généraux/bureau_du_général/ 
+pwd 
+ls 
+exit 
+ls 
+exit 
+mission 
+ls Quartier_Généraux/ 
+stat 
+exit 
+cd Zone_Entrainement/combats/ 
+stat 
+exit 
+mission 
+cd Caserne/dortoirs/ 
+mkdir tente_1 
+stat 
+exit 
+
+mission 
+cd Caserne/dortoirs/ 
+ls 
+rmdir tente_2 
+rmdir tente_3 
+stat 
+exit 
+exit 
+stat 
+exit 
+exit 
+ls 
+ls 
+ls Quartier_Généraux/ 
+ls Quartier_Généraux/bureau_du_général/ 
+ls Quartier_Généraux/bureau_du_général/ 
+ls -l 
+ls Quartier_Généraux/b 
+ls Quartier_Généraux/bureau_du_général/ 
+ls Quartier_Généraux/bureau_du_général/ 
+clea 
+clear 
+mission 
+cd Caserne/dortoirs/ 
+rmdir tente_2 
+rmdir tente_3 
+exit 
+
+cd Caserne/dortoirs/ 
+ls 
+rmdir tente_2 
+rmdir tente_3 
+ls 
+stat 
+exit 
+cd Caserne/dortoirs/ 
+mission 
+rmdir tente_2 
+rmdir tente_3 
+ls 
+stat 
+exit 
+cd Caserne/dortoirs/ 
+rmdir tente_2 
+rmdir tente_3 
+stat 
+exit 
+ls 
+exit 
+mission 
+cd Caserne/dortoirs/ 
+ls 
+rmdir tente_1 
+rmdir tente_2 
+rmdir tente_3 
+stat 
+exit 
+exit 
+ls 
+exit 
+ls 
+ls Quartier_Généraux/ 
+ls 
+exit 
+cd Caserne/dortoirs/ 
+ls 
+rmdir tente_2 
+rmdir tente_3 
+stat 
+exit 
+stat 
+clear 
+cd Caserne/dortoirs/ 
+ls 
+rm tente_2 
+rmdir tente_2 
+rmdir tente_3 
+stat 
+exit 
+cd Caserne/dortoirs/ 
+rmdir tente_2 
+rmdir tente_3 
+stat 
+exit 
+cd Caserne/dortoirs/ 
+rmdir tente_2 
+rmdir tente_3 
+stat 
+exit 
+touch Quartier_Généraux/bureau_du_général/X4-77-DELTA 
+stat 
+stat 
+mission 
+ls 
+cd Quartier_Généraux/ 
+cd bureau_du_général/ 
+ls 
+touch X4-77-DELTA 
+stat 
+ls 
+touch X4-77-DELTA 
+ls 
+clear 
+touch ma 
+ls 
+touch ma 
+ls 
+cd Quartier_Généraux/bureau_du_général/ 
+touch X4-77-DELTA 
+ls 
+stat 
+exit 
+cd Quartier_Généraux/bureau_du_général/ 
+touch X4-77-DELTA 
+stat 
+exit 
+cd Caserne/dortoirs/ 
+ls 
+rmdir tente_2 
+rmdir tente_3 
+stat 
+exit 
+cd Caserne/dortoirs/ 
+rmdir tente_3 
+rmdir tente_2 
+stat 
+exit 
+mission 
+cd Caserne/ 
+ls 
+cd armurerie/ 
+touch pistolet 
+ls 
+stat 
+exit 
+mission 
+cd Zone_Entrainement/ 
+ls 
+rm fichier_indesirable 
+ls 
+stat 
+exit 
+mission 
+cd Caserne/dortoirs/ 
+ls 
+ls tente_2 
+cp tente_2/table tente_1 
+cp tente_2/table tente_1 
+ls tente_1 
+cp tente_3/lit tente_1 
+ls tente_1 
+stat 
+exit 
+ls 
+mission 
+mv Hangar/caisse Zone_Entrainement/ 
+stat 
+exit 
+echo val 
+exit 
+cd Laboratoire/ 
+ls 
+cd archives_secretes/ 
+ls 
+cat convers.crpt 
+
+ls 
+stat 
+cd Laboratoire/ 
+ls 
+cd archives_secretes/ 
+ls 
+cat convers.crpt 
+stat 
+exit 
+mission 
+cd Laboratoire/archives_secretes/ 
+ls 
+head -5 convers.crpt 
+head -n5 convers.crpt 
+head -n 5 convers.crpt 
+head -n 5 convers.crpt 
+clear 
+head -n 5 convers.crpt 
+head -n 5 convers.crpt 
+stat 
+exit 
+mission 
+cd Laboratoire/archives_secretes/ 
+ls 
+tail -n 5 convers.crpt 
+stat 
+mission 
+tail -n 3 convers.crpt 
+stat 
+exit 
+clear 
+ls 
+touch Quartier_Généraux/bureau_du_général/X4-77-DELTA 
+stat 
+exit 
+cd Laboratoire/ 
+ls 
+cd archives_secretes/ 
+ls 
+tail -n 5 convers.crpt 
+stat 
+exit 
+mission 
+mission 
+clear 
+exit 
+exit 
+ls 
+cd Laboratoire/archives_secretes/ 
+ls 
+tail -n 5 convers.crpt 
+stat 
+exit 
+mission 
+cd Zone_Entrainement/ 
+ls 
+rm fichier_indesirable 
+ls 
+stat 
+exit 
+exit 
+cd Laboratoire/ 
+cd archives_secretes/ 
+ls 
+stat 
+mission 
+cd .. 
+cd .. 
+cd Zone_Entrainement/ 
+ls 
+rm fichier_indesirable 
+stat 
+exit 
+exit 
+cd Zone_Entrainement/ 
+ls 
+rm fichier_indesirable 
+exit 
+cd Zone_Entrainement/ 
+rm fichier_indesirable 
+stat 
+exit 
+mission 
+mission 
+stat 
+ls 
+cp Hangar/caisse Zone_Entrainement/ 
+stat 
+exit 
+exit 
+ls 
+clear 
+exit 
+exit 
+exit 
+
+exit 
+mission 
+clear 
+clear 
+clear 
+ls 
+ls -l 
+chmod 7 Coffre_Fort/ 
+clear 
+ls 
+clear 
+ls 
+aide chmod 
+clear 
+ls -l 
+chmod 7 Coffre_Fort/ 
+ls -l 
+clear 
+cd Coffre_Fort/ 
+ls 
+clear 
+demos ./af 
+clear 
+ls 
+exit 
+demos top 
+clear 
+ls 
+cler 
+clear 
+demos sudo apt update 
+demos sudo apt upgrade 
+clear 
+demos man apt 
+top 
+demos top 
+demos htop 
+clear 
+mission 

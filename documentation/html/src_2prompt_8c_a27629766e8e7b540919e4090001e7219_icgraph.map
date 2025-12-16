@@ -1,0 +1,9 @@
+<map id="decrement_score" name="decrement_score">
+<area shape="rect" id="Node000001" title="c&#39;est une fonction qui fait decrementer le nombre de score d&#39;une joueur en jeu" alt="" coords="383,31,517,56"/>
+<area shape="rect" id="Node000002" href="$src_2mission_8c.html#adbaaaaf0ae83783163a1eedabd8789af" title=" " alt="" coords="180,5,335,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="368,35,335,31,336,26,369,30"/>
+<area shape="rect" id="Node000003" href="$src_2gestion__fichier_8c.html#a65ff929a2d03935078e95374dbf120e2" title="Elle affiche une petite aide apropos d&#39;une mission en decrementant le score du joueur actuelle." alt="" coords="211,55,304,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="369,56,305,64,304,59,368,51"/>
+<area shape="rect" id="Node000004" href="$src_2mission_8c.html#ade573c5eee8265efcab5053e371befe1" title=" " alt="" coords="5,55,132,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="197,70,132,70,132,65,197,65"/>
+</map>

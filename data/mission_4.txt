@@ -1,0 +1,19 @@
+MISSION :
+
+    Soldat !!!
+    Pour organiser tes opérations, tu dois créer de nouveaux lieux.
+    Ta mission est de construire un nouveau "tente_1" dans les dortoirs.
+    Mais il faut que tu trouves d'abord les dortoirs!
+
+COMMANDE :
+
+    mkdir [nom_du_lieu] : Cette commande crée un nouvel endroit.
+
+    - C'est comme construire un nouveau batiment.
+    - Tu peux y mettre des objets ou même creer d'autres lieux dedans.
+    - Utile pour organiser tes missions et ton materiel.
+
+HELP :
+    
+    Tape "ls" pour vérifier que l'endroit que t'as crée à bien été construite.
+ 

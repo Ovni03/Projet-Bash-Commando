@@ -1,0 +1,40 @@
+LIEUTENANT : 
+
+        Soldat, écoute bien.
+
+        Aujourd’hui, tu vas apprendre une commande cruciale : chmod.
+        Elle te permet de contrôler les accès.
+        Sans permissions, tu n’es rien : "---".
+        Avec les bonnes permissions, tu controles la base.
+
+COMMANDE :
+        chmod [options] [nom_du_lieu] : Cette commande modifie les permissions d’un lieu ou d’un objet.
+
+        - Permet d’activer ou de retirer tes propres permissions.
+        - Donne accès aux zones sensibles lorsque tu n’as que "---" au départ.
+        - Indispensable pour progresser sans déclencher les alarmes.
+
+IMPORTANT :
+        r (lire)    : Lire les informations du lieu ou de l’objet. 
+             → Comme pouvoir ouvrir un dossier et voir ce qu’il contient.
+
+        w (Modifier)   : Modifier le contenu du lieu ou de l’objet. 
+            → Comme ajouter, renommer ou supprimer des éléments à l’intérieur.
+
+        x (Entrer/executé) : Entrer dans un répertoire ou lancer un fichier. 
+            → Sans x, impossible d’accéder à l’intérieur, même si tu peux le voir.
+
+        "+" : ajoute des permissions (ex : +wx → ajoute w et x)
+        "-" : retire des permissions (ex : -rx → supprime r et x)
+
+        Permissions octales (0 à 7) :
+        On convertit le nombre en binaire pour savoir quelles permissions activer.
+
+EXEMPLES :
+
+        7 = 111 → rwx
+        4 = 100 → r-- 
+        0 = 000 → --- (aucune permission)
+        → chmod 7 Caserne : ajout du tout le au lieu Caserne
+        → chmod 0 Caserne : rendre carne inaccessible.
+    

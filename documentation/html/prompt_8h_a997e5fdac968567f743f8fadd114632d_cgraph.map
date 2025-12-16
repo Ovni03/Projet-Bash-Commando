@@ -1,0 +1,9 @@
+<map id="touches_haut_bas" name="touches_haut_bas">
+<area shape="rect" id="Node000001" title="la fonctione associer à la touche haut et bas" alt="" coords="5,31,144,56"/>
+<area shape="rect" id="Node000002" href="$gestion__fichier_8c.html#a1e0663e3fb9c24f9f880e2fb809cff1d" title="Lire une ligne precise dans un fichier depart de la fin si negative." alt="" coords="192,5,297,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,30,178,25,179,30,144,36"/>
+<area shape="rect" id="Node000003" href="$prompt_8c.html#ac5cea60156f61bb7095ac40599b2292b" title="c&#39;est une simple fonction qui permet de vider la ligne de commande actuelle" alt="" coords="200,55,289,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="144,50,187,57,186,62,144,56"/>
+<area shape="rect" id="Node000004" href="$prompt_8c.html#ae4852ffe3005375dff4d8dac83ca5942" title="elle ne compte pas les caracteres comme strlen ; elle donne la taille en affichage" alt="" coords="345,55,424,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="289,65,332,65,332,70,289,70"/>
+</map>

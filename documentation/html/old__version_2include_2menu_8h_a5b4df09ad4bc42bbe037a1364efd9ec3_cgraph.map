@@ -1,0 +1,9 @@
+<map id="loging" name="loging">
+<area shape="rect" id="Node000001" title="Fonction pour gérer la connexion de l&#39;utilisateur." alt="" coords="5,55,68,80"/>
+<area shape="rect" id="Node000002" href="$old__version_2src_2menu_8c.html#aab4636cb9924e3ab41d607451e09ed94" title=" " alt="" coords="119,5,228,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,54,124,33,126,38,69,59"/>
+<area shape="rect" id="Node000003" href="$src_2prompt_8c.html#a7561703c0e5c30615f04d1caa4279ac9" title="trouver le nom du joueur actuelle et puis l&#39;inserer dans emplacement" alt="" coords="116,55,231,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="68,65,102,65,102,70,68,70"/>
+<area shape="rect" id="Node000004" href="$old__version_2src_2menu_8c.html#a5b4df09ad4bc42bbe037a1364efd9ec3" title="Fonction pour gérer la connexion de l&#39;utilisateur." alt="" coords="142,104,205,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="69,76,129,98,128,103,67,81"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="affichage_ligne" name="affichage_ligne">
+<area shape="rect" id="Node000001" title=" " alt="" coords="579,56,700,81"/>
+<area shape="rect" id="Node000002" href="$affichage_8c.html#a7ad679ded74015890f90157f1194734f" title=" " alt="" coords="417,56,531,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="565,71,531,71,531,66,565,66"/>
+<area shape="rect" id="Node000003" href="$menu_8c.html#aae10502a2b12de301b43545991dc1c9f" title=" " alt="" coords="299,5,349,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="422,54,349,29,350,24,424,49"/>
+<area shape="rect" id="Node000004" href="$menu_8c.html#a0f8a0c90aa152f4542ce093e8d914c08" title=" " alt="" coords="108,56,231,81"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="404,71,231,71,231,66,404,66"/>
+<area shape="rect" id="Node000006" href="$menu_8c.html#aa1031ac362776e9a4c6004aeb5ff56ca" title=" " alt="" coords="279,107,369,132"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="423,88,363,109,362,104,422,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="287,33,210,58,208,53,285,28"/>
+<area shape="rect" id="Node000005" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,60,81"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="94,71,60,71,60,66,94,66"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="271,105,208,84,210,79,272,100"/>
+</map>

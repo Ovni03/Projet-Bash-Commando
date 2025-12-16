@@ -1,0 +1,15 @@
+<map id="lireLigne" name="lireLigne">
+<area shape="rect" id="Node000001" title=" " alt="" coords="516,55,595,80"/>
+<area shape="rect" id="Node000002" href="$src_2s_xC3_xA9cure_8c.html#a537eba45f2b6b73378dc26a7d5fa1120" title="Lit un double." alt="" coords="379,5,468,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="507,52,457,33,459,28,509,47"/>
+<area shape="rect" id="Node000003" href="$src_2s_xC3_xA9cure_8c.html#a6e058c52cf548631e2076e0f49cb8ee0" title="Lire un entier." alt="" coords="383,55,464,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="502,70,464,70,464,65,502,65"/>
+<area shape="rect" id="Node000007" href="$src_2s_xC3_xA9cure_8c.html#adb73b4704094a2b42f9ce2f85aca23df" title="Lit un float." alt="" coords="385,104,461,129"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="509,87,459,106,457,101,507,82"/>
+<area shape="rect" id="Node000004" href="$src_2menu_8c.html#a0f8a0c90aa152f4542ce093e8d914c08" title=" " alt="" coords="208,55,331,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="369,70,331,70,331,65,369,65"/>
+<area shape="rect" id="Node000005" href="$old__version_2src_2main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="55,29,110,55"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="194,60,110,48,111,43,195,55"/>
+<area shape="rect" id="Node000006" href="$src_2mission_8c.html#adbaaaaf0ae83783163a1eedabd8789af" title=" " alt="" coords="5,79,160,104"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="195,80,161,84,160,79,194,74"/>
+</map>

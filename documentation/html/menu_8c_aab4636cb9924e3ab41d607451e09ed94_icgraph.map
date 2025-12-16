@@ -1,0 +1,8 @@
+<map id="dossierExiste" name="dossierExiste">
+<area shape="rect" id="Node000001" title=" " alt="" coords="219,29,328,55"/>
+<area shape="rect" id="Node000002" href="$menu_8c.html#a5b4df09ad4bc42bbe037a1364efd9ec3" title="Fonction pour gérer la connexion de l&#39;utilisateur." alt="" coords="108,29,171,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,45,171,45,171,39,205,39"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="157,18,151,11,139,8,129,10,123,14,122,20,125,28,120,30,117,21,119,12,127,5,139,3,154,6,161,14"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,29,60,55"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="94,45,60,45,60,39,94,39"/>
+</map>

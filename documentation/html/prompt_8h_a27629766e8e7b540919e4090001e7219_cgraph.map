@@ -1,0 +1,5 @@
+<map id="decrement_score" name="decrement_score">
+<area shape="rect" id="Node000001" title="c&#39;est une fonction qui fait decrementer le nombre de score d&#39;une joueur en jeu" alt="" coords="5,5,140,31"/>
+<area shape="rect" id="Node000002" href="$prompt_8c.html#a7be520ef705ee067bc123f782b2cd6f9" title="c&#39;est pour savoir le point que le joueur actuel possède" alt="" coords="188,5,271,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,15,174,15,174,21,140,21"/>
+</map>

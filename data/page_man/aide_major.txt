@@ -1,0 +1,9 @@
+commande	:	major
+
+description	:	afficher l'utilisateur qui a réussie une mission en une temps le plus faible
+
+utilisation	:	major [numéro_de_mission]...
+
+			{il peut afficher des major de plusieurs mission en une fois}
+
+

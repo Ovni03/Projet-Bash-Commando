@@ -1,0 +1,9 @@
+soldat !!
+ 
+Avant de partir en mission, il faut savoir exactement ou tu te trouve sur la carte.
+ 
+La commande PWD te revel ton emplacement actuel.
+Tape pwd et observe le lieu affiche pour toujours savoir d'ou tu pars et ou tu peux aller.
+
+ 
+Tape sur entree pour continuer

@@ -1,0 +1,305 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Data Structure Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Data Structures}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}File Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}File List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Data Structure Documentation}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}fichier Struct Reference}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Detailed Description}{5}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Field Documentation}{6}{subsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}contenu}{6}{subsubsection.3.1.2.1}%
+\contentsline {subsubsection}{\numberline {3.1.2.2}estDossier}{6}{subsubsection.3.1.2.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.3}estProtege}{6}{subsubsection.3.1.2.3}%
+\contentsline {subsubsection}{\numberline {3.1.2.4}frereSuivant}{6}{subsubsection.3.1.2.4}%
+\contentsline {subsubsection}{\numberline {3.1.2.5}nom}{6}{subsubsection.3.1.2.5}%
+\contentsline {subsubsection}{\numberline {3.1.2.6}nombre\_ouverture}{6}{subsubsection.3.1.2.6}%
+\contentsline {subsubsection}{\numberline {3.1.2.7}parent}{6}{subsubsection.3.1.2.7}%
+\contentsline {subsubsection}{\numberline {3.1.2.8}perm}{7}{subsubsection.3.1.2.8}%
+\contentsline {subsubsection}{\numberline {3.1.2.9}premierfils}{7}{subsubsection.3.1.2.9}%
+\contentsline {section}{\numberline {3.2}ligne Struct Reference}{7}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Detailed Description}{7}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Field Documentation}{7}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}argument}{7}{subsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}commande}{7}{subsubsection.3.2.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.3}option}{8}{subsubsection.3.2.2.3}%
+\contentsline {section}{\numberline {3.3}ligne\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}commande Struct Reference}{8}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Detailed Description}{8}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Mission Struct Reference}{8}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Detailed Description}{8}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Field Documentation}{9}{subsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.1}debloqué}{9}{subsubsection.3.4.2.1}%
+\contentsline {subsubsection}{\numberline {3.4.2.2}indice}{9}{subsubsection.3.4.2.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.3}point}{9}{subsubsection.3.4.2.3}%
+\contentsline {subsubsection}{\numberline {3.4.2.4}terminé}{9}{subsubsection.3.4.2.4}%
+\contentsline {subsubsection}{\numberline {3.4.2.5}titre}{9}{subsubsection.3.4.2.5}%
+\contentsline {chapter}{\numberline {4}File Documentation}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}include/affichage.h File Reference}{11}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Function Documentation}{12}{subsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.1}affiche\_fichier()}{12}{subsubsection.4.1.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.2}affiche\_fichier\_tableau\_curse\_position\_exacte()}{13}{subsubsection.4.1.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.1.3}afficher\_tableau\_avec\_titre\_position\_exacte()}{14}{subsubsection.4.1.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.1.4}afficher\_tableau\_fichier()}{15}{subsubsection.4.1.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.1.5}echec()}{15}{subsubsection.4.1.1.5}%
+\contentsline {subsubsection}{\numberline {4.1.1.6}felicitation()}{16}{subsubsection.4.1.1.6}%
+\contentsline {subsubsection}{\numberline {4.1.1.7}screen\_clear()}{17}{subsubsection.4.1.1.7}%
+\contentsline {section}{\numberline {4.2}affichage.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{18}{section.4.2}%
+\contentsline {section}{\numberline {4.3}include/arborescence.h File Reference}{19}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Typedef Documentation}{20}{subsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.1}fichier}{20}{subsubsection.4.3.1.1}%
+\contentsline {subsection}{\numberline {4.3.2}Function Documentation}{20}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}affichage()}{20}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}afficher()}{21}{subsubsection.4.3.2.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.3}afficher\_nbr\_ouverture()}{22}{subsubsection.4.3.2.3}%
+\contentsline {subsubsection}{\numberline {4.3.2.4}ajouter\_enfant()}{23}{subsubsection.4.3.2.4}%
+\contentsline {subsubsection}{\numberline {4.3.2.5}chercher()}{25}{subsubsection.4.3.2.5}%
+\contentsline {subsubsection}{\numberline {4.3.2.6}creer()}{26}{subsubsection.4.3.2.6}%
+\contentsline {subsubsection}{\numberline {4.3.2.7}deplacer()}{27}{subsubsection.4.3.2.7}%
+\contentsline {subsubsection}{\numberline {4.3.2.8}favori()}{27}{subsubsection.4.3.2.8}%
+\contentsline {subsubsection}{\numberline {4.3.2.9}initialiser()}{29}{subsubsection.4.3.2.9}%
+\contentsline {subsubsection}{\numberline {4.3.2.10}my\_cd()}{30}{subsubsection.4.3.2.10}%
+\contentsline {subsubsection}{\numberline {4.3.2.11}my\_chmod()}{31}{subsubsection.4.3.2.11}%
+\contentsline {subsubsection}{\numberline {4.3.2.12}my\_cp()}{32}{subsubsection.4.3.2.12}%
+\contentsline {subsubsection}{\numberline {4.3.2.13}my\_echo()}{34}{subsubsection.4.3.2.13}%
+\contentsline {subsubsection}{\numberline {4.3.2.14}my\_ls()}{34}{subsubsection.4.3.2.14}%
+\contentsline {subsubsection}{\numberline {4.3.2.15}my\_ls\_a()}{36}{subsubsection.4.3.2.15}%
+\contentsline {subsubsection}{\numberline {4.3.2.16}my\_ls\_l()}{38}{subsubsection.4.3.2.16}%
+\contentsline {subsubsection}{\numberline {4.3.2.17}my\_ls\_la()}{39}{subsubsection.4.3.2.17}%
+\contentsline {subsubsection}{\numberline {4.3.2.18}my\_mkdir()}{40}{subsubsection.4.3.2.18}%
+\contentsline {subsubsection}{\numberline {4.3.2.19}my\_mkdir\_p()}{42}{subsubsection.4.3.2.19}%
+\contentsline {subsubsection}{\numberline {4.3.2.20}my\_mv()}{43}{subsubsection.4.3.2.20}%
+\contentsline {subsubsection}{\numberline {4.3.2.21}my\_pwd()}{44}{subsubsection.4.3.2.21}%
+\contentsline {subsubsection}{\numberline {4.3.2.22}my\_rm()}{45}{subsubsection.4.3.2.22}%
+\contentsline {subsubsection}{\numberline {4.3.2.23}my\_rmdir()}{47}{subsubsection.4.3.2.23}%
+\contentsline {subsubsection}{\numberline {4.3.2.24}my\_touch()}{48}{subsubsection.4.3.2.24}%
+\contentsline {subsubsection}{\numberline {4.3.2.25}recherche\_max()}{49}{subsubsection.4.3.2.25}%
+\contentsline {section}{\numberline {4.4}arborescence.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{51}{section.4.4}%
+\contentsline {section}{\numberline {4.5}include/gestion\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}fichier.h File Reference}{51}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{53}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Function Documentation}{53}{subsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.1}affiche\_ligne()}{53}{subsubsection.4.5.2.1}%
+\contentsline {subsubsection}{\numberline {4.5.2.2}cat\_fichier()}{54}{subsubsection.4.5.2.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.3}head\_fichier()}{55}{subsubsection.4.5.2.3}%
+\contentsline {subsubsection}{\numberline {4.5.2.4}insert\_fin()}{56}{subsubsection.4.5.2.4}%
+\contentsline {subsubsection}{\numberline {4.5.2.5}lire\_histoire()}{56}{subsubsection.4.5.2.5}%
+\contentsline {subsubsection}{\numberline {4.5.2.6}my\_history()}{56}{subsubsection.4.5.2.6}%
+\contentsline {subsubsection}{\numberline {4.5.2.7}my\_man()}{58}{subsubsection.4.5.2.7}%
+\contentsline {subsubsection}{\numberline {4.5.2.8}qui\_est\_meilleur()}{58}{subsubsection.4.5.2.8}%
+\contentsline {subsubsection}{\numberline {4.5.2.9}tail\_fichier()}{59}{subsubsection.4.5.2.9}%
+\contentsline {subsubsection}{\numberline {4.5.2.10}voir\_indice()}{60}{subsubsection.4.5.2.10}%
+\contentsline {section}{\numberline {4.6}gestion\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}fichier.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{61}{section.4.6}%
+\contentsline {section}{\numberline {4.7}include/menu.h File Reference}{62}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Function Documentation}{63}{subsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.1.1}charger\_partie()}{63}{subsubsection.4.7.1.1}%
+\contentsline {subsubsection}{\numberline {4.7.1.2}dossierExiste()}{63}{subsubsection.4.7.1.2}%
+\contentsline {subsubsection}{\numberline {4.7.1.3}load\_game()}{64}{subsubsection.4.7.1.3}%
+\contentsline {subsubsection}{\numberline {4.7.1.4}loging()}{66}{subsubsection.4.7.1.4}%
+\contentsline {subsubsection}{\numberline {4.7.1.5}menu\_pricipale()}{67}{subsubsection.4.7.1.5}%
+\contentsline {subsubsection}{\numberline {4.7.1.6}ptit\_prompt()}{69}{subsubsection.4.7.1.6}%
+\contentsline {subsubsection}{\numberline {4.7.1.7}quit\_game()}{70}{subsubsection.4.7.1.7}%
+\contentsline {section}{\numberline {4.8}menu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{71}{section.4.8}%
+\contentsline {section}{\numberline {4.9}include/mission.h File Reference}{72}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Macro Definition Documentation}{73}{subsection.4.9.1}%
+\contentsline {subsubsection}{\numberline {4.9.1.1}NOMBRE\_MISSION}{73}{subsubsection.4.9.1.1}%
+\contentsline {subsection}{\numberline {4.9.2}Typedef Documentation}{73}{subsection.4.9.2}%
+\contentsline {subsubsection}{\numberline {4.9.2.1}Mission}{73}{subsubsection.4.9.2.1}%
+\contentsline {subsection}{\numberline {4.9.3}Function Documentation}{74}{subsection.4.9.3}%
+\contentsline {subsubsection}{\numberline {4.9.3.1}intro()}{74}{subsubsection.4.9.3.1}%
+\contentsline {subsubsection}{\numberline {4.9.3.2}load\_struct\_mission()}{75}{subsubsection.4.9.3.2}%
+\contentsline {subsubsection}{\numberline {4.9.3.3}map\_initialisation()}{76}{subsubsection.4.9.3.3}%
+\contentsline {subsubsection}{\numberline {4.9.3.4}mission\_1()}{76}{subsubsection.4.9.3.4}%
+\contentsline {subsubsection}{\numberline {4.9.3.5}mission\_10()}{78}{subsubsection.4.9.3.5}%
+\contentsline {subsubsection}{\numberline {4.9.3.6}mission\_11()}{80}{subsubsection.4.9.3.6}%
+\contentsline {subsubsection}{\numberline {4.9.3.7}mission\_12()}{82}{subsubsection.4.9.3.7}%
+\contentsline {subsubsection}{\numberline {4.9.3.8}mission\_13()}{84}{subsubsection.4.9.3.8}%
+\contentsline {subsubsection}{\numberline {4.9.3.9}mission\_14()}{86}{subsubsection.4.9.3.9}%
+\contentsline {subsubsection}{\numberline {4.9.3.10}mission\_2()}{88}{subsubsection.4.9.3.10}%
+\contentsline {subsubsection}{\numberline {4.9.3.11}mission\_3()}{90}{subsubsection.4.9.3.11}%
+\contentsline {subsubsection}{\numberline {4.9.3.12}mission\_4()}{92}{subsubsection.4.9.3.12}%
+\contentsline {subsubsection}{\numberline {4.9.3.13}mission\_5()}{94}{subsubsection.4.9.3.13}%
+\contentsline {subsubsection}{\numberline {4.9.3.14}mission\_6()}{96}{subsubsection.4.9.3.14}%
+\contentsline {subsubsection}{\numberline {4.9.3.15}mission\_7()}{98}{subsubsection.4.9.3.15}%
+\contentsline {subsubsection}{\numberline {4.9.3.16}mission\_8()}{100}{subsubsection.4.9.3.16}%
+\contentsline {subsubsection}{\numberline {4.9.3.17}mission\_9()}{102}{subsubsection.4.9.3.17}%
+\contentsline {subsubsection}{\numberline {4.9.3.18}prompt\_mission()}{104}{subsubsection.4.9.3.18}%
+\contentsline {subsubsection}{\numberline {4.9.3.19}réinitialisation\_mission()}{106}{subsubsection.4.9.3.19}%
+\contentsline {subsubsection}{\numberline {4.9.3.20}sauvegarde\_dernier\_partie()}{107}{subsubsection.4.9.3.20}%
+\contentsline {subsubsection}{\numberline {4.9.3.21}verification\_mission()}{108}{subsubsection.4.9.3.21}%
+\contentsline {subsubsection}{\numberline {4.9.3.22}verification\_reussite()}{109}{subsubsection.4.9.3.22}%
+\contentsline {section}{\numberline {4.10}mission.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{111}{section.4.10}%
+\contentsline {section}{\numberline {4.11}include/prompt.h File Reference}{112}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}Detailed Description}{114}{subsection.4.11.1}%
+\contentsline {subsection}{\numberline {4.11.2}Macro Definition Documentation}{114}{subsection.4.11.2}%
+\contentsline {subsubsection}{\numberline {4.11.2.1}LIGNE}{114}{subsubsection.4.11.2.1}%
+\contentsline {subsubsection}{\numberline {4.11.2.2}MOT}{114}{subsubsection.4.11.2.2}%
+\contentsline {subsubsection}{\numberline {4.11.2.3}SORTIR}{114}{subsubsection.4.11.2.3}%
+\contentsline {subsection}{\numberline {4.11.3}Typedef Documentation}{114}{subsection.4.11.3}%
+\contentsline {subsubsection}{\numberline {4.11.3.1}ligne\_commande}{114}{subsubsection.4.11.3.1}%
+\contentsline {subsection}{\numberline {4.11.4}Function Documentation}{114}{subsection.4.11.4}%
+\contentsline {subsubsection}{\numberline {4.11.4.1}affiche\_commande()}{114}{subsubsection.4.11.4.1}%
+\contentsline {subsubsection}{\numberline {4.11.4.2}affiche\_prompt()}{116}{subsubsection.4.11.4.2}%
+\contentsline {subsubsection}{\numberline {4.11.4.3}auto\_completion()}{117}{subsubsection.4.11.4.3}%
+\contentsline {subsubsection}{\numberline {4.11.4.4}commande\_option()}{119}{subsubsection.4.11.4.4}%
+\contentsline {subsubsection}{\numberline {4.11.4.5}compter\_mot()}{120}{subsubsection.4.11.4.5}%
+\contentsline {subsubsection}{\numberline {4.11.4.6}decrement\_score()}{120}{subsubsection.4.11.4.6}%
+\contentsline {subsubsection}{\numberline {4.11.4.7}efface\_cara()}{121}{subsubsection.4.11.4.7}%
+\contentsline {subsubsection}{\numberline {4.11.4.8}execute()}{122}{subsubsection.4.11.4.8}%
+\contentsline {subsubsection}{\numberline {4.11.4.9}get\_point()}{124}{subsubsection.4.11.4.9}%
+\contentsline {subsubsection}{\numberline {4.11.4.10}get\_pwd()}{125}{subsubsection.4.11.4.10}%
+\contentsline {subsubsection}{\numberline {4.11.4.11}getNomJoueur()}{126}{subsubsection.4.11.4.11}%
+\contentsline {subsubsection}{\numberline {4.11.4.12}increment\_score()}{127}{subsubsection.4.11.4.12}%
+\contentsline {subsubsection}{\numberline {4.11.4.13}inserer()}{128}{subsubsection.4.11.4.13}%
+\contentsline {subsubsection}{\numberline {4.11.4.14}inserer\_mot\_dans()}{128}{subsubsection.4.11.4.14}%
+\contentsline {subsubsection}{\numberline {4.11.4.15}my\_get\_ligne()}{129}{subsubsection.4.11.4.15}%
+\contentsline {subsubsection}{\numberline {4.11.4.16}prend\_ligne\_command()}{131}{subsubsection.4.11.4.16}%
+\contentsline {subsubsection}{\numberline {4.11.4.17}prend\_mot\_dans()}{133}{subsubsection.4.11.4.17}%
+\contentsline {subsubsection}{\numberline {4.11.4.18}rapport\_mission()}{133}{subsubsection.4.11.4.18}%
+\contentsline {subsubsection}{\numberline {4.11.4.19}taille\_de()}{134}{subsubsection.4.11.4.19}%
+\contentsline {subsubsection}{\numberline {4.11.4.20}touche\_suppr()}{135}{subsubsection.4.11.4.20}%
+\contentsline {subsubsection}{\numberline {4.11.4.21}touches\_gauche\_droite()}{136}{subsubsection.4.11.4.21}%
+\contentsline {subsubsection}{\numberline {4.11.4.22}touches\_haut\_bas()}{137}{subsubsection.4.11.4.22}%
+\contentsline {subsubsection}{\numberline {4.11.4.23}trouver\_avant()}{138}{subsubsection.4.11.4.23}%
+\contentsline {subsubsection}{\numberline {4.11.4.24}vide\_ligne()}{139}{subsubsection.4.11.4.24}%
+\contentsline {section}{\numberline {4.12}prompt.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{140}{section.4.12}%
+\contentsline {section}{\numberline {4.13}include/sécure.h File Reference}{141}{section.4.13}%
+\contentsline {subsection}{\numberline {4.13.1}Function Documentation}{142}{subsection.4.13.1}%
+\contentsline {subsubsection}{\numberline {4.13.1.1}lireDouble()}{142}{subsubsection.4.13.1.1}%
+\contentsline {subsubsection}{\numberline {4.13.1.2}lireEntier()}{142}{subsubsection.4.13.1.2}%
+\contentsline {subsubsection}{\numberline {4.13.1.3}lireFloat()}{143}{subsubsection.4.13.1.3}%
+\contentsline {subsubsection}{\numberline {4.13.1.4}lireLigne()}{144}{subsubsection.4.13.1.4}%
+\contentsline {section}{\numberline {4.14}sécure.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{144}{section.4.14}%
+\contentsline {section}{\numberline {4.15}src/affichage.c File Reference}{144}{section.4.15}%
+\contentsline {subsection}{\numberline {4.15.1}Macro Definition Documentation}{145}{subsection.4.15.1}%
+\contentsline {subsubsection}{\numberline {4.15.1.1}ESPACE}{145}{subsubsection.4.15.1.1}%
+\contentsline {subsection}{\numberline {4.15.2}Function Documentation}{145}{subsection.4.15.2}%
+\contentsline {subsubsection}{\numberline {4.15.2.1}affichage\_ligne()}{145}{subsubsection.4.15.2.1}%
+\contentsline {subsubsection}{\numberline {4.15.2.2}affiche\_fichier()}{146}{subsubsection.4.15.2.2}%
+\contentsline {subsubsection}{\numberline {4.15.2.3}affiche\_fichier\_tableau\_curse\_position\_exacte()}{147}{subsubsection.4.15.2.3}%
+\contentsline {subsubsection}{\numberline {4.15.2.4}afficher\_tableau\_avec\_titre\_position\_exacte()}{148}{subsubsection.4.15.2.4}%
+\contentsline {subsubsection}{\numberline {4.15.2.5}echec()}{149}{subsubsection.4.15.2.5}%
+\contentsline {subsubsection}{\numberline {4.15.2.6}felicitation()}{150}{subsubsection.4.15.2.6}%
+\contentsline {subsubsection}{\numberline {4.15.2.7}screen\_clear()}{151}{subsubsection.4.15.2.7}%
+\contentsline {section}{\numberline {4.16}affichage.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{152}{section.4.16}%
+\contentsline {section}{\numberline {4.17}src/arborescence.c File Reference}{156}{section.4.17}%
+\contentsline {subsection}{\numberline {4.17.1}Detailed Description}{157}{subsection.4.17.1}%
+\contentsline {subsection}{\numberline {4.17.2}Function Documentation}{157}{subsection.4.17.2}%
+\contentsline {subsubsection}{\numberline {4.17.2.1}affichage()}{157}{subsubsection.4.17.2.1}%
+\contentsline {subsubsection}{\numberline {4.17.2.2}afficher()}{159}{subsubsection.4.17.2.2}%
+\contentsline {subsubsection}{\numberline {4.17.2.3}afficher\_nbr\_ouverture()}{159}{subsubsection.4.17.2.3}%
+\contentsline {subsubsection}{\numberline {4.17.2.4}ajouter\_enfant()}{161}{subsubsection.4.17.2.4}%
+\contentsline {subsubsection}{\numberline {4.17.2.5}chercher()}{162}{subsubsection.4.17.2.5}%
+\contentsline {subsubsection}{\numberline {4.17.2.6}creer()}{163}{subsubsection.4.17.2.6}%
+\contentsline {subsubsection}{\numberline {4.17.2.7}deplacer()}{164}{subsubsection.4.17.2.7}%
+\contentsline {subsubsection}{\numberline {4.17.2.8}favori()}{165}{subsubsection.4.17.2.8}%
+\contentsline {subsubsection}{\numberline {4.17.2.9}my\_cd()}{166}{subsubsection.4.17.2.9}%
+\contentsline {subsubsection}{\numberline {4.17.2.10}my\_chmod()}{168}{subsubsection.4.17.2.10}%
+\contentsline {subsubsection}{\numberline {4.17.2.11}my\_cp()}{169}{subsubsection.4.17.2.11}%
+\contentsline {subsubsection}{\numberline {4.17.2.12}my\_echo()}{171}{subsubsection.4.17.2.12}%
+\contentsline {subsubsection}{\numberline {4.17.2.13}my\_ls()}{171}{subsubsection.4.17.2.13}%
+\contentsline {subsubsection}{\numberline {4.17.2.14}my\_ls\_a()}{173}{subsubsection.4.17.2.14}%
+\contentsline {subsubsection}{\numberline {4.17.2.15}my\_ls\_l()}{175}{subsubsection.4.17.2.15}%
+\contentsline {subsubsection}{\numberline {4.17.2.16}my\_ls\_la()}{176}{subsubsection.4.17.2.16}%
+\contentsline {subsubsection}{\numberline {4.17.2.17}my\_mkdir()}{177}{subsubsection.4.17.2.17}%
+\contentsline {subsubsection}{\numberline {4.17.2.18}my\_mkdir\_p()}{179}{subsubsection.4.17.2.18}%
+\contentsline {subsubsection}{\numberline {4.17.2.19}my\_mv()}{180}{subsubsection.4.17.2.19}%
+\contentsline {subsubsection}{\numberline {4.17.2.20}my\_pwd()}{181}{subsubsection.4.17.2.20}%
+\contentsline {subsubsection}{\numberline {4.17.2.21}my\_rm()}{182}{subsubsection.4.17.2.21}%
+\contentsline {subsubsection}{\numberline {4.17.2.22}my\_rmdir()}{184}{subsubsection.4.17.2.22}%
+\contentsline {subsubsection}{\numberline {4.17.2.23}my\_touch()}{185}{subsubsection.4.17.2.23}%
+\contentsline {subsubsection}{\numberline {4.17.2.24}recherche\_max()}{186}{subsubsection.4.17.2.24}%
+\contentsline {section}{\numberline {4.18}arborescence.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{188}{section.4.18}%
+\contentsline {section}{\numberline {4.19}src/gestion\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}fichier.c File Reference}{206}{section.4.19}%
+\contentsline {subsection}{\numberline {4.19.1}Detailed Description}{206}{subsection.4.19.1}%
+\contentsline {subsection}{\numberline {4.19.2}Function Documentation}{207}{subsection.4.19.2}%
+\contentsline {subsubsection}{\numberline {4.19.2.1}affiche\_ligne()}{207}{subsubsection.4.19.2.1}%
+\contentsline {subsubsection}{\numberline {4.19.2.2}cat\_fichier()}{208}{subsubsection.4.19.2.2}%
+\contentsline {subsubsection}{\numberline {4.19.2.3}head\_fichier()}{209}{subsubsection.4.19.2.3}%
+\contentsline {subsubsection}{\numberline {4.19.2.4}insert\_fin()}{210}{subsubsection.4.19.2.4}%
+\contentsline {subsubsection}{\numberline {4.19.2.5}lire\_histoire()}{210}{subsubsection.4.19.2.5}%
+\contentsline {subsubsection}{\numberline {4.19.2.6}my\_history()}{210}{subsubsection.4.19.2.6}%
+\contentsline {subsubsection}{\numberline {4.19.2.7}my\_man()}{212}{subsubsection.4.19.2.7}%
+\contentsline {subsubsection}{\numberline {4.19.2.8}qui\_est\_meilleur()}{212}{subsubsection.4.19.2.8}%
+\contentsline {subsubsection}{\numberline {4.19.2.9}tail\_fichier()}{213}{subsubsection.4.19.2.9}%
+\contentsline {subsubsection}{\numberline {4.19.2.10}voir\_indice()}{214}{subsubsection.4.19.2.10}%
+\contentsline {section}{\numberline {4.20}gestion\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}fichier.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{215}{section.4.20}%
+\contentsline {section}{\numberline {4.21}src/main.c File Reference}{220}{section.4.21}%
+\contentsline {subsection}{\numberline {4.21.1}Detailed Description}{221}{subsection.4.21.1}%
+\contentsline {subsection}{\numberline {4.21.2}Function Documentation}{221}{subsection.4.21.2}%
+\contentsline {subsubsection}{\numberline {4.21.2.1}main()}{221}{subsubsection.4.21.2.1}%
+\contentsline {section}{\numberline {4.22}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{222}{section.4.22}%
+\contentsline {section}{\numberline {4.23}src/menu.c File Reference}{223}{section.4.23}%
+\contentsline {subsection}{\numberline {4.23.1}Macro Definition Documentation}{224}{subsection.4.23.1}%
+\contentsline {subsubsection}{\numberline {4.23.1.1}LARGEUR}{224}{subsubsection.4.23.1.1}%
+\contentsline {subsection}{\numberline {4.23.2}Function Documentation}{224}{subsection.4.23.2}%
+\contentsline {subsubsection}{\numberline {4.23.2.1}charger\_partie()}{224}{subsubsection.4.23.2.1}%
+\contentsline {subsubsection}{\numberline {4.23.2.2}dossierExiste()}{225}{subsubsection.4.23.2.2}%
+\contentsline {subsubsection}{\numberline {4.23.2.3}load\_game()}{225}{subsubsection.4.23.2.3}%
+\contentsline {subsubsection}{\numberline {4.23.2.4}loging()}{227}{subsubsection.4.23.2.4}%
+\contentsline {subsubsection}{\numberline {4.23.2.5}menu\_pricipale()}{228}{subsubsection.4.23.2.5}%
+\contentsline {subsubsection}{\numberline {4.23.2.6}ptit\_prompt()}{230}{subsubsection.4.23.2.6}%
+\contentsline {subsubsection}{\numberline {4.23.2.7}quit\_game()}{231}{subsubsection.4.23.2.7}%
+\contentsline {section}{\numberline {4.24}menu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{232}{section.4.24}%
+\contentsline {section}{\numberline {4.25}src/mission.c File Reference}{236}{section.4.25}%
+\contentsline {subsection}{\numberline {4.25.1}Detailed Description}{237}{subsection.4.25.1}%
+\contentsline {subsection}{\numberline {4.25.2}Function Documentation}{237}{subsection.4.25.2}%
+\contentsline {subsubsection}{\numberline {4.25.2.1}demande\_avis()}{237}{subsubsection.4.25.2.1}%
+\contentsline {subsubsection}{\numberline {4.25.2.2}entrainement\_14\_1()}{238}{subsubsection.4.25.2.2}%
+\contentsline {subsubsection}{\numberline {4.25.2.3}intro()}{240}{subsubsection.4.25.2.3}%
+\contentsline {subsubsection}{\numberline {4.25.2.4}load\_struct\_mission()}{242}{subsubsection.4.25.2.4}%
+\contentsline {subsubsection}{\numberline {4.25.2.5}map\_initialisation()}{243}{subsubsection.4.25.2.5}%
+\contentsline {subsubsection}{\numberline {4.25.2.6}mission\_1()}{243}{subsubsection.4.25.2.6}%
+\contentsline {subsubsection}{\numberline {4.25.2.7}mission\_10()}{245}{subsubsection.4.25.2.7}%
+\contentsline {subsubsection}{\numberline {4.25.2.8}mission\_11()}{247}{subsubsection.4.25.2.8}%
+\contentsline {subsubsection}{\numberline {4.25.2.9}mission\_12()}{249}{subsubsection.4.25.2.9}%
+\contentsline {subsubsection}{\numberline {4.25.2.10}mission\_13()}{251}{subsubsection.4.25.2.10}%
+\contentsline {subsubsection}{\numberline {4.25.2.11}mission\_14()}{253}{subsubsection.4.25.2.11}%
+\contentsline {subsubsection}{\numberline {4.25.2.12}mission\_2()}{255}{subsubsection.4.25.2.12}%
+\contentsline {subsubsection}{\numberline {4.25.2.13}mission\_3()}{257}{subsubsection.4.25.2.13}%
+\contentsline {subsubsection}{\numberline {4.25.2.14}mission\_4()}{259}{subsubsection.4.25.2.14}%
+\contentsline {subsubsection}{\numberline {4.25.2.15}mission\_5()}{261}{subsubsection.4.25.2.15}%
+\contentsline {subsubsection}{\numberline {4.25.2.16}mission\_6()}{263}{subsubsection.4.25.2.16}%
+\contentsline {subsubsection}{\numberline {4.25.2.17}mission\_7()}{265}{subsubsection.4.25.2.17}%
+\contentsline {subsubsection}{\numberline {4.25.2.18}mission\_8()}{267}{subsubsection.4.25.2.18}%
+\contentsline {subsubsection}{\numberline {4.25.2.19}mission\_9()}{269}{subsubsection.4.25.2.19}%
+\contentsline {subsubsection}{\numberline {4.25.2.20}prepa\_14()}{271}{subsubsection.4.25.2.20}%
+\contentsline {subsubsection}{\numberline {4.25.2.21}prompt\_mission()}{272}{subsubsection.4.25.2.21}%
+\contentsline {subsubsection}{\numberline {4.25.2.22}réinitialisation\_mission()}{274}{subsubsection.4.25.2.22}%
+\contentsline {subsubsection}{\numberline {4.25.2.23}sauvegarde\_dernier\_partie()}{274}{subsubsection.4.25.2.23}%
+\contentsline {subsubsection}{\numberline {4.25.2.24}verification\_mission()}{275}{subsubsection.4.25.2.24}%
+\contentsline {subsubsection}{\numberline {4.25.2.25}verification\_reussite()}{276}{subsubsection.4.25.2.25}%
+\contentsline {section}{\numberline {4.26}mission.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{278}{section.4.26}%
+\contentsline {section}{\numberline {4.27}src/prompt.c File Reference}{294}{section.4.27}%
+\contentsline {subsection}{\numberline {4.27.1}Detailed Description}{295}{subsection.4.27.1}%
+\contentsline {subsection}{\numberline {4.27.2}Function Documentation}{296}{subsection.4.27.2}%
+\contentsline {subsubsection}{\numberline {4.27.2.1}affiche\_commande()}{296}{subsubsection.4.27.2.1}%
+\contentsline {subsubsection}{\numberline {4.27.2.2}affiche\_prompt()}{297}{subsubsection.4.27.2.2}%
+\contentsline {subsubsection}{\numberline {4.27.2.3}auto\_completion()}{298}{subsubsection.4.27.2.3}%
+\contentsline {subsubsection}{\numberline {4.27.2.4}commande\_option()}{300}{subsubsection.4.27.2.4}%
+\contentsline {subsubsection}{\numberline {4.27.2.5}compter\_mot()}{301}{subsubsection.4.27.2.5}%
+\contentsline {subsubsection}{\numberline {4.27.2.6}decrement\_score()}{302}{subsubsection.4.27.2.6}%
+\contentsline {subsubsection}{\numberline {4.27.2.7}efface\_cara()}{303}{subsubsection.4.27.2.7}%
+\contentsline {subsubsection}{\numberline {4.27.2.8}execute()}{304}{subsubsection.4.27.2.8}%
+\contentsline {subsubsection}{\numberline {4.27.2.9}get\_point()}{306}{subsubsection.4.27.2.9}%
+\contentsline {subsubsection}{\numberline {4.27.2.10}get\_pwd()}{307}{subsubsection.4.27.2.10}%
+\contentsline {subsubsection}{\numberline {4.27.2.11}getNomJoueur()}{308}{subsubsection.4.27.2.11}%
+\contentsline {subsubsection}{\numberline {4.27.2.12}increment\_score()}{309}{subsubsection.4.27.2.12}%
+\contentsline {subsubsection}{\numberline {4.27.2.13}inserer()}{310}{subsubsection.4.27.2.13}%
+\contentsline {subsubsection}{\numberline {4.27.2.14}inserer\_mot\_dans()}{310}{subsubsection.4.27.2.14}%
+\contentsline {subsubsection}{\numberline {4.27.2.15}my\_get\_ligne()}{311}{subsubsection.4.27.2.15}%
+\contentsline {subsubsection}{\numberline {4.27.2.16}prend\_ligne\_command()}{313}{subsubsection.4.27.2.16}%
+\contentsline {subsubsection}{\numberline {4.27.2.17}prend\_mot\_dans()}{315}{subsubsection.4.27.2.17}%
+\contentsline {subsubsection}{\numberline {4.27.2.18}rapport\_mission()}{315}{subsubsection.4.27.2.18}%
+\contentsline {subsubsection}{\numberline {4.27.2.19}taille\_de()}{316}{subsubsection.4.27.2.19}%
+\contentsline {subsubsection}{\numberline {4.27.2.20}touche\_suppr()}{317}{subsubsection.4.27.2.20}%
+\contentsline {subsubsection}{\numberline {4.27.2.21}touches\_gauche\_droite()}{318}{subsubsection.4.27.2.21}%
+\contentsline {subsubsection}{\numberline {4.27.2.22}touches\_haut\_bas()}{319}{subsubsection.4.27.2.22}%
+\contentsline {subsubsection}{\numberline {4.27.2.23}trouver\_avant()}{320}{subsubsection.4.27.2.23}%
+\contentsline {subsubsection}{\numberline {4.27.2.24}vide\_ligne()}{321}{subsubsection.4.27.2.24}%
+\contentsline {section}{\numberline {4.28}prompt.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{322}{section.4.28}%
+\contentsline {section}{\numberline {4.29}src/sécure.c File Reference}{346}{section.4.29}%
+\contentsline {subsection}{\numberline {4.29.1}Detailed Description}{346}{subsection.4.29.1}%
+\contentsline {subsection}{\numberline {4.29.2}Function Documentation}{347}{subsection.4.29.2}%
+\contentsline {subsubsection}{\numberline {4.29.2.1}lireDouble()}{347}{subsubsection.4.29.2.1}%
+\contentsline {subsubsection}{\numberline {4.29.2.2}lireEntier()}{347}{subsubsection.4.29.2.2}%
+\contentsline {subsubsection}{\numberline {4.29.2.3}lireFloat()}{348}{subsubsection.4.29.2.3}%
+\contentsline {subsubsection}{\numberline {4.29.2.4}lireLigne()}{349}{subsubsection.4.29.2.4}%
+\contentsline {section}{\numberline {4.30}sécure.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{349}{section.4.30}%

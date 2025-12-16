@@ -1,0 +1,18 @@
+MISSION :
+
+    Bravo... t'es arrivée en mission 7 !
+    Maintenant je t'apprend a supprimer un cible avec la commande 'rm'
+    Va dans la Zone d'entrainement et supprime la chose indesirable
+
+COMMANDE :
+
+    rm [nom_du_fichier] : Cette commande supprime le fichier .
+
+    - C'est comme renvoyer quelque chose à la poubèlle
+    - Utile pour nettoyer une espace dans un batiment.
+        (attention c'est irrécuperable).
+
+HELP :
+
+    Tape "ls" pour verifier l'effet de l'action.
+ 

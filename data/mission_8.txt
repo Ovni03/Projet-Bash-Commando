@@ -1,0 +1,24 @@
+MISSION :
+
+    Soldat !!!
+    Tu dois apprendre a dupliquer tes objets pour les utiliser dans plusieurs zones.
+    Ta mission est de faire une copie du caisse qui se trouve dans le Hangar dans le Zone_Entainement . 
+
+
+COMMANDE :
+
+    cp [source] [destination] : Cette commande copie un objet.
+
+    - C'est comme prendre un objet et en faire une copie identique.
+    - Tu peux copier un objet vers un autre lieu.
+    - Pour copier un lieu entier, utilise "cp -r".
+
+ATTENTION :
+
+    La source et la destination doivent être précises par rapport à ta localisation.
+        Par exemple : cp drone Laboratoire/prototypes/ : Si tu es dans /AK-07/ et que tu veux faire une copie de drone dans prototypes.
+
+HELP :
+    
+    Tape "cp table  Batiment_1 " pour faire une copie de table dans la Batiment_1.
+ 

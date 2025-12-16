@@ -1,0 +1,16 @@
+MISSION :
+
+    Calme , cette mission est tres simple !
+    Dit moi quelque chose geniale selon ton appreciation
+
+COMMANDE :
+
+    echo [chaine_de_caractere] : Cette commande affiche le mot chaine de caractere .
+
+    - Il affiche tout ce qui est derriere la commande
+    - Utile pour envoyer ou afficher un message
+
+HELP :
+
+    dit peut juste dire Bonjour !
+ 

@@ -1,0 +1,15 @@
+MISSION :
+
+    Va au labo et dit moi ce qui est archivee [contenu des fichiers archives]
+
+COMMANDE :
+
+    cat [nom_de_fichier] : Cette commande affiche le contenu du fichier en argument
+
+    - Il affiche tout ce qui est dans le fichier sans exception
+    - Tu peut utiliser l'option '-n' pour afficher les numeros de ligne
+
+HELP :
+
+    labo et archive representent des batiments { repertoires }
+ 

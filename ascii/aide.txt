@@ -1,0 +1,18 @@
+
+
+
+
+
+					              ╔════════════════════════════════════════════════════════════════════════╗
+						      ║				Veuillez choisir le nombre :	               ║
+						      ║									       ║
+						      ║		1 : Si vous souhaitez continuez à la dernière partie.	       ║
+						      ║		2 : Si vous voulez listez toutes les parties débloquées	       ║
+						      ║				et choisir une partie.			       ║
+						      ║		4 : Pour quittez le jeu.                                       ║
+						      ║                                                                        ║
+						      ║                      tapez Menu : pour retourner au ménu               ║
+						      ║                                                                        ║
+						      ╚════════════════════════════════════════════════════════════════════════╝
+
+

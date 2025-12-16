@@ -1,0 +1,5 @@
+<map id="increment_score" name="increment_score">
+<area shape="rect" id="Node000001" title="c&#39;est pour augmenter le nombre de score du joueur actuel" alt="" coords="5,5,136,31"/>
+<area shape="rect" id="Node000002" href="$prompt_8c.html#a7be520ef705ee067bc123f782b2cd6f9" title="c&#39;est pour savoir le point que le joueur actuel possède" alt="" coords="184,5,267,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,15,170,15,170,21,136,21"/>
+</map>

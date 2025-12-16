@@ -1,0 +1,29 @@
+<map id="auto_completion" name="auto_completion">
+<area shape="rect" id="Node000001" title="c&#39;est la fonction principale de l&#39;auto&#45;completion sur ligne de commande" alt="" coords="5,231,136,256"/>
+<area shape="rect" id="Node000002" href="$prompt_8c.html#a8224c0f5c6caf14e2630ab7bd877fc07" title="Quelques fonctions de Olivier utilise cette bibliotheques." alt="" coords="193,55,313,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,229,117,168,147,131,182,97,203,84,206,88,186,101,151,134,121,171,81,232"/>
+<area shape="rect" id="Node000006" href="$prompt_8c.html#a82c7fe66cf3596c91306ae54d9eca589" title="fonction qui compte le nombre de mot dans une chaine de caractere" alt="" coords="373,155,483,180"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="79,229,120,183,149,159,183,141,234,129,287,129,337,137,380,148,379,153,336,142,287,135,235,135,185,146,152,163,124,187,83,232"/>
+<area shape="rect" id="Node000007" href="$prompt_8c.html#a0d8529b02b5a1209e10d4810637dd1ed" title="c&#39;est pour inserer une mot dans une position precise dans une chaine ; separateur = espace" alt="" coords="184,156,323,181"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="97,228,183,190,200,184,202,189,185,195,100,233"/>
+<area shape="rect" id="Node000008" href="$arborescence_8c.html#ac248248ebcb492503e52068627f5fe91" title="Change le répertoire courant." alt="" coords="221,205,286,231"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="136,232,207,222,207,227,137,237"/>
+<area shape="rect" id="Node000010" href="$arborescence_8c.html#a6c4fa25a347e9972b9e029c71ed9fd00" title="Liste les fichiers et dossiers dans le répertoire courant." alt="" coords="223,255,284,280"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="137,249,210,259,209,264,136,255"/>
+<area shape="rect" id="Node000011" href="$prompt_8c.html#a10c43f5ca70cc0962729fd7cd95a80c9" title=" " alt="" coords="188,304,319,329"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="100,254,185,290,202,297,201,302,183,295,98,259"/>
+<area shape="rect" id="Node000012" href="$prompt_8c.html#ae4852ffe3005375dff4d8dac83ca5942" title="elle ne compte pas les caracteres comme strlen ; elle donne la taille en affichage" alt="" coords="214,353,293,379"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="86,255,127,296,155,319,185,340,202,348,200,353,183,344,152,324,124,300,82,259"/>
+<area shape="rect" id="Node000013" href="$prompt_8c.html#a5288f6b9f4b7f6cd692005dd08bea7e2" title="Elle permet de trouver si la chaine recherche est le debut de chaine ; les espaces sont ignorés." alt="" coords="197,403,310,428"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="81,255,119,319,150,356,186,389,193,394,190,399,182,393,146,360,115,322,76,257"/>
+<area shape="rect" id="Node000003" href="$prompt_8c.html#a7be520ef705ee067bc123f782b2cd6f9" title="c&#39;est pour savoir le point que le joueur actuel possède" alt="" coords="387,5,469,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="298,52,373,31,375,36,300,57"/>
+<area shape="rect" id="Node000004" href="$prompt_8c.html#ac778e6a7210b6ab52bc8d395d0a63145" title="trouver le chemin du repertoire actuelle et puis l&#39;inserer dans emplacement" alt="" coords="389,55,467,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="313,65,376,65,376,70,313,70"/>
+<area shape="rect" id="Node000005" href="$prompt_8c.html#a7561703c0e5c30615f04d1caa4279ac9" title="trouver le nom du joueur actuelle et puis l&#39;inserer dans emplacement" alt="" coords="371,104,485,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="300,77,370,98,368,103,298,83"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="323,165,360,165,360,171,323,171"/>
+<area shape="rect" id="Node000009" href="$arborescence_8c.html#a0249217c5659201e1b06aad32054c2cc" title="Cherche un fichier ou dossier par son nom dans le répertoire courant." alt="" coords="389,229,467,255"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="287,220,375,232,374,237,286,225"/>
+<area shape="poly" id="edge11_Node000010_Node000009" title=" " alt="" coords="284,260,375,247,375,252,285,266"/>
+</map>

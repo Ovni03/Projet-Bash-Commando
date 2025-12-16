@@ -1,0 +1,17 @@
+commande	:	mkdir
+
+description	:	créer une repertoire
+
+utilisation	:	mkdir [option]... [repertoire]...
+
+			{il peut créer plusieurs repertoire en une seule fois}
+
+option existant
+
+       -m	initialiser les permissions du repertoire
+
+       -p	créer les parents s'il n'existe pas encore
+
+       -v	le mode verbose ; affiche toute information de ce qui a été fait
+
+

@@ -1,0 +1,7 @@
+<map id="voir_indice" name="voir_indice">
+<area shape="rect" id="Node000001" title="Elle affiche une petite aide apropos d&#39;une mission en decrementant le score du joueur actuelle." alt="" coords="5,5,99,31"/>
+<area shape="rect" id="Node000002" href="$src_2prompt_8c.html#a27629766e8e7b540919e4090001e7219" title="c&#39;est une fonction qui fait decrementer le nombre de score d&#39;une joueur en jeu" alt="" coords="147,5,281,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,15,133,15,133,21,99,21"/>
+<area shape="rect" id="Node000003" href="$old__version_2src_2prompt_8c.html#a7be520ef705ee067bc123f782b2cd6f9" title="c&#39;est pour savoir le point que le joueur actuel possède" alt="" coords="329,5,412,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="282,15,316,15,316,21,282,21"/>
+</map>

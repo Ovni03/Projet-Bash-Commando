@@ -1,0 +1,6 @@
+
+ls 
+histoire 
+exit 
+
+exit 

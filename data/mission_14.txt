@@ -1,0 +1,30 @@
+MISSION :
+
+    Soldat !
+
+    Jusqu’ici, tu as pu suivre tes missions grâce à la commande mission.
+    Mais la prochaine mission est différente… beaucoup plus délicate.
+
+    Tu devras infiltrer l’archive secrète dans le laboratoire et consulter le dossier Abdul pendant que les gardes sont en pause café.
+    Une fois le code trouvé dans le document, crée un fichier portant ce code comme nom.
+    puis transfère-le discrètement dans le bureau du Général aux quartiers généreaux.
+    Ne laisse aucune trace de ton passage.
+
+    Chaque mouvement compte. La discrétion est ta meilleure arme.
+
+    Prépare-toi, Soldat. Cette mission ne tolère aucun échec.
+
+COMMANDE :
+
+    chmod [options] [nom_du_lieu] : Cette commande modifie les permissions d’un lieu ou d’un objet.
+
+    - Permet d’activer ou de retirer tes propres permissions.
+    - Donne accès aux zones sensibles lorsque tu n’as que "---" au départ.
+    - Indispensable pour progresser sans déclencher les alarmes.
+
+HELP :
+
+    - Tape "ls -l" pour afficher les permissions actuelles de chaque lieu et objet.
+    - Pense à utiliser "mv" pour déplacer le fichier créé vers le bureau du Général.
+    - Vérifie toujours les permissions avant d’agir : r (lire), w (modifier), x (exécuter).
+    

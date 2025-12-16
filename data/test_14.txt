@@ -1,0 +1,19 @@
+ENTRAÎNEMENT :
+
+    Écoute-moi bien, soldat.
+
+    La vraie mission ne pardonne pas.
+    Alors avant de risquer ta peau, tu vas t’entraîner.
+    Si tu échoues ici,
+    tu n’iras nulle part là-bas.
+ 
+    Le test commence maintenant.
+    Tu vas entrer dans la zone sécurisée appelée : Coffre_Fort.
+    Cette pièce est verrouillée. Elle ne s’ouvre qu’aux soldats disciplinés.
+
+    Utilise ce que tu as appris. Contrôle les permissions. Ouvre le passage.
+    Entre dans le Coffre-Fort.
+    Sans bruit. Sans erreur.
+
+    Je t’observe.
+    

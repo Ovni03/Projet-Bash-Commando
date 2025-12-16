@@ -1,0 +1,18 @@
+MISSION :
+
+    Soldat !!!
+    Tu dois maintenant apprendre à créer des objets dans la base.
+    Ta mission est de fabriquer un "pistolet" dans l'amurerie qui se trouve dans Caserne..
+
+COMMANDE :
+
+    touch [nom_du_fichier] : Cette commande crée un objet vide.
+
+    - C'est comme poser un objet vide dans un batiment.
+    - Utile pour préparer des documents avant de les utiliser.
+
+HELP :
+
+    Tape "touch nom_du_fichier" pour créer un nouveau objet.
+    Tape "ls" pour vérifier sa présence.
+ 

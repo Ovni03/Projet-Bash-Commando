@@ -1,0 +1,5 @@
+<map id="my_rm" name="my_rm">
+<area shape="rect" id="Node000001" title="Supprime un fichier dans le répertoire courant." alt="" coords="5,5,73,31"/>
+<area shape="rect" id="Node000002" href="$arborescence_8c.html#a0249217c5659201e1b06aad32054c2cc" title="Cherche un fichier ou dossier par son nom dans le répertoire courant." alt="" coords="121,5,200,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,15,107,15,107,21,74,21"/>
+</map>

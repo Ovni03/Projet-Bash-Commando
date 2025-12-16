@@ -1,0 +1,17 @@
+MISSION :
+
+    Soldat !!!
+    Tu dois apprendre a déplacer tes objets pour les utiliser dans plusieurs zones.
+    Ta mission est de déplacer le caisse qui se trouve dans le Hangar dans le Zone_Entainement . 
+
+COMMANDE :
+
+    mv [source] [nouvelle_destination] : Cette commande  un objet.
+
+    - C'est comme prendre un objet et le déplace dans un tout autre lieu.
+    - Tu peux déplacer un objet vers un autre lieu.
+    - Pour déplacer un lieu entier, utilise "mv -r".
+
+HELP :
+    Tape "cp table  Batiment_1 " pour faire un copie de table dans la Batiment_1.
+ 

@@ -1,0 +1,11 @@
+<map id="afficher_tableau_fichier" name="afficher_tableau_fichier">
+<area shape="rect" id="Node000001" title=" " alt="" coords="668,13,843,38"/>
+<area shape="rect" id="Node000002" href="$old__version_2src_2affichage_8c.html#a0ede45a3b41cb6bde728e8608ee0876c" title=" " alt="" coords="451,5,620,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="654,28,620,28,620,23,654,23"/>
+<area shape="rect" id="Node000003" href="$src_2mission_8c.html#a060574dcb2ecd963a2e4e0af59808810" title=" " alt="" coords="351,13,403,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="437,28,403,28,403,23,437,23"/>
+<area shape="rect" id="Node000004" href="$src_2menu_8c.html#a3f8bf4a7d071108da45a49c477f5fd1b" title=" " alt="" coords="208,13,303,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="337,28,303,28,303,23,337,23"/>
+<area shape="rect" id="Node000005" href="$src_2mission_8c.html#adbaaaaf0ae83783163a1eedabd8789af" title=" " alt="" coords="5,13,160,38"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="194,28,160,28,160,23,194,23"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="get_point" name="get_point">
+<area shape="rect" id="Node000001" title="c&#39;est pour savoir le point que le joueur actuel possède" alt="" coords="565,55,648,80"/>
+<area shape="rect" id="Node000002" href="$src_2prompt_8c.html#a8224c0f5c6caf14e2630ab7bd877fc07" title="il affiche le ligne de prompt où l&#39;on insere du commande" alt="" coords="197,5,317,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="553,53,517,45,412,30,317,23,318,18,412,25,518,39,555,48"/>
+<area shape="rect" id="Node000004" href="$src_2prompt_8c.html#a27629766e8e7b540919e4090001e7219" title="c&#39;est une fonction qui fait decrementer le nombre de score d&#39;une joueur en jeu" alt="" coords="383,104,517,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="554,87,492,106,491,101,552,82"/>
+<area shape="rect" id="Node000007" href="$src_2prompt_8c.html#aa99f29d159bdefecc6f70f00361524d6" title="c&#39;est pour augmenter le nombre de score du joueur actuel" alt="" coords="385,55,515,80"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="552,70,516,70,516,65,552,65"/>
+<area shape="rect" id="Node000003" href="$src_2mission_8c.html#ade573c5eee8265efcab5053e371befe1" title=" " alt="" coords="5,55,132,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="196,37,119,57,118,52,194,32"/>
+<area shape="rect" id="Node000005" href="$src_2mission_8c.html#adbaaaaf0ae83783163a1eedabd8789af" title=" " alt="" coords="180,55,335,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="386,103,307,83,309,78,387,98"/>
+<area shape="rect" id="Node000006" href="$src_2gestion__fichier_8c.html#a65ff929a2d03935078e95374dbf120e2" title="Elle affiche une petite aide apropos d&#39;une mission en decrementant le score du joueur actuelle." alt="" coords="211,104,304,129"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="369,119,304,119,304,114,369,114"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="197,104,118,83,119,78,198,99"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="371,70,335,70,335,65,371,65"/>
+</map>

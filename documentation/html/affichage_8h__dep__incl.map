@@ -1,0 +1,15 @@
+<map id="include/affichage.h" name="include/affichage.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="143,5,288,31"/>
+<area shape="rect" id="Node000002" href="$menu_8h.html" title=" " alt="" coords="105,79,227,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,44,176,80,172,77,197,41"/>
+<area shape="rect" id="Node000003" href="$main_8c.html" title=": Fonction principale du jeu Bash Commando" alt="" coords="5,152,95,177"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="165,38,128,56,95,81,80,98,69,117,56,152,51,150,65,115,76,95,91,77,125,51,163,33"/>
+<area shape="rect" id="Node000005" href="$mission_8c.html" title=": Fonction pour gérer les missions du jeu" alt="" coords="237,152,343,177"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="230,42,286,151,282,153,225,44"/>
+<area shape="rect" id="Node000006" href="$prompt_8c.html" title="ceci fait reference à la simulation de prompt" alt="" coords="303,79,405,104"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="251,34,333,76,330,81,248,39"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="137,113,70,154,68,149,134,109"/>
+<area shape="rect" id="Node000004" href="$menu_8c.html" title=" " alt="" coords="119,152,213,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="169,118,169,152,163,152,163,118"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="199,108,271,149,268,154,196,113"/>
+</map>

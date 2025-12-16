@@ -1,0 +1,19 @@
+commande	:	mv
+
+description	:	deplacer un fichier (tout est fichier sous linux) vers une destination
+
+utilisation	:	mv [option]... [source]... [destination]
+
+			{ la source peut être nombreuse mais la destination est unique}
+
+option existant
+
+       -f	ne demande pas d'avis en cas d'écrasement de fichier deja existant dans la destination
+
+       -i	n'écrase pas si la destination contient deja la copie mais demande une confirmation
+
+       -t	pour preciser une repertoire de destination
+
+       -v	afficher tous ce qui a été fait
+
+

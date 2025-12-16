@@ -1,0 +1,9 @@
+<map id="touche_suppr" name="touche_suppr">
+<area shape="rect" id="Node000001" title="c&#39;est la fonction associer à la touche suppr" alt="" coords="5,31,115,56"/>
+<area shape="rect" id="Node000002" href="$prompt_8c.html#ac8bb82aceed1af2184b3a60daa343ec9" title="On lui donne une chaine de caractere et une position ; Il supprime le caractere qui se trouve à cette..." alt="" coords="163,5,260,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,32,148,26,149,31,115,37"/>
+<area shape="rect" id="Node000003" href="$prompt_8c.html#ac5cea60156f61bb7095ac40599b2292b" title="c&#39;est une simple fonction qui permet de vider la ligne de commande actuelle" alt="" coords="167,55,256,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="115,49,154,56,153,61,115,55"/>
+<area shape="rect" id="Node000004" href="$prompt_8c.html#ae4852ffe3005375dff4d8dac83ca5942" title="elle ne compte pas les caracteres comme strlen ; elle donne la taille en affichage" alt="" coords="308,55,387,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="256,65,294,65,294,70,256,70"/>
+</map>

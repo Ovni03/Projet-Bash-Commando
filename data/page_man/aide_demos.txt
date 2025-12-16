@@ -1,0 +1,7 @@
+commande	:	demos
+
+description	:	executer une commande en vraie
+
+utilisation	:	demos [commande_vraie]
+
+

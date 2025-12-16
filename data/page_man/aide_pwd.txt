@@ -1,0 +1,13 @@
+commande	:	pwd
+
+description	:	afficher le chemin complet du repertoire actuel
+
+utilisation	:	pwd [option]...
+
+option existant
+
+	-P	eviter tous les liens symboliques
+
+	-L	utiliser PWD depuis l'environnement , même s'il y a des liens symboliques
+
+

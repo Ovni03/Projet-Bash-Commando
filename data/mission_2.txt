@@ -1,0 +1,18 @@
+ 
+P-1 :
+
+    Repérer tous les objets, caisses, documents et batiments autour de toi.
+
+COMMANDE:
+
+    ls [nom du lieu]: Cette commande te montre tout ce qu'il y a dans un endroit.
+
+    - C'est comme regardé autour de toi à 360°.
+    - Tu vois les caisses, les dossiers, les equipements, tout ce qui est posé dans la zone.
+    - C'est la première commande à faire à chaque nouvelle zone explorée.
+    
+HELP :
+
+    Tape ls pour afficher tous les objets visibles dans tout le lieu; mais si tu pécises le nom de 
+    l'endroit où tu te trouves,seuls les objets dans le même endroit que toi s'afficheront.
+    
