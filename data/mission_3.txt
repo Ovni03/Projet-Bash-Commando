@@ -22,3 +22,4 @@ HELP :
     Tape "cd camp" pour entrer dans un lieu nomme "camp".
 
 .
+ 

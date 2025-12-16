@@ -72,4 +72,4 @@ double lireDouble()
 	lireLigne(reel , sizeof(reel));
 
 	return strtod(reel , NULL);
-}
+} 

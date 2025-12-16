@@ -6,4 +6,4 @@
 	float lireFloat();
 	double lireDouble();
 
-#endif
+#endif 

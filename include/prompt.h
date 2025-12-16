@@ -242,3 +242,4 @@ int verifier(char *chaine);
     void inserer(char caractere , int position , char *chaine);
 
 #endif
+ 

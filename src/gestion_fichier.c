@@ -521,4 +521,4 @@ int my_history(bool effacer)
     free(emplacement);
 
     return (1);
-}
+} 

@@ -37,4 +37,4 @@ EXEMPLES :
         0 = 000 → --- (aucune permission)
         → chmod 7 Caserne : ajout du tout le au lieu Caserne
         → chmod 0 Caserne : rendre carne inaccessible.
-    
+     

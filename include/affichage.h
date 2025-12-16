@@ -42,4 +42,4 @@
     bool echec();
     void affiche_fichier(char *nom_fichier ) ;
     
-#endif
+#endif 

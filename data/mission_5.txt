@@ -16,4 +16,4 @@ COMMANDE :
 HELP :
 
     Tape "ls" pour verifier que le batiment a disparu.
-    
+     

@@ -218,3 +218,4 @@ void affichage(fichier* home) ;
 void my_ls_la(fichier* racine, fichier *courant,char *nom) ;
 
 #endif
+ 

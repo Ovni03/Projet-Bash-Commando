@@ -2075,3 +2075,4 @@ int rapport_mission(int num_mission , bool reussie)
     fclose(mission_registre);
     return (1);
 }
+ 

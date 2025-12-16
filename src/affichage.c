@@ -310,3 +310,4 @@ void affiche_fichier_tableau_curse_position_exacte(const char *titre , const cha
    endwin(); // restaure le terminal
    clear();
 }
+ 

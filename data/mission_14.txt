@@ -27,4 +27,4 @@ HELP :
     - Tape "ls -l" pour afficher les permissions actuelles de chaque lieu et objet.
     - Pense à utiliser "mv" pour déplacer le fichier créé vers le bureau du Général.
     - Vérifie toujours les permissions avant d’agir : r (lire), w (modifier), x (exécuter).
-    
+     

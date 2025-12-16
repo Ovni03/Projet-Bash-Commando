@@ -1628,4 +1628,4 @@ void my_ls_la(fichier* racine, fichier *courant,char *nom)
         temp = temp->frereSuivant ;
     }
     printf("\n") ;
-}
+} 

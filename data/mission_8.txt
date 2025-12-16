@@ -22,3 +22,4 @@ HELP :
     
     Tape "cp table  Batiment_1 " pour faire une copie de table dans la Batiment_1.
  
+ 

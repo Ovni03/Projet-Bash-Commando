@@ -15,4 +15,4 @@ HELP :
 
     Tape ls pour afficher tous les objets visibles dans tout le lieu; mais si tu pécises le nom de 
     l'endroit où tu te trouves,seuls les objets dans le même endroit que toi s'afficheront.
-    
+     
