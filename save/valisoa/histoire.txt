@@ -25,3 +25,17 @@ ls
 ls Quartier_Généraux/ 
 exit 
 exit 
+demos bash 
+ls 
+
+lsd 
+fsfsjqlfqz 
+tail 
+kdsk 
+liste_commande 
+ls -l 
+pwd 
+exit 
+
+ls 
+liste_commande 

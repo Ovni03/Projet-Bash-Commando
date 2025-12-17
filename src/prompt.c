@@ -1428,90 +1428,6 @@ fichier *execute(char **commande , fichier *repertoire_actuel , int nbMot )
     nb_commande = i;
     switch(nb_commande)
     {
-
-        case 5:
-        {
-            nbMot = 0;
-            while(ligne.argument[nbMot] != NULL)
-            {
-                nbMot++;
-            }
-            if( nbMot == 0 )
-            {
-                printf("(EE) : mkdir a besoin d'argument !\n");
-            }
-            else
-            {
-                nbMot = 0;
-                while(ligne.argument[nbMot] != NULL)
-                {
-                    my_mkdir(racine , repertoire_actuel , ligne.argument[nbMot] , 0);
-                    nbMot++;
-                }
-            }
-            break;
-        }
-        case 7:
-        {
-            nbMot = 0;
-            while(ligne.argument[nbMot] != NULL)
-            {
-                if(nbMot == 0)
-                {
-                    nbMot = 1;
-                }
-                nbMot++;
-            }
-            if(nbMot == 2)
-            {
-                my_cp( racine , repertoire_actuel , ligne.argument[0] , ligne.argument[1]);
-            }
-            else if(nbMot > 2)
-            {
-                nb_commande = 0;
-                while(ligne.argument[(nb_commande)] != NULL)
-                {
-                    nb_commande++;
-                }
-                for(i=0 ; i < (nb_commande-1) ; i++)
-                {
-                    my_cp( racine , repertoire_actuel , ligne.argument[i] , ligne.argument[(nb_commande-1)]);
-                }
-            }
-            else
-            {
-                printf("\t(EE) : cp besoin d'arguments source et destination !\n\tSaisissez << aide cp >> pour plus d'informations.\n");
-                return (repertoire_actuel);
-            }
-            break;
-        }
-        case 11:
-        {
-            nbMot = 0;
-            while(ligne.argument[nbMot] != NULL)
-            {
-                nbMot++;
-            }
-            if(nbMot == 2)
-            {
-                my_chmod(racine, repertoire_actuel, ligne.argument[0], ligne.argument[1]) ;
-            }
-            else
-            {
-                printf("Apprennez a utilisez chmod !\n");
-            }
-            break;
-        }
-        case 22:
-        {
-            afficher_nbr_ouverture(racine, 0) ;
-            break;
-        }
-        case 21:
-        {
-            affichage(racine) ;
-            break;
-        }
         case 0:
         {
             if(ligne.option[0] != NULL)
@@ -1630,32 +1546,6 @@ fichier *execute(char **commande , fichier *repertoire_actuel , int nbMot )
             }
             break;
         }
-        case 20: 
-        {
-            if( ligne.argument[0] == NULL)
-            {
-                printf("(EE) : touch a besoin d'argument !\n");
-            }
-            else
-            {
-                i = 0;
-                while(ligne.argument[i] != NULL)
-                {
-                    my_touch( racine , repertoire_actuel , ligne.argument[i],0);
-                    i++;
-                }
-            }
-            break;
-        }
-        case 16: 
-        {
-            if( nbMot != 1)
-            {
-                printf("Oui liste_commande ignore ton argument !\n");
-            }
-            cat_fichier("../data/page_man/mes_commandes.txt" , false);
-            break;
-        }
         case 1:
         {
             i = 0;
@@ -1689,77 +1579,6 @@ fichier *execute(char **commande , fichier *repertoire_actuel , int nbMot )
             }
             break;
         } 
-        case 9: 
-        {
-            if( ligne.argument[0] == NULL)
-            {
-                printf("(EE) : rmdir a besoin d'argument !\n");
-            }
-            else
-            {
-                i = 0;
-                while(ligne.argument[i] != NULL)
-                {
-                    my_rmdir(racine , repertoire_actuel , ligne.argument[i]);
-                    i++;
-                }
-            }
-            break;
-        }
-        case 15: 
-        {
-            if(nbMot == 1)
-            {
-                my_history(false);
-            }
-            else if(ligne.argument[0] != NULL)
-            {
-                printf("(EE) : commande histoire mal compris !\n\n   Utilisation : histoire [-c]\n\n");
-            }
-            else
-            {
-                i = 0;
-                while(ligne.option[i] != NULL)
-                {
-                    if(strcmp(ligne.option[i], "-c") == 0)
-                    {
-                        my_history(true);
-                    }
-                    else if((strcmp(ligne.option[i], "-") == 0))
-                    {
-                        printf("%s : quelle drole option !\n" , ligne.option[i]);
-                    }
-                    else
-                    {
-                        par_option = ligne.option[i]+1;
-                        while(*par_option != '\0')
-                        {
-                            histoire_s(*par_option);
-                            par_option++;
-                        }
-                    }
-                    i++;
-                }
-            }
-            break;
-        }
-        case 6: 
-        {
-            if( nbMot == 1)
-            {
-                printf("(EE) : rm a besoin d'argument !\n");
-            }
-            else
-            {
-                i = 0;
-                while(ligne.argument[i] != NULL)
-                {
-                    my_rm(racine , repertoire_actuel , ligne.argument[i]);
-                    i++;
-                }
-            }
-            break;
-        }
         case 2:
         {
             if ( nbMot == 1 )
@@ -1785,18 +1604,6 @@ fichier *execute(char **commande , fichier *repertoire_actuel , int nbMot )
                     }
                 }
             } 
-            break;
-        }
-        case 13:
-        {
-            if ( nbMot == 1)
-            {
-                screen_clear();          
-            }
-            else
-            {
-                printf("(EE) : clear ne veut pas d'argument !\n");
-            }
             break;
         }
         case 3:
@@ -1856,41 +1663,130 @@ fichier *execute(char **commande , fichier *repertoire_actuel , int nbMot )
             }
             break;
         }
-        case 19:
+        case 4:
         {
-            if( (nbMot == 1) || (ligne.argument[0] == NULL))
+            my_echo( commande );
+            break;
+        }
+        case 5:
+        {
+            nbMot = 0;
+            while(ligne.argument[nbMot] != NULL)
             {
-                printf("(EE) : head a besoin de fichier comme argument !\n");
+                nbMot++;
             }
-            else if(ligne.option[0] == NULL)
+            if( nbMot == 0 )
             {
-                for(i=0 ; ligne.argument[i] != NULL ; i++)
+                printf("(EE) : mkdir a besoin d'argument !\n");
+            }
+            else
+            {
+                nbMot = 0;
+                while(ligne.argument[nbMot] != NULL)
                 {
-                    head_fichier(ligne.argument[i] , 10);
+                    my_mkdir(racine , repertoire_actuel , ligne.argument[nbMot] , 0);
+                    nbMot++;
+                }
+            }
+            break;
+        }
+        case 6: 
+        {
+            if( nbMot == 1)
+            {
+                printf("(EE) : rm a besoin d'argument !\n");
+            }
+            else
+            {
+                i = 0;
+                while(ligne.argument[i] != NULL)
+                {
+                    my_rm(racine , repertoire_actuel , ligne.argument[i]);
+                    i++;
+                }
+            }
+            break;
+        }
+        case 7:
+        {
+            nbMot = 0;
+            while(ligne.argument[nbMot] != NULL)
+            {
+                if(nbMot == 0)
+                {
+                    nbMot = 1;
+                }
+                nbMot++;
+            }
+            if(nbMot == 2)
+            {
+                my_cp( racine , repertoire_actuel , ligne.argument[0] , ligne.argument[1]);
+            }
+            else if(nbMot > 2)
+            {
+                nb_commande = 0;
+                while(ligne.argument[(nb_commande)] != NULL)
+                {
+                    nb_commande++;
+                }
+                for(i=0 ; i < (nb_commande-1) ; i++)
+                {
+                    my_cp( racine , repertoire_actuel , ligne.argument[i] , ligne.argument[(nb_commande-1)]);
                 }
             }
             else
             {
-                nb_commande = 0 ;
-                for(i=0 ; ligne.option[i] != NULL ; i++)
+                printf("\t(EE) : cp besoin d'arguments source et destination !\n\tSaisissez << aide cp >> pour plus d'informations.\n");
+                return (repertoire_actuel);
+            }
+            break;
+        }
+        case 8: 
+        {
+            nbMot = 0;
+            while(ligne.argument[nbMot] != NULL)
+            {
+                if(nbMot == 0)
                 {
-                    if(strcmp(ligne.option[i] , "-n") == 0)
-                    {
-                        nb_commande = atoi(ligne.argument[0]);
-                    }
-                    else
-                    {
-                        printf("%s : option non reconnue !\n", ligne.option[i]);
-                    }
+                    nbMot = 1;
                 }
-                if(nb_commande != 0)
+                nbMot++;
+            }
+            if(nbMot == 2)
+            {
+                my_mv( racine , repertoire_actuel , ligne.argument[0] , ligne.argument[1]);
+            }
+            else if(nbMot > 2)
+            {
+                nb_commande = 0;
+                while(ligne.argument[(nb_commande)] != NULL)
                 {
-                    test = 1;
-                    while(ligne.argument[test] != NULL)
-                    {
-                        head_fichier(ligne.argument[test] , i);
-                        test++;
-                    }
+                    nb_commande++;
+                }
+                for(i=0 ; i < (nb_commande-1) ; i++)
+                {
+                    my_mv( racine , repertoire_actuel , ligne.argument[i] , ligne.argument[(nb_commande-1)]);
+                }
+            }
+            else
+            {
+                printf("Vous avez besoin d'apprendre mv !\n-------------> Tapez aide mv \n");
+            }
+            break;
+        }
+        case 9: 
+        {
+            if( ligne.argument[0] == NULL)
+            {
+                printf("(EE) : rmdir a besoin d'argument !\n");
+            }
+            else
+            {
+                i = 0;
+                while(ligne.argument[i] != NULL)
+                {
+                    my_rmdir(racine , repertoire_actuel , ligne.argument[i]);
+                    i++;
                 }
             }
             break;
@@ -1934,54 +1830,98 @@ fichier *execute(char **commande , fichier *repertoire_actuel , int nbMot )
             }
             break;
         }
-        case 4:
-        {
-            my_echo( commande );
-            break;
-        }
-        case 8: 
+        case 11:
         {
             nbMot = 0;
             while(ligne.argument[nbMot] != NULL)
             {
-                if(nbMot == 0)
-                {
-                    nbMot = 1;
-                }
                 nbMot++;
             }
             if(nbMot == 2)
             {
-                my_mv( racine , repertoire_actuel , ligne.argument[0] , ligne.argument[1]);
-            }
-            else if(nbMot > 2)
-            {
-                nb_commande = 0;
-                while(ligne.argument[(nb_commande)] != NULL)
-                {
-                    nb_commande++;
-                }
-                for(i=0 ; i < (nb_commande-1) ; i++)
-                {
-                    my_mv( racine , repertoire_actuel , ligne.argument[i] , ligne.argument[(nb_commande-1)]);
-                }
+                my_chmod(racine, repertoire_actuel, ligne.argument[0], ligne.argument[1]) ;
             }
             else
             {
-                printf("Vous avez besoin d'apprendre mv !\n-------------> Tapez aide mv \n");
+                printf("Apprennez a utilisez chmod !\n");
             }
             break;
         }
-        case 23:
+        case 13:
         {
-            tempo = calloc(LIGNE , sizeof(char));
-            for(i=1 ; i<nbMot ; i++)
+            if ( nbMot == 1)
             {
-                strcat(tempo , commande[i]);
-                strcat(tempo , " ");
+                screen_clear();          
             }
-            system(tempo);
-            free(tempo);
+            else
+            {
+                printf("(EE) : clear ne veut pas d'argument !\n");
+            }
+            break;
+        }
+        case 14:
+        {
+            if(nbMot == 1)
+            {
+                my_man("aide");
+            }
+            else if( ligne.option[0] != NULL)
+            {
+                printf(" Option non accepter !\n\n");
+            }
+            else
+            {
+                for(i=0 ; ligne.argument[i] != NULL ; i++)
+                {
+                    my_man(ligne.argument[i]);
+                }
+            }
+            break;
+        }
+        case 15: 
+        {
+            if(nbMot == 1)
+            {
+                my_history(false);
+            }
+            else if(ligne.argument[0] != NULL)
+            {
+                printf("(EE) : commande histoire mal compris !\n\n   Utilisation : histoire [-c]\n\n");
+            }
+            else
+            {
+                i = 0;
+                while(ligne.option[i] != NULL)
+                {
+                    if(strcmp(ligne.option[i], "-c") == 0)
+                    {
+                        my_history(true);
+                    }
+                    else if((strcmp(ligne.option[i], "-") == 0))
+                    {
+                        printf("%s : quelle drole option !\n" , ligne.option[i]);
+                    }
+                    else
+                    {
+                        par_option = ligne.option[i]+1;
+                        while(*par_option != '\0')
+                        {
+                            histoire_s(*par_option);
+                            par_option++;
+                        }
+                    }
+                    i++;
+                }
+            }
+            break;
+        }
+        case 16: 
+        {
+            if( nbMot != 1)
+            {
+                printf("Oui liste_commande ignore ton argument !\n");
+            }
+            cat_fichier("../data/page_man/mes_commandes.txt" , false);
             break;
         }
         case 17:
@@ -2004,23 +1944,82 @@ fichier *execute(char **commande , fichier *repertoire_actuel , int nbMot )
             }
             break;
         }
-        case 14:
+        case 19:
         {
-            if(nbMot == 1)
+            if( (nbMot == 1) || (ligne.argument[0] == NULL))
             {
-                my_man("aide");
+                printf("(EE) : head a besoin de fichier comme argument !\n");
             }
-            else if( ligne.option[0] != NULL)
-            {
-                printf(" Option non accepter !\n\n");
-            }
-            else
+            else if(ligne.option[0] == NULL)
             {
                 for(i=0 ; ligne.argument[i] != NULL ; i++)
                 {
-                    my_man(ligne.argument[i]);
+                    head_fichier(ligne.argument[i] , 10);
                 }
             }
+            else
+            {
+                nb_commande = 0 ;
+                for(i=0 ; ligne.option[i] != NULL ; i++)
+                {
+                    if(strcmp(ligne.option[i] , "-n") == 0)
+                    {
+                        nb_commande = atoi(ligne.argument[0]);
+                    }
+                    else
+                    {
+                        printf("%s : option non reconnue !\n", ligne.option[i]);
+                    }
+                }
+                if(nb_commande != 0)
+                {
+                    test = 1;
+                    while(ligne.argument[test] != NULL)
+                    {
+                        head_fichier(ligne.argument[test] , i);
+                        test++;
+                    }
+                }
+            }
+            break;
+        }
+        case 20: 
+        {
+            if( ligne.argument[0] == NULL)
+            {
+                printf("(EE) : touch a besoin d'argument !\n");
+            }
+            else
+            {
+                i = 0;
+                while(ligne.argument[i] != NULL)
+                {
+                    my_touch( racine , repertoire_actuel , ligne.argument[i],0);
+                    i++;
+                }
+            }
+            break;
+        }
+        case 21:
+        {
+            affichage(racine) ;
+            break;
+        }
+        case 22:
+        {
+            afficher_nbr_ouverture(racine, 0) ;
+            break;
+        }
+        case 23:
+        {
+            tempo = calloc(LIGNE , sizeof(char));
+            for(i=1 ; i<nbMot ; i++)
+            {
+                strcat(tempo , commande[i]);
+                strcat(tempo , " ");
+            }
+            system(tempo);
+            free(tempo);
             break;
         }
         default:
